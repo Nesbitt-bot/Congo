@@ -184,6 +184,21 @@
       "image": "media/hp-envy-6155e-printer-bundle.jpg",
       "description": "HP Envy 6155e all-in-one printer bundle including extra black ink and HP Premium 24 paper shown in the photo.",
       "pickupNotes": "Bundle includes the printer, extra black ink pack, and HP Premium 24 print paper. Reference price uses HP's direct current printer listing; bundle extras are included on top."
+    },
+    {
+      "id": "ikea-skadis-pegboard-set",
+      "name": "IKEA SKADIS Pegboard Set",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 28,
+      "referenceLink": "https://www.ikea.com/us/en/cat/skadis-series-37813/",
+      "actualPrice": null,
+      "quantity": 1,
+      "status": "pending",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/ikea-skadis-pegboard-set.jpg",
+      "description": "IKEA SKADIS pegboard set with cups, tray, hooks, and clamps shown together in one bundle.",
+      "pickupNotes": "Hidden seller price not set yet, so this item is currently displayed as pending."
     }
   ]
 }

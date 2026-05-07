@@ -8,3 +8,6 @@ __pycache__/
 
 # Build output
 /dist/
+
+# Generator cache
+/.cache/

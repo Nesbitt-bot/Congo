@@ -11,6 +11,7 @@ Congo is a static GitHub Pages graduation-sale site with a browsing-first storef
 - The site is built into `dist/` by `scripts/build_site.py`
 - Deployment is automatic through `.github/workflows/pages.yml`
 - Pushing to `main` should rebuild and redeploy the site on GitHub Pages
+- The generator now exports multilingual storefronts for English and Chinese (`/en/` and `/zh/`) and creates language-specific posters with QR codes
 
 ## Current pricing rule
 

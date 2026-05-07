@@ -16,6 +16,8 @@ The name is a joke on Amazon: Congo is the second-largest rainforest, but this r
 - Unlocks **free local delivery** when the total is above the configured threshold
 - Builds a checkout page that composes a ready-to-send email for pickup or delivery scheduling
 - Generates Open Graph / Twitter preview images for the main store and every item page
+- Generates language-specific posters for English and Chinese, with QR codes linking to item details
+- Exports separate English and Chinese storefronts (`/en/` and `/zh/`)
 - Deploys automatically to **GitHub Pages via Actions** on push to `main`
 
 ## Data model

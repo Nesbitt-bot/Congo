@@ -1,14 +1,22 @@
 const STORAGE_KEYS = {
-  cart: 'congo_cart_v2',
-  guess: 'congo_guess_state_v2',
+  cart: 'congo_cart_v3',
+  guess: 'congo_guess_state_v3',
 };
 
-const relRoot = window.CONGO_REL_ROOT || './';
+const assetRoot = window.CONGO_ASSET_ROOT || './';
+const pageRoot = window.CONGO_PAGE_ROOT || './';
+const dataUrl = window.CONGO_DATA_URL || `${pageRoot}data/catalog.json`;
 const pageType = document.body.dataset.page || 'index';
 const fallbackSite = window.CONGO_SITE || {};
+const STRINGS = fallbackSite.strings || {};
+
+function t(key, fallback, vars = {}) {
+  const template = STRINGS[key] ?? fallback;
+  return String(template).replace(/\{(\w+)\}/g, (_, name) => String(vars[name] ?? `{${name}}`));
+}
 
 function money(value, currency = fallbackSite.currency || 'USD') {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat(fallbackSite.numberLocale || 'en-US', {
     style: 'currency',
     currency,
     minimumFractionDigits: 0,
@@ -17,9 +25,9 @@ function money(value, currency = fallbackSite.currency || 'USD') {
 }
 
 function withBase(path = '') {
-  if (!path) return `${relRoot}assets/placeholder.png`;
+  if (!path) return `${assetRoot}assets/placeholder.png`;
   if (/^https?:\/\//.test(path)) return path;
-  return `${relRoot}${path.replace(/^\/+/, '')}`;
+  return `${assetRoot}${path.replace(/^\/+/, '')}`;
 }
 
 function escapeHtml(value) {
@@ -92,26 +100,31 @@ function computeOfferPrice(item, guess, site) {
 }
 
 async function fetchCatalog() {
-  const response = await fetch(`${relRoot}data/catalog.json`, { cache: 'no-store' });
+  const response = await fetch(dataUrl, { cache: 'no-store' });
   if (!response.ok) throw new Error('Could not load catalog.json');
   return response.json();
 }
 
 function slugToPath(id) {
-  return `${relRoot}item/${encodeURIComponent(id)}/`;
+  return `${pageRoot}item/${encodeURIComponent(id)}/`;
 }
 
 function buildIndexUrl({ query = '', category = '' } = {}) {
-  const url = new URL(`${window.location.origin}${relRoot}`);
+  const url = new URL(`${window.location.origin}${pageRoot}`);
   if (query) url.searchParams.set('q', query);
-  if (category && category !== 'All') url.searchParams.set('category', category);
+  if (category && category !== t('allCategory', 'All')) url.searchParams.set('category', category);
   return `${url.pathname}${url.search}`;
 }
 
-function renderCategoryChips(items, activeCategory = 'All') {
+function getItemPrimaryImage(item) {
+  if (Array.isArray(item?.images) && item.images.length) return item.images[0];
+  return item?.image || '';
+}
+
+function renderCategoryChips(items, activeCategory = t('allCategory', 'All')) {
   const host = document.getElementById('category-chips');
   if (!host) return;
-  const categories = ['All', ...Array.from(new Set(items.map((item) => item.category))).sort()];
+  const categories = [t('allCategory', 'All'), ...Array.from(new Set(items.map((item) => item.category))).sort()];
   host.innerHTML = categories
     .map((category) => {
       const active = category === activeCategory ? 'active' : '';
@@ -151,27 +164,27 @@ function attachGlobalSearch() {
   });
 }
 
-function getItemPrimaryImage(item) {
-  if (Array.isArray(item?.images) && item.images.length) return item.images[0];
-  return item?.image || '';
-}
-
 function productCard(item, site) {
   const guessEntry = getGuessEntry(item.id);
   const unlocked = guessEntry.success;
   const sold = !itemReadyForGuessing(item);
+  const badgeText = item.status === 'pending'
+    ? t('statusPending', 'pending')
+    : sold
+      ? t('statusUnavailable', 'Unavailable')
+      : t('threeChances', '3 chances');
   const unlockedText = unlocked
-    ? `Unlocked offer: ${money(guessEntry.offerPrice ?? item.actualPrice, site.currency)}`
-    : 'Price hidden until you guess high enough';
+    ? t('unlockedOffer', 'Unlocked offer: {price}', { price: money(guessEntry.offerPrice ?? item.actualPrice, site.currency) })
+    : t('priceHiddenUntilGuess', 'Price hidden until you guess high enough');
   return `
     <article class="product-card ${sold ? 'is-sold' : ''}">
       <a class="product-card-link" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
         <div class="card-image-wrap">
           <div class="badge-row">
             <span class="badge gold">${escapeHtml(item.category)}</span>
-            <span class="badge ${sold ? '' : 'green'}">${sold ? 'Unavailable' : '3 chances'}</span>
+            <span class="badge ${itemReadyForGuessing(item) ? 'green' : ''}">${escapeHtml(badgeText)}</span>
           </div>
-          <img src="${withBase(getItemPrimaryImage(item))}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${relRoot}assets/placeholder.png'"/>
+          <img src="${withBase(getItemPrimaryImage(item))}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${assetRoot}assets/placeholder.png'"/>
         </div>
         <div class="product-card-body">
           <div class="eyebrow">${escapeHtml(item.condition || 'Used')}</div>
@@ -191,19 +204,17 @@ function renderIndex(catalog) {
   const items = catalog.items || [];
   const grid = document.getElementById('catalog-grid');
   const searchInput = document.getElementById('global-search');
-  const freeDeliveryNode = document.getElementById('delivery-threshold-copy');
   const activeFilters = {
-    category: new URLSearchParams(window.location.search).get('category') || 'All',
+    category: new URLSearchParams(window.location.search).get('category') || t('allCategory', 'All'),
     query: new URLSearchParams(window.location.search).get('q') || '',
   };
 
   if (searchInput) searchInput.value = activeFilters.query;
-  if (freeDeliveryNode) freeDeliveryNode.textContent = money(site.freeDeliveryThreshold, site.currency);
 
   function draw(pushState = false) {
     renderCategoryChips(items, activeFilters.category);
     const filtered = items.filter((item) => {
-      const matchCategory = activeFilters.category === 'All' || item.category === activeFilters.category;
+      const matchCategory = activeFilters.category === t('allCategory', 'All') || item.category === activeFilters.category;
       const needle = activeFilters.query.trim().toLowerCase();
       const hay = [item.name, item.category, item.description, item.condition].join(' ').toLowerCase();
       const matchQuery = !needle || hay.includes(needle);
@@ -216,17 +227,15 @@ function renderIndex(catalog) {
     }
 
     if (!grid) return;
-
     if (!filtered.length) {
       grid.innerHTML = `
         <div class="empty-state">
-          <h3>No items matched that search.</h3>
-          <p class="muted">Try another keyword or another category.</p>
+          <h3>${escapeHtml(t('noMatchTitle', 'No items matched that search.'))}</h3>
+          <p class="muted">${escapeHtml(t('noMatchDesc', 'Try another keyword or another category.'))}</p>
         </div>
       `;
       return;
     }
-
     grid.innerHTML = filtered.map((item) => productCard(item, site)).join('');
   }
 
@@ -270,7 +279,6 @@ function setItemUnlockedUI(item, site, offerPrice) {
   const status = document.getElementById('guess-status');
   const remaining = document.getElementById('remaining-guesses');
   const hiddenHint = document.getElementById('hidden-price-hint');
-  const factor = Number(site.discountFactor ?? 0.8);
 
   if (reveal) {
     reveal.classList.remove('hide');
@@ -279,14 +287,14 @@ function setItemUnlockedUI(item, site, offerPrice) {
   if (actionBlock) actionBlock.classList.remove('hide');
   if (hiddenHint) {
     hiddenHint.textContent = offerPrice > Number(item.actualPrice)
-      ? `Unlocked from an above-target guess using discount factor ${factor}.`
-      : 'Unlocked at the seller price.';
+      ? t('unlockAboveTarget', 'Unlocked from an above-target guess.')
+      : t('unlockAtSellerPrice', 'Unlocked at the seller price.');
   }
   if (status) {
     status.className = 'status-box good';
-    status.textContent = 'Yes — that guess works. The unlocked checkout price is shown below.';
+    status.textContent = t('guessSuccess', 'Yes — that guess works. The unlocked checkout price is shown below.');
   }
-  if (remaining) remaining.textContent = 'Unlocked';
+  if (remaining) remaining.textContent = t('added', 'Added');
 }
 
 function renderItemPage(catalog) {
@@ -321,9 +329,9 @@ function renderItemPage(catalog) {
     if (!itemReadyForGuessing(current)) {
       if (status) {
         status.className = 'status-box warn';
-        status.textContent = 'This item is not ready for offers yet.';
+        status.textContent = t('pendingItemMessage', 'This item is not ready for offers yet.');
       }
-      if (hiddenHint) hiddenHint.textContent = 'Seller has not enabled guessing for this item yet.';
+      if (hiddenHint) hiddenHint.textContent = t('pendingItemHint', 'Seller has not enabled guessing for this item yet.');
       if (input) input.disabled = true;
       if (button) button.disabled = true;
       return;
@@ -338,12 +346,13 @@ function renderItemPage(catalog) {
 
     const attemptsLeft = Math.max(0, 3 - entry.attempts);
     if (remaining) remaining.textContent = String(attemptsLeft);
+    if (status) status.textContent = t('offersLeft', 'Offers left: {count}', { count: attemptsLeft });
     if (attemptsLeft === 0) {
       if (status) {
         status.className = 'status-box bad';
-        status.textContent = 'That was the last try from this browser. If you still want it, email the seller directly.';
+        status.textContent = t('lastTryMessage', 'That was the last try from this browser. If you still want it, email the seller directly.');
       }
-      if (hiddenHint) hiddenHint.textContent = 'No guesses left on this browser.';
+      if (hiddenHint) hiddenHint.textContent = t('noGuessesLeft', 'No guesses left on this browser.');
       if (input) input.disabled = true;
       if (button) button.disabled = true;
     }
@@ -358,7 +367,7 @@ function renderItemPage(catalog) {
       const value = Number(input.value);
       if (!Number.isFinite(value) || value < 0) {
         status.className = 'status-box warn';
-        status.textContent = 'Enter a valid dollar amount first.';
+        status.textContent = t('enterValidAmount', 'Enter a valid dollar amount first.');
         return;
       }
 
@@ -384,9 +393,12 @@ function renderItemPage(catalog) {
         const attemptsLeft = Math.max(0, 3 - nextAttempts);
         status.className = attemptsLeft ? 'status-box info' : 'status-box bad';
         status.textContent = attemptsLeft
-          ? `Too low. Try again — ${attemptsLeft} chance${attemptsLeft === 1 ? '' : 's'} left.`
-          : 'Too low, and that was the last chance on this browser.';
-        if (hiddenHint) hiddenHint.textContent = 'Still hidden — the guess needs to be higher.';
+          ? t('guessTooLow', 'Too low. Try again — {count} chance{suffix} left.', {
+              count: attemptsLeft,
+              suffix: attemptsLeft === 1 ? '' : 's',
+            })
+          : t('guessTooLowFinal', 'Too low, and that was the last chance on this browser.');
+        if (hiddenHint) hiddenHint.textContent = t('hiddenCheckoutPrice', 'The checkout price is still hidden.');
         refreshState();
       }
     });
@@ -395,7 +407,7 @@ function renderItemPage(catalog) {
   if (addButton) {
     addButton.addEventListener('click', () => {
       addToCart(current, 1);
-      addButton.textContent = 'Added';
+      addButton.textContent = t('added', 'Added');
       addButton.disabled = true;
     });
   }
@@ -403,7 +415,7 @@ function renderItemPage(catalog) {
   if (buyButton) {
     buyButton.addEventListener('click', () => {
       addToCart(current, 1);
-      window.location.href = `${relRoot}checkout/`;
+      window.location.href = `${pageRoot}checkout/`;
     });
   }
 }
@@ -411,28 +423,28 @@ function renderItemPage(catalog) {
 function buildCheckoutEmail({ cartRows, total, site, form }) {
   const deliveryEligible = total >= Number(site.freeDeliveryThreshold || 0);
   const lines = [
-    `Hi ${site.ownerName || 'seller'},`,
+    t('emailGreeting', 'Hi {name},', { name: site.ownerName || 'seller' }),
     '',
-    'I would like to buy these items from Congo:',
+    t('emailIntro', 'I would like to buy these items from Congo:'),
     '',
-    ...cartRows.map((row) => `- ${row.name} — ${money(row.offerPrice, site.currency)}${row.guess ? ` (guessed ${money(row.guess, site.currency)})` : ''}`),
+    ...cartRows.map((row) => `- ${row.name} — ${money(row.offerPrice, site.currency)}${row.guess ? ` (${t('unlockedFromGuess', 'Unlocked from guess {guess}.', { guess: money(row.guess, site.currency) })})` : ''}`),
     '',
-    `Total: ${money(total, site.currency)}`,
+    t('emailTotal', 'Total: {total}', { total: money(total, site.currency) }),
     deliveryEligible
-      ? `This order is above ${money(site.freeDeliveryThreshold, site.currency)}, so it qualifies for free local delivery.`
-      : `This order is below ${money(site.freeDeliveryThreshold, site.currency)}. Pickup is fine, or we can discuss delivery.`,
+      ? t('emailDeliveryUnlocked', 'This order is above {threshold}, so it qualifies for free local delivery.', { threshold: money(site.freeDeliveryThreshold, site.currency) })
+      : t('emailDeliveryNeedMore', 'This order is below {threshold}. Pickup is fine, or we can discuss delivery.', { threshold: money(site.freeDeliveryThreshold, site.currency) }),
     '',
-    `Preferred option: ${form.deliveryMode}`,
-    `Preferred time: ${form.when || 'To be discussed'}`,
-    `Name: ${form.name || ''}`,
-    `Email: ${form.email || ''}`,
-    `Phone: ${form.phone || ''}`,
-    `Address / meeting point: ${form.address || ''}`,
+    t('emailPreferredOption', 'Preferred option: {value}', { value: form.deliveryMode }),
+    t('emailPreferredTime', 'Preferred time: {value}', { value: form.when || t('none', 'None') }),
+    t('emailName', 'Name: {value}', { value: form.name || '' }),
+    t('emailEmail', 'Email: {value}', { value: form.email || '' }),
+    t('emailPhone', 'Phone: {value}', { value: form.phone || '' }),
+    t('emailAddress', 'Address / meeting point: {value}', { value: form.address || '' }),
     '',
-    'Notes:',
-    form.notes || 'None',
+    t('emailNotes', 'Notes:'),
+    form.notes || t('none', 'None'),
     '',
-    'Thanks!',
+    t('thanks', 'Thanks!'),
   ];
   return lines.join('\n');
 }
@@ -476,19 +488,18 @@ function renderCheckout(catalog) {
     if (summaryMessage) {
       summaryMessage.className = total >= threshold ? 'status-box good' : 'status-box info';
       summaryMessage.textContent = total >= threshold
-        ? 'Free local delivery unlocked on this order.'
-        : `Add ${money(Math.max(0, threshold - total), site.currency)} more to reach free local delivery.`;
+        ? t('deliveryUnlocked', 'Free local delivery unlocked on this order.')
+        : t('deliveryNeedMore', 'Add {amount} more to reach free local delivery.', { amount: money(Math.max(0, threshold - total), site.currency) });
     }
     if (progressFill) progressFill.style.width = `${progress}%`;
 
     if (!cartList) return { rows, total };
-
     if (!rows.length) {
       cartList.innerHTML = `
         <div class="empty-state">
-          <h3>Your cart is empty.</h3>
-          <p class="muted">Unlock an item first, then add it to cart.</p>
-          <p><a class="btn-amazon" href="${relRoot}">Back to the catalog</a></p>
+          <h3>${escapeHtml(t('cartEmptyTitle', 'Your cart is empty.'))}</h3>
+          <p class="muted">${escapeHtml(t('cartEmptyDesc', 'Unlock an item first, then add it to cart.'))}</p>
+          <p><a class="btn-amazon" href="${pageRoot}">${escapeHtml(t('backToCatalog', 'Back to the catalog'))}</a></p>
         </div>
       `;
       return { rows, total };
@@ -498,16 +509,16 @@ function renderCheckout(catalog) {
       .map((row) => `
         <article class="cart-item">
           <div class="cart-thumb">
-            <img src="${withBase(getItemPrimaryImage(row))}" alt="${escapeHtml(row.name)}" onerror="this.src='${relRoot}assets/placeholder.png'"/>
+            <img src="${withBase(getItemPrimaryImage(row))}" alt="${escapeHtml(row.name)}" onerror="this.src='${assetRoot}assets/placeholder.png'"/>
           </div>
           <div>
             <h3 style="margin:0 0 6px">${escapeHtml(row.name)}</h3>
             <div class="muted">${escapeHtml(row.category)} · ${escapeHtml(row.condition || 'Used')}</div>
-            <div class="small-note" style="margin-top:8px">${row.guess ? `Unlocked from guess ${money(row.guess, site.currency)}.` : 'Unlocked price ready.'}</div>
+            <div class="small-note" style="margin-top:8px">${row.guess ? escapeHtml(t('unlockedFromGuess', 'Unlocked from guess {guess}.', { guess: money(row.guess, site.currency) })) : escapeHtml(t('unlockedPriceReady', 'Unlocked price ready.'))}</div>
           </div>
           <div style="display:grid;gap:10px;justify-items:end">
             <div class="price-line">${money(row.offerPrice, site.currency)}</div>
-            <button class="btn-ghost" data-remove-item="${escapeHtml(row.id)}">Remove</button>
+            <button class="btn-ghost" data-remove-item="${escapeHtml(row.id)}">${escapeHtml(t('remove', 'Remove'))}</button>
           </div>
         </article>
       `)
@@ -540,7 +551,7 @@ function renderCheckout(catalog) {
       email: fd.get('email')?.toString().trim(),
       phone: fd.get('phone')?.toString().trim(),
       when: fd.get('when')?.toString().trim(),
-      deliveryMode: fd.get('deliveryMode')?.toString().trim() || 'Pickup',
+      deliveryMode: fd.get('deliveryMode')?.toString().trim() || t('pickupOption', 'Pickup'),
       address: fd.get('address')?.toString().trim(),
       notes: fd.get('notes')?.toString().trim(),
     };
@@ -551,7 +562,10 @@ function renderCheckout(catalog) {
     if (!form) return '';
     const formData = getFormData();
     const body = buildCheckoutEmail({ cartRows: state.rows, total: state.total, site, form: formData });
-    const subject = `Congo order request (${state.rows.length} item${state.rows.length === 1 ? '' : 's'})`;
+    const subject = t('mailSubject', 'Congo order request ({count} item{suffix})', {
+      count: state.rows.length,
+      suffix: state.rows.length === 1 ? '' : 's',
+    });
     if (mailtoButton) {
       mailtoButton.href = `mailto:${encodeURIComponent(site.contactEmail)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
@@ -568,10 +582,10 @@ function renderCheckout(catalog) {
       const body = writeEmailTargets();
       try {
         await navigator.clipboard.writeText(body);
-        copyButton.textContent = 'Copied';
-        setTimeout(() => (copyButton.textContent = 'Copy email text'), 1800);
+        copyButton.textContent = t('copied', 'Copied');
+        setTimeout(() => (copyButton.textContent = t('copyEmailText', 'Copy email text')), 1800);
       } catch {
-        copyButton.textContent = 'Copy failed';
+        copyButton.textContent = t('copyFailed', 'Copy failed');
       }
     });
   }
@@ -584,7 +598,7 @@ function boot() {
   attachGlobalSearch();
   fetchCatalog()
     .then((catalog) => {
-      renderCategoryChips(catalog.items || [], new URLSearchParams(window.location.search).get('category') || 'All');
+      renderCategoryChips(catalog.items || [], new URLSearchParams(window.location.search).get('category') || t('allCategory', 'All'));
       if (pageType === 'index') renderIndex(catalog);
       if (pageType === 'item') renderItemPage(catalog);
       if (pageType === 'checkout') renderCheckout(catalog);
@@ -593,7 +607,7 @@ function boot() {
       const host = document.getElementById('page-error');
       if (host) {
         host.classList.remove('hide');
-        host.textContent = `Failed to load the catalog: ${error.message}`;
+        host.textContent = t('failedLoadCatalog', 'Failed to load the catalog: {message}', { message: error.message });
       }
     });
 }

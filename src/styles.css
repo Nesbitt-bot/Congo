@@ -30,6 +30,10 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+html[lang="zh-CN"] body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
 body.has-mobile-footer {
   padding-bottom: 76px;
 }
@@ -175,6 +179,24 @@ img {
   background: rgba(255, 255, 255, 0.08);
   color: white;
   white-space: nowrap;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d8e2e9;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.language-switch a {
+  color: white;
+}
+
+.language-switch-label {
+  color: #c6d0d7;
+  font-size: 0.78rem;
 }
 
 .cart-link strong {
@@ -762,7 +784,8 @@ img {
 
   .brand-lockup,
   .cart-link,
-  .primary-links {
+  .primary-links,
+  .language-switch {
     display: none;
   }
 
