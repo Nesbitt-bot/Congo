@@ -103,6 +103,11 @@ ITEM_ZH = {
         "description": "Herman Miller Aeron 人体工学椅，全功能配置，B 号尺寸。包含正面和侧面两张照片。",
         "pickupNotes": "包含两张照片。参考价格使用你提供的 SeatingMind 对应商品页面。",
     },
+    "whiteboard-bundle-two-boards-markers": {
+        "name": "两块白板 + 三色白板笔套装",
+        "description": "套装包含两块可擦写白板，以及一组三色 Pilot V Board Master 白板笔。",
+        "pickupNotes": "参考价格是根据相似 U Brands 白板和当前 Pilot V Board Master 白板笔套装做出的实用估算。",
+    },
     "ikea-skadis-pegboard-set": {
         "name": "IKEA SKÅDIS 洞洞板套装",
         "description": "IKEA SKÅDIS 白色洞洞板套装，包含挂篮、小盒、托盘、挂钩和夹具等配件，照片中展示为整套。",

@@ -238,6 +238,25 @@
       ],
       "description": "Herman Miller Aeron chair, fully featured, size B. Two photos included: front view and side profile.",
       "pickupNotes": "Two photos included. Reference price uses the exact SeatingMind listing you provided."
+    },
+    {
+      "id": "whiteboard-bundle-two-boards-markers",
+      "name": "2 Whiteboards + 3 Color Marker Set",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 35.49,
+      "referenceLink": "https://duckduckgo.com/?q=U+Brands+whiteboard+Pilot+V+Board+Master+price",
+      "actualPrice": 9,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/whiteboard-bundle-full.jpg",
+      "images": [
+        "media/whiteboard-bundle-full.jpg",
+        "media/whiteboard-bundle-markers-close.jpg"
+      ],
+      "description": "Bundle includes two dry-erase whiteboards plus a 3-color Pilot V Board Master marker set.",
+      "pickupNotes": "Reference price is a practical bundle estimate based on similar U Brands whiteboards and a current Pilot V Board Master marker set."
     }
   ]
 }
