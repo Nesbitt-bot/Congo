@@ -154,6 +154,21 @@
       ],
       "description": "FlexiSpot Pro Standing Desk (E7) bundle with the included Govee RGBIC desk light shown in the photos.",
       "pickupNotes": "Bundle includes the FlexiSpot E7 standing desk and the Govee RGBIC desk light shown on the desktop. Four photos included: assembled frame, parts view, full desk view, and close-up accessory view."
+    },
+    {
+      "id": "big-joe-comfort-chair",
+      "name": "Big Joe Comfort Chair",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 69,
+      "referenceLink": "https://www.amazon.com/s?k=Big+Joe+bean+bag+chair",
+      "actualPrice": 10,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/big-joe-comfort-chair.jpg",
+      "description": "Big Joe-style black comfort chair / bean bag lounge seat.",
+      "pickupNotes": "Single photo currently attached. Reference price uses current Big Joe bean bag chair listings as a model-near comparison."
     }
   ]
 }
