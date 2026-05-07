@@ -94,6 +94,25 @@
       "image": "media/lamicall-laptop-stand.jpg",
       "description": "Adjustable aluminum Lamicall laptop stand, shown with the original box.",
       "pickupNotes": "Box included in the photo. Reference price uses Lamicall's current similar adjustable foldable laptop stand listing."
+    },
+    {
+      "id": "ikea-elloven-monitor-stand-drawer",
+      "name": "IKEA ELLOVEN Monitor Stand with Drawer",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 30,
+      "referenceLink": "https://www.ikea.com/us/en/p/elloven-monitor-stand-with-drawer-white-50474770/",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/ikea-elloven-monitor-stand-open.jpg",
+      "images": [
+        "media/ikea-elloven-monitor-stand-open.jpg",
+        "media/ikea-elloven-monitor-stand-label.jpg"
+      ],
+      "description": "IKEA ELLOVEN monitor stand with bamboo drawer and white top shelf, shown open and with label visible.",
+      "pickupNotes": "Two photos included: open drawer view and product label/reference sticker."
     }
   ]
 }
