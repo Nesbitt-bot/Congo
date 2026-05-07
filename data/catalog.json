@@ -133,6 +133,25 @@
       ],
       "description": "ASUS VP28UQG 28-inch 4K monitor mounted on an adjustable table arm. DP cable included.",
       "pickupNotes": "Includes the table mount arm and a DisplayPort cable. Three photos included: front view, rear/arm view, and model label."
+    },
+    {
+      "id": "flexispot-e7-standing-desk-govee",
+      "name": "FlexiSpot Pro Standing Desk (E7) with Govee RGBIC Desk Light",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 299.99,
+      "referenceLink": "https://www.flexispot.com/flexispot-pro-standing-desk-e7",
+      "actualPrice": 150,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/flexispot-e7-desk-wide.jpg",
+      "images": [
+        "media/flexispot-e7-desk-wide.jpg",
+        "media/flexispot-e7-desk-govee.jpg"
+      ],
+      "description": "FlexiSpot Pro Standing Desk (E7) bundle with the included Govee RGBIC desk light shown in the photos.",
+      "pickupNotes": "Bundle includes the FlexiSpot E7 standing desk and the Govee RGBIC desk light shown on the desktop. Two photos included: full desk view and close-up accessory view."
     }
   ]
 }
