@@ -93,6 +93,11 @@ ITEM_ZH = {
         "description": "HP Envy 6155e 一体机套装，包含额外黑色墨盒和照片中展示的 HP Premium 24 打印纸。",
         "pickupNotes": "套装包含打印机、额外黑色墨盒和 HP Premium 24 打印纸。参考价采用 HP 官方当前打印机页面，耗材为额外赠送内容。",
     },
+    "honeywell-quietset-8-fan": {
+        "name": "Honeywell QuietSet 8 40英寸塔扇",
+        "description": "Honeywell QuietSet 8 全房间 40 英寸塔扇，照片中带原包装箱。",
+        "pickupNotes": "包含两张照片：带包装箱的整机图和顶部控制面板近景。",
+    },
     "ikea-skadis-pegboard-set": {
         "name": "IKEA SKÅDIS 洞洞板套装",
         "description": "IKEA SKÅDIS 白色洞洞板套装，包含挂篮、小盒、托盘、挂钩和夹具等配件，照片中展示为整套。",

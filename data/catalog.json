@@ -199,6 +199,25 @@
       "image": "media/ikea-skadis-pegboard-set.jpg",
       "description": "IKEA SKADIS pegboard set with cups, tray, hooks, and clamps shown together in one bundle.",
       "pickupNotes": "Hidden seller price not set yet, so this item is currently displayed as pending."
+    },
+    {
+      "id": "honeywell-quietset-8-fan",
+      "name": "Honeywell QuietSet 8 Whole Room 40-inch Tower Fan",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 74.99,
+      "referenceLink": "https://www.amazon.com/s?k=Honeywell+QuietSet+8+tower+fan",
+      "actualPrice": 19,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/honeywell-quietset-8-full.jpg",
+      "images": [
+        "media/honeywell-quietset-8-full.jpg",
+        "media/honeywell-quietset-8-top.jpg"
+      ],
+      "description": "Honeywell QuietSet 8 whole-room 40-inch tower fan, shown with the original box.",
+      "pickupNotes": "Two photos included: full fan with box and close-up of the top controls."
     }
   ]
 }
