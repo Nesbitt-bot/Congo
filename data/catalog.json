@@ -3,44 +3,31 @@
     "title": "Congo",
     "subtitle": "A graduation sale where buyers guess the price before they unlock it.",
     "ownerName": "Cedar",
-    "contactEmail": "your-email@example.com",
+    "contactEmail": "me@trance-0.com",
     "location": "Local pickup / delivery area",
     "currency": "USD",
     "freeDeliveryThreshold": 50,
+    "discountFactor": 0.8,
     "baseUrl": "https://nesbitt-bot.github.io/Congo",
-    "defaultDescription": "Furniture and computer supplies for sale. Beat the listed price challenge and check out for local pickup or delivery.",
+    "defaultDescription": "Furniture and computer supplies for sale before graduation. Browse the goods, guess the price to unlock a deal, and schedule pickup or delivery by email.",
     "sharingTagline": "Guess the price. Unlock the deal.",
     "deliveryNote": "Orders above $50 qualify for free local delivery.",
     "pickupNote": "Pickup details are coordinated by email after checkout."
   },
   "items": [
     {
-      "id": "desk-lamp-sample",
-      "name": "Adjustable Desk Lamp",
-      "category": "Furniture",
-      "condition": "Used - very good",
-      "referencePrice": 39,
-      "referenceLink": "https://example.com/reference-desk-lamp",
-      "actualPrice": 18,
-      "quantity": 1,
-      "status": "available",
-      "image": "media/desk-lamp-sample.jpg",
-      "description": "Warm LED desk lamp with adjustable arm and brightness control.",
-      "pickupNotes": "Easy to carry."
-    },
-    {
-      "id": "monitor-arm-sample",
-      "name": "Single Monitor Arm",
+      "id": "cat6-cable-2pack-10ft",
+      "name": "Inland CAT6 UTP Cable, 2-Pack, 10ft",
       "category": "Computer Supplies",
-      "condition": "Used - good",
-      "referencePrice": 69,
-      "referenceLink": "https://example.com/reference-monitor-arm",
-      "actualPrice": 32,
+      "condition": "New - sealed",
+      "referencePrice": 11.99,
+      "referenceLink": "https://www.microcenter.com/",
+      "actualPrice": 8,
       "quantity": 1,
       "status": "available",
-      "image": "media/monitor-arm-sample.jpg",
-      "description": "Clamp-style monitor arm for one display, includes mounting hardware.",
-      "pickupNotes": "Best picked up with the original screws kept together in a bag."
+      "image": "media/cat6-cable-2pack-10ft.jpg",
+      "description": "Two 10ft CAT6 RJ45 Ethernet cables (black and blue), bare copper, still sealed in original packaging.",
+      "pickupNotes": "Small item, easy to bundle with other computer supplies."
     }
   ]
 }

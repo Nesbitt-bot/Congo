@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import json
-import os
 import shutil
 import subprocess
 import textwrap
@@ -44,6 +43,7 @@ def ensure_clean_dist() -> None:
     (DIST / "data").mkdir(parents=True, exist_ok=True)
     (DIST / "item").mkdir(parents=True, exist_ok=True)
     (DIST / "checkout").mkdir(parents=True, exist_ok=True)
+    (DIST / "about").mkdir(parents=True, exist_ok=True)
 
 
 def copy_static_assets() -> None:
@@ -51,8 +51,7 @@ def copy_static_assets() -> None:
     shutil.copy2(SRC / "app.js", ASSETS / "app.js")
     shutil.copy2(DATA / "catalog.json", DIST / "data" / "catalog.json")
     if MEDIA.exists():
-        dst_media = DIST / "media"
-        shutil.copytree(MEDIA, dst_media, dirs_exist_ok=True)
+        shutil.copytree(MEDIA, DIST / "media", dirs_exist_ok=True)
     (DIST / ".nojekyll").write_text("", encoding="utf-8")
 
 
@@ -61,10 +60,18 @@ def slug(item_id: str) -> str:
 
 
 def wrap_lines(text: str, width: int, max_lines: int = 3) -> list[str]:
-    lines = textwrap.wrap(text, width=width) or [text]
+    lines = textwrap.wrap(str(text), width=width) or [str(text)]
     if len(lines) > max_lines:
         lines = lines[: max_lines - 1] + [lines[max_lines - 1][: max(0, width - 1)] + "…"]
     return lines
+
+
+def money(value: float | int | str, site: dict) -> str:
+    currency = site.get("currency", "USD")
+    number = float(value or 0)
+    if currency == "USD":
+        return f"${number:,.2f}".replace(".00", "")
+    return f"{currency} {number:,.2f}".replace(".00", "")
 
 
 def run_convert(args: list[str]) -> None:
@@ -121,19 +128,6 @@ def create_favicon(path: Path) -> None:
     )
 
 
-def poster_lines_for_item(site: dict, item: dict) -> tuple[str, list[str], str]:
-    title = item.get("name", "Untitled item")
-    subtitle = f"{item.get('category', 'Item')} · Guess to unlock the seller price"
-    footer = f"Reference: {money(item.get('referencePrice', 0), site)}"
-    return title, wrap_lines(subtitle, 34, max_lines=2), footer
-
-
-def money(value: float | int | str, site: dict) -> str:
-    currency = site.get("currency", "USD")
-    symbol = "$" if currency == "USD" else f"{currency} "
-    return f"{symbol}{int(round(float(value or 0)))}"
-
-
 def create_poster_png(path: Path, site: dict, title: str, subtitle_lines: list[str], footer: str) -> None:
     args = [
         "-size",
@@ -154,45 +148,39 @@ def create_poster_png(path: Path, site: dict, title: str, subtitle_lines: list[s
         "-annotate",
         "+56+26",
         site.get("title", "Congo"),
-        "-fill",
-        "white",
-        "-gravity",
-        "northwest",
-        "-pointsize",
-        "68",
-        "-annotate",
-        "+56+152",
-        wrap_lines(title, 22, max_lines=2)[0],
     ]
-
     title_lines = wrap_lines(title, 22, max_lines=2)
-    if len(title_lines) > 1:
+    y = 156
+    for line in title_lines:
         args.extend(
             [
+                "-fill",
+                "white",
+                "-font",
+                "DejaVu-Sans-Bold",
                 "-pointsize",
                 "68",
                 "-annotate",
-                "+56+234",
-                title_lines[1],
+                f"+56+{y}",
+                line,
             ]
         )
-        subtitle_y = 332
-    else:
-        subtitle_y = 262
-
-    for index, line in enumerate(subtitle_lines):
+        y += 80
+    for line in subtitle_lines:
         args.extend(
             [
                 "-fill",
                 "#dbe6ef",
+                "-font",
+                "DejaVu-Sans",
                 "-pointsize",
                 "32",
                 "-annotate",
-                f"+56+{subtitle_y + index * 42}",
+                f"+56+{y}",
                 line,
             ]
         )
-
+        y += 42
     args.extend(
         [
             "-fill",
@@ -201,6 +189,8 @@ def create_poster_png(path: Path, site: dict, title: str, subtitle_lines: list[s
             "roundrectangle 56,476 1144,570 28,28",
             "-fill",
             "#ffd68a",
+            "-font",
+            "DejaVu-Sans-Bold",
             "-pointsize",
             "34",
             "-annotate",
@@ -208,6 +198,8 @@ def create_poster_png(path: Path, site: dict, title: str, subtitle_lines: list[s
             footer,
             "-fill",
             "#f3f4f6",
+            "-font",
+            "DejaVu-Sans",
             "-pointsize",
             "26",
             "-annotate",
@@ -219,7 +211,83 @@ def create_poster_png(path: Path, site: dict, title: str, subtitle_lines: list[s
     run_convert(args)
 
 
-def html_shell(*, title: str, description: str, canonical: str, image_url: str, body: str, rel_root: str, page: str, site: dict, extra_head: str = "", extra_script: str = "") -> str:
+def write_posters(catalog: dict) -> None:
+    site = catalog["site"]
+    create_poster_png(
+        OG / "default.png",
+        site,
+        f"{site.get('title', 'Congo')} graduation sale",
+        wrap_lines(site.get("defaultDescription", "Browse the sale and unlock deals."), 34, max_lines=2),
+        site.get("sharingTagline", "Guess the price. Unlock the deal."),
+    )
+    for item in catalog["items"]:
+        create_poster_png(
+            OG / f"{slug(item['id'])}.png",
+            site,
+            item.get("name", "Untitled item"),
+            wrap_lines(f"{item.get('category', 'Item')} · Guess high enough to unlock the checkout price", 34, max_lines=2),
+            f"Reference: {money(item.get('referencePrice', 0), site)}",
+        )
+
+
+def rel_asset(path: str, rel_root: str) -> str:
+    return rel_root + path.lstrip("/")
+
+
+def topbar_html(rel_root: str, page: str, site: dict) -> str:
+    def nav_link(href: str, label: str, icon: str, key: str) -> str:
+        active = " active" if page == key else ""
+        return f'<a class="nav-link{active}" href="{href}"><span>{icon}</span><span>{label}</span></a>'
+
+    return f"""
+    <header class=\"topbar\">
+      <div class=\"topbar-inner\">
+        <a class=\"brand-lockup\" href=\"{rel_root}\">
+          <span class=\"brand-mark\">CO</span>
+          <span class=\"brand-copy\">
+            <strong>{escape(site.get('title', 'Congo'))}</strong>
+            <span>Graduation sale · price guessing</span>
+          </span>
+        </a>
+        <div class=\"search-shell\">
+          <input id=\"global-search\" type=\"search\" placeholder=\"Search furniture, monitors, supplies...\" />
+          <button id=\"global-search-button\" type=\"button\" aria-label=\"Search\">⌕</button>
+        </div>
+        <nav class=\"primary-links\" aria-label=\"Primary\">
+          {nav_link(rel_root, 'Home', '⌂', 'index')}
+          {nav_link(rel_root + 'about/', 'About', 'ℹ', 'about')}
+        </nav>
+        <a class=\"cart-link\" href=\"{rel_root}checkout/\">
+          <div>
+            <strong>Cart</strong>
+            <span><span data-cart-count>0</span> unlocked item(s)</span>
+          </div>
+        </a>
+      </div>
+      <div class=\"nav-secondary\">
+        <div class=\"nav-secondary-inner\" id=\"category-chips\"></div>
+      </div>
+    </header>
+    """
+
+
+def mobile_footer_html(rel_root: str, page: str) -> str:
+    def tab(href: str, label: str, icon: str, key: str) -> str:
+        active = " active" if page == key else ""
+        return f'''<a class="mobile-tab{active}" href="{href}"><span class="mobile-tab-icon">{icon}</span><span class="mobile-tab-label">{label}</span></a>'''
+
+    return f"""
+    <nav class=\"mobile-footer-nav\" aria-label=\"Mobile footer\">
+      <div class=\"mobile-footer-nav-inner\">
+        {tab(rel_root, 'Home', '⌂', 'index')}
+        {tab(rel_root + 'checkout/', 'Cart', '🛒', 'checkout')}
+        {tab(rel_root + 'about/', 'About', 'ℹ', 'about')}
+      </div>
+    </nav>
+    """
+
+
+def html_shell(*, title: str, description: str, canonical: str, image_url: str, body: str, rel_root: str, page: str, site: dict, extra_script: str = "") -> str:
     site_title = escape(site.get("title", "Congo"))
     payload = json.dumps(site, ensure_ascii=False)
     return f"""<!doctype html>
@@ -242,44 +310,10 @@ def html_shell(*, title: str, description: str, canonical: str, image_url: str, 
     <link rel=\"canonical\" href=\"{escape(canonical)}\" />
     <link rel=\"icon\" href=\"{rel_root}assets/favicon.svg\" type=\"image/svg+xml\" />
     <link rel=\"stylesheet\" href=\"{rel_root}assets/styles.css\" />
-    {extra_head}
   </head>
-  <body data-page=\"{page}\">
-    <header class=\"topbar\">
-      <div class=\"topbar-inner\">
-        <a class=\"brand-lockup\" href=\"{rel_root}\">
-          <span class=\"brand-mark\">CO</span>
-          <span class=\"brand-copy\">
-            <strong>{site_title}</strong>
-            <span>Graduation sale · price guessing</span>
-          </span>
-        </a>
-        <div class=\"search-shell\">
-          <input id=\"global-search\" type=\"search\" placeholder=\"Search furniture, monitors, supplies...\" />
-          <button type=\"button\" aria-label=\"Search\">⌕</button>
-        </div>
-        <div class=\"top-actions\">
-          <div class=\"action-pill\">
-            <div>
-              <strong>{escape(site.get('location', 'Local area'))}</strong>
-              <span>Pickup or local delivery</span>
-            </div>
-          </div>
-          <a class=\"cart-link\" href=\"{rel_root}checkout/\">
-            <div>
-              <strong>Cart</strong>
-              <span><span data-cart-count>0</span> unlocked item(s)</span>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class=\"nav-secondary\">
-        <div class=\"nav-secondary-inner\" id=\"category-chips\"></div>
-      </div>
-    </header>
-
+  <body data-page=\"{page}\" class=\"has-mobile-footer\">
+    {topbar_html(rel_root, page, site)}
     {body}
-
     <footer class=\"footer\">
       <div class=\"footer-inner\">
         <div><strong>{site_title}</strong> · {escape(site.get('subtitle', ''))}</div>
@@ -287,7 +321,7 @@ def html_shell(*, title: str, description: str, canonical: str, image_url: str, 
         <div>Update items in <code>data/catalog.json</code>, add photos to <code>/media</code>, then push to redeploy.</div>
       </div>
     </footer>
-
+    {mobile_footer_html(rel_root, page)}
     <script>window.CONGO_REL_ROOT = {json.dumps(rel_root)}; window.CONGO_SITE = {payload}; {extra_script}</script>
     <script src=\"{rel_root}assets/app.js\"></script>
   </body>
@@ -297,36 +331,20 @@ def html_shell(*, title: str, description: str, canonical: str, image_url: str, 
 
 def index_body(site: dict) -> str:
     return f"""
-    <section class=\"hero\">
-      <div class=\"hero-inner\">
-        <div class=\"hero-copy\">
-          <h1>Guess the price. Unlock the deal.</h1>
-          <p>{escape(site.get('defaultDescription', ''))}</p>
-          <ul class=\"hero-list\">
-            <li>Each item has a real seller price hidden behind a 3-guess challenge.</li>
-            <li>If your guess is high enough, the item unlocks and can be added to cart.</li>
-            <li>Orders over {escape(money(site.get('freeDeliveryThreshold', 0), site))} get free local delivery.</li>
-          </ul>
-          <div class=\"inline-actions\" style=\"margin-top:18px\">
-            <button id=\"hero-search\" class=\"btn-amazon\">Browse items</button>
-            <a class=\"btn-ghost\" href=\"{escape(site.get('baseUrl', '#'))}\" target=\"_blank\" rel=\"noreferrer\">Share store link</a>
-          </div>
+    <main class=\"section\">
+      <div class=\"info-strip\">
+        <div>
+          <strong>Browse the sale directly.</strong>
+          <p>Tap a card to open the deal page and start guessing.</p>
         </div>
-        <div class=\"hero-card\">
-          <h2 style=\"margin:0\">How it works</h2>
-          <div class=\"stat-grid\">
-            <div class=\"stat-card\"><strong>3</strong><span>guess attempts per item, per browser</span></div>
-            <div class=\"stat-card\"><strong id=\"hero-item-count\">0</strong><span>items currently listed</span></div>
-            <div class=\"stat-card\"><strong id=\"hero-threshold\">$0</strong><span>free delivery threshold</span></div>
-            <div class=\"stat-card\"><strong>Email</strong><span>checkout composes a ready-to-send message</span></div>
-          </div>
+        <div>
+          <strong>Free local delivery after <span id=\"delivery-threshold-copy\">{escape(money(site.get('freeDeliveryThreshold', 0), site))}</span>.</strong>
+          <p>Otherwise checkout still prepares the scheduling email for pickup.</p>
         </div>
       </div>
-    </section>
-    <main class=\"section\">
       <div class=\"section-header\">
         <div>
-          <h2>Available items</h2>
+          <h1>Available items</h1>
           <p>Furniture, computer supplies, and anything else that needs a new home before graduation.</p>
         </div>
       </div>
@@ -346,11 +364,12 @@ def item_body(site: dict, item: dict) -> str:
     image = escape(rel_asset(item.get("image", f"assets/{PLACEHOLDER_NAME}"), "../../"))
     quantity = int(item.get("quantity", 1))
     status = escape(item.get("status", "available"))
+    factor = escape(str(site.get("discountFactor", 0.8)))
     return f"""
     <main class=\"item-page\">
       <section class=\"panel media-panel\">
         <div class=\"media-frame\">
-          <img src=\"{image}\" alt=\"{escape(item.get('name', 'Item image'))}\" onerror=\"this.src='{rel_asset('assets/' + PLACEHOLDER_NAME, '../../')}'\" />
+          <img src=\"{image}\" alt=\"{escape(item.get('name', 'Item image'))}\" onerror=\"this.src='../../assets/{PLACEHOLDER_NAME}'\" />
         </div>
       </section>
       <section class=\"item-meta\">
@@ -369,16 +388,16 @@ def item_body(site: dict, item: dict) -> str:
           </ul>
         </div>
         <div class=\"panel guess-panel\">
-          <h2 class=\"block-title\">Unlock the real price</h2>
-          <p class=\"muted\">Enter the highest price you are willing to pay. If your guess is at or above the seller price, the deal unlocks.</p>
+          <h2 class=\"block-title\">Unlock the checkout price</h2>
+          <p class=\"muted\">You get 3 chances on this browser. If your guess is at or above the seller price, the site computes your checkout price using discount factor {factor} whenever you overshoot.</p>
           <div class=\"guess-box\">
             <div class=\"status-box info\" id=\"guess-status\">You have <strong id=\"remaining-guesses\">3</strong> chances on this browser.</div>
             <div class=\"guess-input-row\">
-              <input id=\"guess-input\" type=\"number\" min=\"0\" step=\"1\" placeholder=\"Enter your guess in dollars\" />
+              <input id=\"guess-input\" type=\"number\" min=\"0\" step=\"0.01\" placeholder=\"Enter your guess in dollars\" />
               <button id=\"guess-button\" class=\"btn-amazon\">Guess</button>
             </div>
-            <div class=\"small-note\" id=\"hidden-price-hint\">The price is still hidden.</div>
-            <div class=\"reveal-price hide\" id=\"reveal-price\">Unlocked price: <span data-actual-price></span></div>
+            <div class=\"small-note\" id=\"hidden-price-hint\">The checkout price is still hidden.</div>
+            <div class=\"reveal-price hide\" id=\"reveal-price\">Unlocked checkout price: <span data-offer-price></span></div>
             <div class=\"inline-actions hide\" id=\"unlock-actions\">
               <button id=\"add-to-cart\" class=\"btn-amazon\">Add to cart</button>
               <button id=\"buy-now\" class=\"btn-secondary\">Checkout now</button>
@@ -398,7 +417,7 @@ def checkout_body(site: dict) -> str:
       <section class=\"cart-panel panel\">
         <div class=\"section-header\" style=\"margin-bottom:18px\">
           <div>
-            <h2>Checkout</h2>
+            <h1>Checkout</h1>
             <p>Unlock items first, then use this page to compose the pickup or delivery email.</p>
           </div>
           <button id=\"clear-cart\" class=\"btn-ghost\">Clear cart</button>
@@ -439,75 +458,103 @@ def checkout_body(site: dict) -> str:
     """
 
 
-def rel_asset(path: str, rel_root: str) -> str:
-    return rel_root + path.lstrip("/")
+def about_body(site: dict) -> str:
+    factor = escape(str(site.get("discountFactor", 0.8)))
+    return f"""
+    <main class=\"section\">
+      <div class=\"about-stack\">
+        <section class=\"about-panel panel\">
+          <h1 class=\"block-title\">Guess the price. Unlock the deal.</h1>
+          <p class=\"muted\">Congo is a graduation-sale storefront for local pickup and delivery. The front page stays focused on browsing goods; this page explains the pricing mechanic.</p>
+        </section>
+        <section class=\"about-panel panel\">
+          <h2 class=\"block-title\">How it works</h2>
+          <ul class=\"about-list\">
+            <li>Each product page starts with a hidden seller price.</li>
+            <li>You get 3 chances per item, per browser, to enter the highest price you are willing to pay.</li>
+            <li>If your guess is too low, the site tells you to try again.</li>
+            <li>If your guess reaches or beats the seller price, the site unlocks a checkout price.</li>
+            <li>If your guess is above the seller price, the checkout price is computed as <code>actual price + (guessed price - actual price) × {factor}</code>.</li>
+            <li>Unlocked items can be added to cart and bundled for pickup or local delivery.</li>
+            <li>Orders above {escape(money(site.get('freeDeliveryThreshold', 0), site))} qualify for free local delivery.</li>
+            <li>The final checkout page prepares a ready-to-send email to <strong>{escape(site.get('contactEmail', ''))}</strong> for scheduling.</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    """
 
 
 def write_pages(catalog: dict) -> None:
     site = catalog["site"]
     base_url = site.get("baseUrl", "").rstrip("/")
-
     default_title = f"{site.get('title', 'Congo')} · Graduation sale"
     default_description = site.get("defaultDescription", "Graduation sale catalog.")
     default_image = f"{base_url}/og/default.png"
 
-    index_html = html_shell(
-        title=default_title,
-        description=default_description,
-        canonical=f"{base_url}/",
-        image_url=default_image,
-        body=index_body(site),
-        rel_root="./",
-        page="index",
-        site=site,
+    (DIST / "index.html").write_text(
+        html_shell(
+            title=default_title,
+            description=default_description,
+            canonical=f"{base_url}/",
+            image_url=default_image,
+            body=index_body(site),
+            rel_root="./",
+            page="index",
+            site=site,
+        ),
+        encoding="utf-8",
     )
-    (DIST / "index.html").write_text(index_html, encoding="utf-8")
 
-    checkout_html = html_shell(
-        title=f"Checkout · {site.get('title', 'Congo')}",
-        description=f"Compose your pickup or delivery email for the {site.get('title', 'Congo')} graduation sale.",
-        canonical=f"{base_url}/checkout/",
-        image_url=default_image,
-        body=checkout_body(site),
-        rel_root="../",
-        page="checkout",
-        site=site,
+    (DIST / "checkout" / "index.html").write_text(
+        html_shell(
+            title=f"Checkout · {site.get('title', 'Congo')}",
+            description=f"Compose your pickup or delivery email for the {site.get('title', 'Congo')} graduation sale.",
+            canonical=f"{base_url}/checkout/",
+            image_url=default_image,
+            body=checkout_body(site),
+            rel_root="../",
+            page="checkout",
+            site=site,
+        ),
+        encoding="utf-8",
     )
-    (DIST / "checkout" / "index.html").write_text(checkout_html, encoding="utf-8")
+
+    (DIST / "about" / "index.html").write_text(
+        html_shell(
+            title=f"About · {site.get('title', 'Congo')}",
+            description="How the Congo graduation-sale guessing mechanic works.",
+            canonical=f"{base_url}/about/",
+            image_url=default_image,
+            body=about_body(site),
+            rel_root="../",
+            page="about",
+            site=site,
+        ),
+        encoding="utf-8",
+    )
 
     for item in catalog["items"]:
         item_slug = slug(item["id"])
         item_dir = DIST / "item" / item_slug
         item_dir.mkdir(parents=True, exist_ok=True)
         og_image = f"{base_url}/og/{item_slug}.png"
-        description = f"{item.get('category', 'Item')} — reference price {money(item.get('referencePrice', 0), site)}. Guess high enough to unlock the real seller price."
+        description = f"{item.get('category', 'Item')} — reference price {money(item.get('referencePrice', 0), site)}. Guess high enough to unlock the checkout price."
         extra_script = f"window.CONGO_CURRENT_ITEM = {json.dumps(item, ensure_ascii=False)};"
-        html = html_shell(
-            title=f"{item.get('name', 'Item')} · {site.get('title', 'Congo')}",
-            description=description,
-            canonical=f"{base_url}/item/{item_slug}/",
-            image_url=og_image,
-            body=item_body(site, item),
-            rel_root="../../",
-            page="item",
-            site=site,
-            extra_script=extra_script,
+        (item_dir / "index.html").write_text(
+            html_shell(
+                title=f"{item.get('name', 'Item')} · {site.get('title', 'Congo')}",
+                description=description,
+                canonical=f"{base_url}/item/{item_slug}/",
+                image_url=og_image,
+                body=item_body(site, item),
+                rel_root="../../",
+                page="item",
+                site=site,
+                extra_script=extra_script,
+            ),
+            encoding="utf-8",
         )
-        (item_dir / "index.html").write_text(html, encoding="utf-8")
-
-
-def write_posters(catalog: dict) -> None:
-    site = catalog["site"]
-    create_poster_png(
-        OG / "default.png",
-        site,
-        f"{site.get('title', 'Congo')} graduation sale",
-        wrap_lines(site.get("subtitle", "Guess the price and unlock the deal."), 34, max_lines=2),
-        site.get("sharingTagline", "Guess the price. Unlock the deal."),
-    )
-    for item in catalog["items"]:
-        title, subtitle_lines, footer = poster_lines_for_item(site, item)
-        create_poster_png(OG / f"{slug(item['id'])}.png", site, title, subtitle_lines, footer)
 
 
 def write_support_assets() -> None:

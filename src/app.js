@@ -1,6 +1,6 @@
 const STORAGE_KEYS = {
-  cart: 'congo_cart_v1',
-  guess: 'congo_guess_state_v1',
+  cart: 'congo_cart_v2',
+  guess: 'congo_guess_state_v2',
 };
 
 const relRoot = window.CONGO_REL_ROOT || './';
@@ -11,7 +11,8 @@ function money(value, currency = fallbackSite.currency || 'USD') {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency,
-    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
   }).format(Number(value || 0));
 }
 
@@ -21,11 +22,20 @@ function withBase(path = '') {
   return `${relRoot}${path.replace(/^\/+/, '')}`;
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function getStorage(key, fallback) {
   try {
     const raw = localStorage.getItem(key);
     return raw ? JSON.parse(raw) : fallback;
-  } catch (error) {
+  } catch {
     return fallback;
   }
 }
@@ -49,7 +59,7 @@ function getGuessState() {
 
 function getGuessEntry(itemId) {
   const state = getGuessState();
-  return state[itemId] || { attempts: 0, success: false, lastGuess: null };
+  return state[itemId] || { attempts: 0, success: false, lastGuess: null, offerPrice: null };
 }
 
 function updateGuessEntry(itemId, next) {
@@ -60,10 +70,21 @@ function updateGuessEntry(itemId, next) {
 
 function hydrateCartCount() {
   const cart = getCart();
-  const count = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+  const count = Object.values(cart).reduce((sum, row) => sum + Number(row.qty || 0), 0);
   document.querySelectorAll('[data-cart-count]').forEach((node) => {
     node.textContent = String(count);
   });
+}
+
+function normalizePrice(value) {
+  return Math.round(Number(value || 0) * 100) / 100;
+}
+
+function computeOfferPrice(item, guess, site) {
+  const actual = Number(item.actualPrice || 0);
+  const factor = Number(site.discountFactor ?? 0.8);
+  if (guess <= actual) return normalizePrice(actual);
+  return normalizePrice(actual + (guess - actual) * factor);
 }
 
 async function fetchCatalog() {
@@ -76,54 +97,82 @@ function slugToPath(id) {
   return `${relRoot}item/${encodeURIComponent(id)}/`;
 }
 
+function buildIndexUrl({ query = '', category = '' } = {}) {
+  const url = new URL(`${window.location.origin}${relRoot}`);
+  if (query) url.searchParams.set('q', query);
+  if (category && category !== 'All') url.searchParams.set('category', category);
+  return `${url.pathname}${url.search}`;
+}
+
 function renderCategoryChips(items, activeCategory = 'All') {
   const host = document.getElementById('category-chips');
   if (!host) return;
   const categories = ['All', ...Array.from(new Set(items.map((item) => item.category))).sort()];
   host.innerHTML = categories
-    .map((category) => `
-      <button class="category-chip ${category === activeCategory ? 'active' : ''}" data-category="${escapeHtml(category)}">
-        ${escapeHtml(category)}
-      </button>
-    `)
+    .map((category) => {
+      const active = category === activeCategory ? 'active' : '';
+      const href = buildIndexUrl({
+        query: new URLSearchParams(window.location.search).get('q') || '',
+        category,
+      });
+      const tag = pageType === 'index' ? 'button' : 'a';
+      const extra = pageType === 'index'
+        ? `type="button" data-category="${escapeHtml(category)}"`
+        : `href="${escapeHtml(href)}"`;
+      return `<${tag} class="category-chip ${active}" ${extra}>${escapeHtml(category)}</${tag}>`;
+    })
     .join('');
 }
 
-function escapeHtml(value) {
-  return String(value)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
+function attachGlobalSearch() {
+  const input = document.getElementById('global-search');
+  const button = document.getElementById('global-search-button');
+  if (!input || !button) return;
+
+  const runSearch = () => {
+    const query = input.value.trim();
+    if (pageType === 'index') {
+      input.dispatchEvent(new Event('input', { bubbles: true }));
+      return;
+    }
+    window.location.href = buildIndexUrl({ query });
+  };
+
+  button.addEventListener('click', runSearch);
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      runSearch();
+    }
+  });
 }
 
 function productCard(item, site) {
   const guessEntry = getGuessEntry(item.id);
   const unlocked = guessEntry.success;
   const sold = item.status !== 'available';
+  const unlockedText = unlocked
+    ? `Unlocked offer: ${money(guessEntry.offerPrice ?? item.actualPrice, site.currency)}`
+    : 'Price hidden until you guess high enough';
   return `
-    <article class="product-card">
-      <a class="card-image-wrap" href="${slugToPath(item.id)}">
-        <div class="badge-row">
-          <span class="badge gold">${escapeHtml(item.category)}</span>
-          <span class="badge ${sold ? '' : 'green'}">${sold ? 'Unavailable' : '3 chances'}</span>
+    <article class="product-card ${sold ? 'is-sold' : ''}">
+      <a class="product-card-link" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
+        <div class="card-image-wrap">
+          <div class="badge-row">
+            <span class="badge gold">${escapeHtml(item.category)}</span>
+            <span class="badge ${sold ? '' : 'green'}">${sold ? 'Unavailable' : '3 chances'}</span>
+          </div>
+          <img src="${withBase(item.image)}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${relRoot}assets/placeholder.png'"/>
         </div>
-        <img src="${withBase(item.image)}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${relRoot}assets/placeholder.png'"/>
+        <div class="product-card-body">
+          <div class="eyebrow">${escapeHtml(item.condition || 'Used')}</div>
+          <h3>${escapeHtml(item.name)}</h3>
+          <div class="price-stack">
+            <div class="hidden-price">${escapeHtml(unlockedText)}</div>
+          </div>
+          <div class="small-note">${escapeHtml(item.description || '')}</div>
+        </div>
       </a>
-      <div class="product-card-body">
-        <div class="eyebrow">${escapeHtml(item.condition || 'Used')}</div>
-        <h3><a href="${slugToPath(item.id)}">${escapeHtml(item.name)}</a></h3>
-        <div class="price-stack">
-          <div class="reference">Reference online: ${money(item.referencePrice, site.currency)}</div>
-          <div class="hidden-price">${unlocked ? `Unlocked price: ${money(item.actualPrice, site.currency)}` : 'Price hidden until you guess high enough'}</div>
-        </div>
-        <div class="small-note">${escapeHtml(item.description || '')}</div>
-        <div class="card-actions">
-          <a class="btn-amazon" href="${slugToPath(item.id)}">View deal</a>
-          <a class="btn-ghost" href="${escapeHtml(item.referenceLink)}" target="_blank" rel="noreferrer">Reference</a>
-        </div>
-      </div>
     </article>
   `;
 }
@@ -133,14 +182,16 @@ function renderIndex(catalog) {
   const items = catalog.items || [];
   const grid = document.getElementById('catalog-grid');
   const searchInput = document.getElementById('global-search');
-  const heroCount = document.getElementById('hero-item-count');
-  const thresholdNode = document.getElementById('hero-threshold');
-  const activeFilters = { category: 'All', query: '' };
+  const freeDeliveryNode = document.getElementById('delivery-threshold-copy');
+  const activeFilters = {
+    category: new URLSearchParams(window.location.search).get('category') || 'All',
+    query: new URLSearchParams(window.location.search).get('q') || '',
+  };
 
-  if (heroCount) heroCount.textContent = String(items.length);
-  if (thresholdNode) thresholdNode.textContent = money(site.freeDeliveryThreshold, site.currency);
+  if (searchInput) searchInput.value = activeFilters.query;
+  if (freeDeliveryNode) freeDeliveryNode.textContent = money(site.freeDeliveryThreshold, site.currency);
 
-  function draw() {
+  function draw(pushState = false) {
     renderCategoryChips(items, activeFilters.category);
     const filtered = items.filter((item) => {
       const matchCategory = activeFilters.category === 'All' || item.category === activeFilters.category;
@@ -150,13 +201,18 @@ function renderIndex(catalog) {
       return matchCategory && matchQuery;
     });
 
+    if (pushState) {
+      const url = buildIndexUrl({ query: activeFilters.query, category: activeFilters.category });
+      window.history.replaceState({}, '', url);
+    }
+
     if (!grid) return;
 
     if (!filtered.length) {
       grid.innerHTML = `
         <div class="empty-state">
           <h3>No items matched that search.</h3>
-          <p class="muted">Try another keyword or switch the category filter.</p>
+          <p class="muted">Try another keyword or another category.</p>
         </div>
       `;
       return;
@@ -171,20 +227,25 @@ function renderIndex(catalog) {
     const button = event.target.closest('[data-category]');
     if (!button) return;
     activeFilters.category = button.dataset.category;
-    draw();
+    draw(true);
   });
 
   if (searchInput) {
     searchInput.addEventListener('input', (event) => {
       activeFilters.query = event.target.value;
-      draw();
+      draw(true);
     });
   }
 }
 
 function addToCart(item, quantity = 1) {
+  const guessEntry = getGuessEntry(item.id);
   const cart = getCart();
-  cart[item.id] = Math.min((cart[item.id] || 0) + quantity, item.quantity || 1);
+  cart[item.id] = {
+    qty: Math.min((cart[item.id]?.qty || 0) + quantity, item.quantity || 1),
+    offerPrice: normalizePrice(guessEntry.offerPrice ?? item.actualPrice),
+    guess: guessEntry.lastGuess,
+  };
   setCart(cart);
 }
 
@@ -194,21 +255,27 @@ function removeFromCart(itemId) {
   setCart(cart);
 }
 
-function setItemUnlockedUI(item, site) {
+function setItemUnlockedUI(item, site, offerPrice) {
   const reveal = document.getElementById('reveal-price');
   const actionBlock = document.getElementById('unlock-actions');
   const status = document.getElementById('guess-status');
   const remaining = document.getElementById('remaining-guesses');
   const hiddenHint = document.getElementById('hidden-price-hint');
+  const factor = Number(site.discountFactor ?? 0.8);
+
   if (reveal) {
     reveal.classList.remove('hide');
-    reveal.querySelector('[data-actual-price]').textContent = money(item.actualPrice, site.currency);
+    reveal.querySelector('[data-offer-price]').textContent = money(offerPrice, site.currency);
   }
   if (actionBlock) actionBlock.classList.remove('hide');
-  if (hiddenHint) hiddenHint.textContent = 'Price unlocked.';
+  if (hiddenHint) {
+    hiddenHint.textContent = offerPrice > Number(item.actualPrice)
+      ? `Unlocked from an above-target guess using discount factor ${factor}.`
+      : 'Unlocked at the seller price.';
+  }
   if (status) {
     status.className = 'status-box good';
-    status.textContent = 'Yes — that guess works. You can add the item to cart or go straight to checkout.';
+    status.textContent = 'Yes — that guess works. The unlocked checkout price is shown below.';
   }
   if (remaining) remaining.textContent = 'Unlocked';
 }
@@ -225,12 +292,11 @@ function renderItemPage(catalog) {
   const remaining = document.getElementById('remaining-guesses');
   const status = document.getElementById('guess-status');
   const hiddenHint = document.getElementById('hidden-price-hint');
-  const guessEntry = getGuessEntry(current.id);
 
   function refreshState() {
     const entry = getGuessEntry(current.id);
     if (entry.success) {
-      setItemUnlockedUI(current, site);
+      setItemUnlockedUI(current, site, entry.offerPrice ?? current.actualPrice);
       if (input) input.disabled = true;
       if (button) button.disabled = true;
       return;
@@ -241,15 +307,14 @@ function renderItemPage(catalog) {
     if (attemptsLeft === 0) {
       if (status) {
         status.className = 'status-box bad';
-        status.textContent = 'That was the last try from this browser. If you still want it, send an email from the checkout page or clear local storage and start over.';
+        status.textContent = 'That was the last try from this browser. If you still want it, email the seller directly.';
       }
-      if (hiddenHint) hiddenHint.textContent = 'No guesses left.';
+      if (hiddenHint) hiddenHint.textContent = 'No guesses left on this browser.';
       if (input) input.disabled = true;
       if (button) button.disabled = true;
     }
   }
 
-  if (guessEntry.success) setItemUnlockedUI(current, site);
   refreshState();
 
   if (button) {
@@ -264,13 +329,24 @@ function renderItemPage(catalog) {
       }
 
       if (value >= Number(current.actualPrice)) {
-        updateGuessEntry(current.id, { attempts: entry.attempts + 1, success: true, lastGuess: value });
-        setItemUnlockedUI(current, site);
+        const offerPrice = computeOfferPrice(current, value, site);
+        updateGuessEntry(current.id, {
+          attempts: entry.attempts + 1,
+          success: true,
+          lastGuess: value,
+          offerPrice,
+        });
+        setItemUnlockedUI(current, site, offerPrice);
         if (input) input.disabled = true;
         if (button) button.disabled = true;
       } else {
         const nextAttempts = entry.attempts + 1;
-        updateGuessEntry(current.id, { attempts: nextAttempts, success: false, lastGuess: value });
+        updateGuessEntry(current.id, {
+          attempts: nextAttempts,
+          success: false,
+          lastGuess: value,
+          offerPrice: null,
+        });
         const attemptsLeft = Math.max(0, 3 - nextAttempts);
         status.className = attemptsLeft ? 'status-box info' : 'status-box bad';
         status.textContent = attemptsLeft
@@ -287,7 +363,6 @@ function renderItemPage(catalog) {
       addToCart(current, 1);
       addButton.textContent = 'Added';
       addButton.disabled = true;
-      hydrateCartCount();
     });
   }
 
@@ -306,7 +381,7 @@ function buildCheckoutEmail({ cartRows, total, site, form }) {
     '',
     'I would like to buy these items from Congo:',
     '',
-    ...cartRows.map((row) => `- ${row.name} — ${money(row.actualPrice, site.currency)}`),
+    ...cartRows.map((row) => `- ${row.name} — ${money(row.offerPrice, site.currency)}${row.guess ? ` (guessed ${money(row.guess, site.currency)})` : ''}`),
     '',
     `Total: ${money(total, site.currency)}`,
     deliveryEligible
@@ -345,14 +420,19 @@ function renderCheckout(catalog) {
   function draw() {
     const rawCart = getCart();
     const rows = Object.entries(rawCart)
-      .map(([id, qty]) => {
+      .map(([id, cartRow]) => {
         const item = itemMap.get(id);
         if (!item) return null;
-        return { ...item, qty };
+        return {
+          ...item,
+          qty: Number(cartRow.qty || 1),
+          offerPrice: normalizePrice(cartRow.offerPrice ?? item.actualPrice),
+          guess: cartRow.guess ?? null,
+        };
       })
       .filter(Boolean);
 
-    const total = rows.reduce((sum, row) => sum + Number(row.actualPrice) * Number(row.qty || 1), 0);
+    const total = rows.reduce((sum, row) => sum + Number(row.offerPrice) * Number(row.qty || 1), 0);
     const count = rows.reduce((sum, row) => sum + Number(row.qty || 1), 0);
     const threshold = Number(site.freeDeliveryThreshold || 0);
     const progress = threshold > 0 ? Math.min(100, Math.round((total / threshold) * 100)) : 100;
@@ -362,7 +442,7 @@ function renderCheckout(catalog) {
     if (summaryMessage) {
       summaryMessage.className = total >= threshold ? 'status-box good' : 'status-box info';
       summaryMessage.textContent = total >= threshold
-        ? `Free local delivery unlocked on this order.`
+        ? 'Free local delivery unlocked on this order.'
         : `Add ${money(Math.max(0, threshold - total), site.currency)} more to reach free local delivery.`;
     }
     if (progressFill) progressFill.style.width = `${progress}%`;
@@ -389,10 +469,10 @@ function renderCheckout(catalog) {
           <div>
             <h3 style="margin:0 0 6px">${escapeHtml(row.name)}</h3>
             <div class="muted">${escapeHtml(row.category)} · ${escapeHtml(row.condition || 'Used')}</div>
-            <div class="small-note" style="margin-top:8px">Reference: <a class="reference-link" href="${escapeHtml(row.referenceLink)}" target="_blank" rel="noreferrer">${money(row.referencePrice, site.currency)}</a></div>
+            <div class="small-note" style="margin-top:8px">${row.guess ? `Unlocked from guess ${money(row.guess, site.currency)}.` : 'Unlocked price ready.'}</div>
           </div>
           <div style="display:grid;gap:10px;justify-items:end">
-            <div class="price-line">${money(row.actualPrice, site.currency)}</div>
+            <div class="price-line">${money(row.offerPrice, site.currency)}</div>
             <button class="btn-ghost" data-remove-item="${escapeHtml(row.id)}">Remove</button>
           </div>
         </article>
@@ -409,7 +489,6 @@ function renderCheckout(catalog) {
     if (remove) {
       removeFromCart(remove.dataset.removeItem);
       state = draw();
-      return;
     }
   });
 
@@ -435,6 +514,7 @@ function renderCheckout(catalog) {
 
   function writeEmailTargets() {
     state = draw();
+    if (!form) return '';
     const formData = getFormData();
     const body = buildCheckoutEmail({ cartRows: state.rows, total: state.total, site, form: formData });
     const subject = `Congo order request (${state.rows.length} item${state.rows.length === 1 ? '' : 's'})`;
@@ -456,7 +536,7 @@ function renderCheckout(catalog) {
         await navigator.clipboard.writeText(body);
         copyButton.textContent = 'Copied';
         setTimeout(() => (copyButton.textContent = 'Copy email text'), 1800);
-      } catch (error) {
+      } catch {
         copyButton.textContent = 'Copy failed';
       }
     });
@@ -465,29 +545,23 @@ function renderCheckout(catalog) {
   writeEmailTargets();
 }
 
-function attachQuickSearchJump() {
-  const heroSearch = document.getElementById('hero-search');
-  const globalSearch = document.getElementById('global-search');
-  if (!heroSearch || !globalSearch) return;
-  heroSearch.addEventListener('click', () => {
-    globalSearch.focus();
-    globalSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-}
-
-async function boot() {
+function boot() {
   hydrateCartCount();
-  attachQuickSearchJump();
-  const catalog = await fetchCatalog();
-  if (pageType === 'index') renderIndex(catalog);
-  if (pageType === 'item') renderItemPage(catalog);
-  if (pageType === 'checkout') renderCheckout(catalog);
+  attachGlobalSearch();
+  fetchCatalog()
+    .then((catalog) => {
+      renderCategoryChips(catalog.items || [], new URLSearchParams(window.location.search).get('category') || 'All');
+      if (pageType === 'index') renderIndex(catalog);
+      if (pageType === 'item') renderItemPage(catalog);
+      if (pageType === 'checkout') renderCheckout(catalog);
+    })
+    .catch((error) => {
+      const host = document.getElementById('page-error');
+      if (host) {
+        host.classList.remove('hide');
+        host.textContent = `Failed to load the catalog: ${error.message}`;
+      }
+    });
 }
 
-boot().catch((error) => {
-  const host = document.getElementById('page-error');
-  if (host) {
-    host.classList.remove('hide');
-    host.textContent = `Failed to load the catalog: ${error.message}`;
-  }
-});
+boot();

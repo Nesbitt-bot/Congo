@@ -9,7 +9,9 @@ The name is a joke on Amazon: Congo is the second-largest rainforest, but this r
 - Reads all sale data from `data/catalog.json`
 - Expects item photos under `/media`
 - Renders a mobile-friendly and desktop-friendly storefront with an Amazon-inspired layout
-- Gives each visitor **3 chances per item** to guess a price high enough to unlock the real seller price
+- Keeps the front page focused on browsing goods
+- Gives each visitor **3 chances per item** to guess a price high enough to unlock a checkout deal
+- If the guess is above the hidden seller price, computes the checkout price with the configured discount factor
 - Lets unlocked items be added to a local cart
 - Unlocks **free local delivery** when the total is above the configured threshold
 - Builds a checkout page that composes a ready-to-send email for pickup or delivery scheduling
@@ -24,8 +26,9 @@ Edit `data/catalog.json`.
 {
   "site": {
     "title": "Congo",
-    "contactEmail": "your-email@example.com",
+    "contactEmail": "me@example.com",
     "freeDeliveryThreshold": 50,
+    "discountFactor": 0.8,
     "baseUrl": "https://nesbitt-bot.github.io/Congo"
   },
   "items": [
@@ -47,9 +50,19 @@ Important fields:
 
 - `id`: stable slug used in the URL
 - `referencePrice`: visible comparison price
-- `actualPrice`: hidden seller price that gets unlocked when the guess is high enough
+- `actualPrice`: hidden seller price threshold for success
+- `discountFactor`: stored under `site`, used when the successful guess is above `actualPrice`
 - `image`: path relative to repo root, usually `media/<filename>`
 - `status`: `available` or anything else to mark it unavailable
+
+## Pricing rule
+
+If the user guesses successfully:
+
+- if `guess == actualPrice`, checkout price = `actualPrice`
+- if `guess > actualPrice`, checkout price = `actualPrice + (guess - actualPrice) * discountFactor`
+
+Default `discountFactor` is `0.8`.
 
 ## Local workflow
 
@@ -69,6 +82,10 @@ python3 scripts/build_site.py
 GitHub Actions builds the site and deploys it to Pages automatically.
 
 If Pages is not already enabled for the repo, set it to **GitHub Actions** in the repository settings.
+
+## Agent instructions
+
+See `agent.md` for maintenance, upload, redeploy, and template-user instructions.
 
 ## Notes
 
