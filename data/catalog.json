@@ -1,0 +1,46 @@
+{
+  "site": {
+    "title": "Congo",
+    "subtitle": "A graduation sale where buyers guess the price before they unlock it.",
+    "ownerName": "Cedar",
+    "contactEmail": "your-email@example.com",
+    "location": "Local pickup / delivery area",
+    "currency": "USD",
+    "freeDeliveryThreshold": 50,
+    "baseUrl": "https://nesbitt-bot.github.io/Congo",
+    "defaultDescription": "Furniture and computer supplies for sale. Beat the listed price challenge and check out for local pickup or delivery.",
+    "sharingTagline": "Guess the price. Unlock the deal.",
+    "deliveryNote": "Orders above $50 qualify for free local delivery.",
+    "pickupNote": "Pickup details are coordinated by email after checkout."
+  },
+  "items": [
+    {
+      "id": "desk-lamp-sample",
+      "name": "Adjustable Desk Lamp",
+      "category": "Furniture",
+      "condition": "Used - very good",
+      "referencePrice": 39,
+      "referenceLink": "https://example.com/reference-desk-lamp",
+      "actualPrice": 18,
+      "quantity": 1,
+      "status": "available",
+      "image": "media/desk-lamp-sample.jpg",
+      "description": "Warm LED desk lamp with adjustable arm and brightness control.",
+      "pickupNotes": "Easy to carry."
+    },
+    {
+      "id": "monitor-arm-sample",
+      "name": "Single Monitor Arm",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 69,
+      "referenceLink": "https://example.com/reference-monitor-arm",
+      "actualPrice": 32,
+      "quantity": 1,
+      "status": "available",
+      "image": "media/monitor-arm-sample.jpg",
+      "description": "Clamp-style monitor arm for one display, includes mounting hardware.",
+      "pickupNotes": "Best picked up with the original screws kept together in a bag."
+    }
+  ]
+}
