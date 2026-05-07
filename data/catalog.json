@@ -113,6 +113,26 @@
       ],
       "description": "IKEA ELLOVEN monitor stand with bamboo drawer and white top shelf, shown open and with label visible.",
       "pickupNotes": "Two photos included: open drawer view and product label/reference sticker."
+    },
+    {
+      "id": "asus-vp28uqg-monitor-arm",
+      "name": "ASUS VP28UQG 28-inch 4K Monitor with Table Mount",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 300.75,
+      "referenceLink": "https://www.walmart.com/ip/ASUS-VP28UQG-28-4K-UHD-16-9-TN-LCD-Gaming-Monitor-with-Adaptive-Sync-FreeSync/516386342",
+      "actualPrice": 99,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/asus-vp28uqg-monitor-front.jpg",
+      "images": [
+        "media/asus-vp28uqg-monitor-front.jpg",
+        "media/asus-vp28uqg-monitor-rear-arm.jpg",
+        "media/asus-vp28uqg-monitor-label.jpg"
+      ],
+      "description": "ASUS VP28UQG 28-inch 4K monitor mounted on an adjustable table arm. DP cable included.",
+      "pickupNotes": "Includes the table mount arm and a DisplayPort cable. Three photos included: front view, rear/arm view, and model label."
     }
   ]
 }
