@@ -169,6 +169,21 @@
       "image": "media/big-joe-comfort-chair.jpg",
       "description": "Big Joe-style black comfort chair / bean bag lounge seat.",
       "pickupNotes": "Single photo currently attached. Reference price uses current Big Joe bean bag chair listings as a model-near comparison."
+    },
+    {
+      "id": "hp-envy-6155e-printer-bundle",
+      "name": "HP Envy 6155e Printer Bundle",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 89.99,
+      "referenceLink": "https://www.hp.com/us-en/shop/pdp/hp-envy-6155e-all-in-one-printer",
+      "actualPrice": 75,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/hp-envy-6155e-printer-bundle.jpg",
+      "description": "HP Envy 6155e all-in-one printer bundle including extra black ink and HP Premium 24 paper shown in the photo.",
+      "pickupNotes": "Bundle includes the printer, extra black ink pack, and HP Premium 24 print paper. Reference price uses HP's direct current printer listing; bundle extras are included on top."
     }
   ]
 }
