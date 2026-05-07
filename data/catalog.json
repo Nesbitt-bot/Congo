@@ -28,6 +28,20 @@
       "image": "media/cat6-cable-2pack-10ft.jpg",
       "description": "Two 10ft CAT6 RJ45 Ethernet cables (black and blue), bare copper, still sealed in original packaging.",
       "pickupNotes": "Small item, easy to bundle with other computer supplies."
+    },
+    {
+      "id": "sony-srs-xb23",
+      "name": "Sony EXTRA BASS SRS-XB23 Bluetooth Speaker",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 67.99,
+      "referenceLink": "https://www.newegg.com/p/pl?d=Sony+SRS-XB23",
+      "actualPrice": 30,
+      "quantity": 1,
+      "status": "available",
+      "image": "media/sony-srs-xb23.jpg",
+      "description": "Portable Sony EXTRA BASS Bluetooth speaker, model SRS-XB23, shown with the original box.",
+      "pickupNotes": "Includes original retail box shown in the photo."
     }
   ]
 }
