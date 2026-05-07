@@ -79,6 +79,21 @@
       ],
       "description": "Bose Companion 2 Series III multimedia speaker system with power adapter and attached cabling.",
       "pickupNotes": "Three photos included: front view, rear connections, and model label."
+    },
+    {
+      "id": "lamicall-laptop-stand",
+      "name": "Lamicall Laptop Stand",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 42.39,
+      "referenceLink": "https://lamicallshop.com/collections/shop-all-stands-holders",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/lamicall-laptop-stand.jpg",
+      "description": "Adjustable aluminum Lamicall laptop stand, shown with the original box.",
+      "pickupNotes": "Box included in the photo. Reference price uses Lamicall's current similar adjustable foldable laptop stand listing."
     }
   ]
 }
