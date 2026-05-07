@@ -52,13 +52,13 @@
       "condition": "Used - good",
       "referencePrice": 611.13,
       "referenceLink": "https://www.walmart.com/ip/ASUS-ROG-Swift-32-1440P-Gaming-Monitor-PG329Q-QHD-2560-x-1440-Fast-IPS-175Hz-Supports-144Hz-1ms-G-SYNC-Compatible-Extreme-Low-Motion-Blur-Sync-HDMI-D/1033201882",
-      "actualPrice": null,
+      "actualPrice": 150,
       "quantity": 1,
-      "status": "pending",
+      "status": "available",
       "earliestPickupDate": "2026-05-07",
-      "image": "assets/placeholder.png",
+      "image": "media/rog-swift-pg329q-monitor.jpg",
       "description": "ASUS ROG Swift PG329Q gaming monitor, box included.",
-      "pickupNotes": "Box included. Hidden seller price still needs to be set before this item can accept offers."
+      "pickupNotes": "Box included. Additional photos available on request."
     }
   ]
 }
