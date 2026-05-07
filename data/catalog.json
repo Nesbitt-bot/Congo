@@ -145,13 +145,15 @@
       "quantity": 1,
       "status": "available",
       "earliestPickupDate": "2026-05-07",
-      "image": "media/flexispot-e7-desk-wide.jpg",
+      "image": "media/flexispot-e7-desk-frame-assembled.jpg",
       "images": [
+        "media/flexispot-e7-desk-frame-assembled.jpg",
+        "media/flexispot-e7-desk-frame-parts.jpg",
         "media/flexispot-e7-desk-wide.jpg",
         "media/flexispot-e7-desk-govee.jpg"
       ],
       "description": "FlexiSpot Pro Standing Desk (E7) bundle with the included Govee RGBIC desk light shown in the photos.",
-      "pickupNotes": "Bundle includes the FlexiSpot E7 standing desk and the Govee RGBIC desk light shown on the desktop. Two photos included: full desk view and close-up accessory view."
+      "pickupNotes": "Bundle includes the FlexiSpot E7 standing desk and the Govee RGBIC desk light shown on the desktop. Four photos included: assembled frame, parts view, full desk view, and close-up accessory view."
     }
   ]
 }
