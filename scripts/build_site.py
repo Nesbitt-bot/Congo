@@ -332,16 +332,6 @@ def html_shell(*, title: str, description: str, canonical: str, image_url: str, 
 def index_body(site: dict) -> str:
     return f"""
     <main class=\"section\">
-      <div class=\"info-strip\">
-        <div>
-          <strong>Browse the sale directly.</strong>
-          <p>Tap a card to open the deal page and start guessing.</p>
-        </div>
-        <div>
-          <strong>Free local delivery after <span id=\"delivery-threshold-copy\">{escape(money(site.get('freeDeliveryThreshold', 0), site))}</span>.</strong>
-          <p>Otherwise checkout still prepares the scheduling email for pickup.</p>
-        </div>
-      </div>
       <div class=\"section-header\">
         <div>
           <h1>Available items</h1>
@@ -363,8 +353,11 @@ def item_body(site: dict, item: dict) -> str:
     pickup_notes = escape(item.get("pickupNotes", ""))
     image = escape(rel_asset(item.get("image", f"assets/{PLACEHOLDER_NAME}"), "../../"))
     quantity = int(item.get("quantity", 1))
-    status = escape(item.get("status", "available"))
-    factor = escape(str(site.get("discountFactor", 0.8)))
+    raw_status = str(item.get("status", "available"))
+    status = escape(raw_status)
+    earliest_pickup = escape(item.get("earliestPickupDate", ""))
+    latest_pickup = escape(item.get("latestPickupDate", ""))
+    latest_pickup_line = f'<li><span class=\"spec-label\">Latest pickup</span><span>{latest_pickup}</span></li>' if latest_pickup else ''
     return f"""
     <main class=\"item-page\">
       <section class=\"panel media-panel\">
@@ -377,21 +370,23 @@ def item_body(site: dict, item: dict) -> str:
           <div class=\"badge-row\" style=\"position:static;justify-content:flex-start;margin-bottom:10px\">
             <span class=\"badge gold\">{category}</span>
             <span class=\"badge\">{condition}</span>
-            <span class=\"badge {'green' if status == 'available' else ''}\">{status}</span>
+            <span class=\"badge {'green' if raw_status == 'available' else ''}\">{status}</span>
           </div>
           <h1>{escape(item.get('name', 'Untitled item'))}</h1>
           <p class=\"muted\">{description}</p>
           <ul class=\"spec-list\">
             <li><span class=\"spec-label\">Reference price</span><span><a class=\"reference-link\" href=\"{reference_link}\" target=\"_blank\" rel=\"noreferrer\">{reference_price}</a></span></li>
             <li><span class=\"spec-label\">Quantity</span><span>{quantity}</span></li>
+            <li><span class=\"spec-label\">Earliest pickup</span><span>{earliest_pickup or 'Available now'}</span></li>
+            {latest_pickup_line}
             <li><span class=\"spec-label\">Pickup note</span><span>{pickup_notes or 'Will coordinate after checkout.'}</span></li>
           </ul>
         </div>
         <div class=\"panel guess-panel\">
           <h2 class=\"block-title\">Unlock the checkout price</h2>
-          <p class=\"muted\">You get 3 chances on this browser. If your guess is at or above the seller price, the site computes your checkout price using discount factor {factor} whenever you overshoot.</p>
+          <p class=\"muted\">Enter your offer to reveal the checkout price.</p>
           <div class=\"guess-box\">
-            <div class=\"status-box info\" id=\"guess-status\">You have <strong id=\"remaining-guesses\">3</strong> chances on this browser.</div>
+            <div class=\"status-box info\" id=\"guess-status\">Offers left: <strong id=\"remaining-guesses\">3</strong></div>
             <div class=\"guess-input-row\">
               <input id=\"guess-input\" type=\"number\" min=\"0\" step=\"0.01\" placeholder=\"Enter your guess in dollars\" />
               <button id=\"guess-button\" class=\"btn-amazon\">Guess</button>
@@ -459,23 +454,21 @@ def checkout_body(site: dict) -> str:
 
 
 def about_body(site: dict) -> str:
-    factor = escape(str(site.get("discountFactor", 0.8)))
     return f"""
     <main class=\"section\">
       <div class=\"about-stack\">
         <section class=\"about-panel panel\">
           <h1 class=\"block-title\">Guess the price. Unlock the deal.</h1>
-          <p class=\"muted\">Congo is a graduation-sale storefront for local pickup and delivery. The front page stays focused on browsing goods; this page explains the pricing mechanic.</p>
+          <p class=\"muted\">Congo is a graduation-sale storefront for local pickup and delivery. The front page stays focused on browsing goods; this page explains the shopping mechanic.</p>
         </section>
         <section class=\"about-panel panel\">
           <h2 class=\"block-title\">How it works</h2>
           <ul class=\"about-list\">
-            <li>Each product page starts with a hidden seller price.</li>
-            <li>You get 3 chances per item, per browser, to enter the highest price you are willing to pay.</li>
-            <li>If your guess is too low, the site tells you to try again.</li>
-            <li>If your guess reaches or beats the seller price, the site unlocks a checkout price.</li>
-            <li>If your guess is above the seller price, the checkout price is computed as <code>actual price + (guessed price - actual price) × {factor}</code>.</li>
-            <li>Unlocked items can be added to cart and bundled for pickup or local delivery.</li>
+            <li>Each product page starts with a hidden seller checkout price.</li>
+            <li>You can make up to 3 offers per item from the same browser.</li>
+            <li>If your offer is too low, the site asks you to try again.</li>
+            <li>If your offer succeeds, the site unlocks a checkout price and lets you add the item to cart.</li>
+            <li>Unlocked items can be bundled for pickup or local delivery.</li>
             <li>Orders above {escape(money(site.get('freeDeliveryThreshold', 0), site))} qualify for free local delivery.</li>
             <li>The final checkout page prepares a ready-to-send email to <strong>{escape(site.get('contactEmail', ''))}</strong> for scheduling.</li>
           </ul>

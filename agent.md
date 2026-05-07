@@ -92,9 +92,18 @@ Each item should have:
 - `actualPrice`
 - `quantity`
 - `status`
+- `earliestPickupDate`
+- optional `latestPickupDate`
 - `image`
 - `description`
 - `pickupNotes`
+
+If the hidden seller price is not ready yet, set:
+
+- `actualPrice`: `null`
+- `status`: `pending`
+
+That keeps the item visible without enabling guessing.
 
 ### If the user did not provide a reference price or link
 

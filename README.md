@@ -52,8 +52,10 @@ Important fields:
 - `referencePrice`: visible comparison price
 - `actualPrice`: hidden seller price threshold for success
 - `discountFactor`: stored under `site`, used when the successful guess is above `actualPrice`
+- `earliestPickupDate`: earliest day the item can be picked up
+- `latestPickupDate`: optional latest day for pickup; hidden when omitted
 - `image`: path relative to repo root, usually `media/<filename>`
-- `status`: `available` or anything else to mark it unavailable
+- `status`: `available` or anything else to mark it unavailable / not ready
 
 ## Pricing rule
 

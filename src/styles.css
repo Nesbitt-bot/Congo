@@ -729,21 +729,18 @@ img {
 
 @media (max-width: 760px) {
   .topbar-inner {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr;
   }
 
-  .brand-copy span,
-  .brand-copy strong {
-    white-space: nowrap;
+  .brand-lockup,
+  .cart-link,
+  .primary-links {
+    display: none;
   }
 
   .search-shell {
     grid-column: 1 / -1;
-    order: 3;
-  }
-
-  .primary-links {
-    display: none;
+    order: 1;
   }
 
   .section,

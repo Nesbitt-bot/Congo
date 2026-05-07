@@ -25,6 +25,7 @@
       "actualPrice": 8,
       "quantity": 1,
       "status": "available",
+      "earliestPickupDate": "2026-05-07",
       "image": "media/cat6-cable-2pack-10ft.jpg",
       "description": "Two 10ft CAT6 RJ45 Ethernet cables (black and blue), bare copper, still sealed in original packaging.",
       "pickupNotes": "Small item, easy to bundle with other computer supplies."
@@ -39,9 +40,25 @@
       "actualPrice": 30,
       "quantity": 1,
       "status": "available",
+      "earliestPickupDate": "2026-05-07",
       "image": "media/sony-srs-xb23.jpg",
       "description": "Portable Sony EXTRA BASS Bluetooth speaker, model SRS-XB23, shown with the original box.",
       "pickupNotes": "Includes original retail box shown in the photo."
+    },
+    {
+      "id": "rog-swift-pg329q-monitor",
+      "name": "ASUS ROG Swift PG329Q Monitor",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 611.13,
+      "referenceLink": "https://www.walmart.com/ip/ASUS-ROG-Swift-32-1440P-Gaming-Monitor-PG329Q-QHD-2560-x-1440-Fast-IPS-175Hz-Supports-144Hz-1ms-G-SYNC-Compatible-Extreme-Low-Motion-Blur-Sync-HDMI-D/1033201882",
+      "actualPrice": null,
+      "quantity": 1,
+      "status": "pending",
+      "earliestPickupDate": "2026-05-07",
+      "image": "assets/placeholder.png",
+      "description": "ASUS ROG Swift PG329Q gaming monitor, box included.",
+      "pickupNotes": "Box included. Hidden seller price still needs to be set before this item can accept offers."
     }
   ]
 }

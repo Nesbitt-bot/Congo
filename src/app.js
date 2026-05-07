@@ -80,6 +80,10 @@ function normalizePrice(value) {
   return Math.round(Number(value || 0) * 100) / 100;
 }
 
+function itemReadyForGuessing(item) {
+  return item?.status === 'available' && item?.actualPrice !== null && item?.actualPrice !== undefined && Number(item.actualPrice) > 0;
+}
+
 function computeOfferPrice(item, guess, site) {
   const actual = Number(item.actualPrice || 0);
   const factor = Number(site.discountFactor ?? 0.8);
@@ -150,7 +154,7 @@ function attachGlobalSearch() {
 function productCard(item, site) {
   const guessEntry = getGuessEntry(item.id);
   const unlocked = guessEntry.success;
-  const sold = item.status !== 'available';
+  const sold = !itemReadyForGuessing(item);
   const unlockedText = unlocked
     ? `Unlocked offer: ${money(guessEntry.offerPrice ?? item.actualPrice, site.currency)}`
     : 'Price hidden until you guess high enough';
@@ -295,6 +299,17 @@ function renderItemPage(catalog) {
 
   function refreshState() {
     const entry = getGuessEntry(current.id);
+    if (!itemReadyForGuessing(current)) {
+      if (status) {
+        status.className = 'status-box warn';
+        status.textContent = 'This item is not ready for offers yet.';
+      }
+      if (hiddenHint) hiddenHint.textContent = 'Seller has not enabled guessing for this item yet.';
+      if (input) input.disabled = true;
+      if (button) button.disabled = true;
+      return;
+    }
+
     if (entry.success) {
       setItemUnlockedUI(current, site, entry.offerPrice ?? current.actualPrice);
       if (input) input.disabled = true;
@@ -422,7 +437,7 @@ function renderCheckout(catalog) {
     const rows = Object.entries(rawCart)
       .map(([id, cartRow]) => {
         const item = itemMap.get(id);
-        if (!item) return null;
+        if (!item || !itemReadyForGuessing(item)) return null;
         return {
           ...item,
           qty: Number(cartRow.qty || 1),
