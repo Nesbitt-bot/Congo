@@ -351,19 +351,31 @@ def item_body(site: dict, item: dict) -> str:
     reference_price = escape(money(item.get("referencePrice", 0), site))
     description = escape(item.get("description", ""))
     pickup_notes = escape(item.get("pickupNotes", ""))
-    image = escape(rel_asset(item.get("image", f"assets/{PLACEHOLDER_NAME}"), "../../"))
+    images = item.get("images") or [item.get("image", f"assets/{PLACEHOLDER_NAME}")]
+    images = [img for img in images if img]
+    if not images:
+        images = [f"assets/{PLACEHOLDER_NAME}"]
+    primary_image = escape(rel_asset(images[0], "../../"))
+    thumb_buttons = ""
+    if len(images) > 1:
+        thumb_buttons = "".join(
+            f'<button type="button" class="gallery-thumb{" active" if idx == 0 else ""}" data-gallery-image="{escape(img)}" aria-label="View photo {idx + 1}"><img src="{escape(rel_asset(img, "../../"))}" alt="{escape(item.get("name", "Item image"))} photo {idx + 1}" onerror="this.src=\'../../assets/{PLACEHOLDER_NAME}\'" /></button>'
+            for idx, img in enumerate(images)
+        )
     quantity = int(item.get("quantity", 1))
     raw_status = str(item.get("status", "available"))
     status = escape(raw_status)
     earliest_pickup = escape(item.get("earliestPickupDate", ""))
     latest_pickup = escape(item.get("latestPickupDate", ""))
     latest_pickup_line = f'<li><span class=\"spec-label\">Latest pickup</span><span>{latest_pickup}</span></li>' if latest_pickup else ''
+    gallery_strip = f'<div class="gallery-strip">{thumb_buttons}</div>' if thumb_buttons else ''
     return f"""
     <main class=\"item-page\">
       <section class=\"panel media-panel\">
         <div class=\"media-frame\">
-          <img src=\"{image}\" alt=\"{escape(item.get('name', 'Item image'))}\" onerror=\"this.src='../../assets/{PLACEHOLDER_NAME}'\" />
+          <img id=\"item-main-image\" src=\"{primary_image}\" alt=\"{escape(item.get('name', 'Item image'))}\" onerror=\"this.src='../../assets/{PLACEHOLDER_NAME}'\" />
         </div>
+        {gallery_strip}
       </section>
       <section class=\"item-meta\">
         <div class=\"panel detail-panel\">

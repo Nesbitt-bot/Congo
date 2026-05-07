@@ -54,7 +54,8 @@ Important fields:
 - `discountFactor`: stored under `site`, used when the successful guess is above `actualPrice`
 - `earliestPickupDate`: earliest day the item can be picked up
 - `latestPickupDate`: optional latest day for pickup; hidden when omitted
-- `image`: path relative to repo root, usually `media/<filename>`
+- `image`: primary image path relative to repo root, usually `media/<filename>`
+- `images`: optional array of gallery image paths; first image is used as the card/cover image when present
 - `status`: `available` or anything else to mark it unavailable / not ready
 
 ## Pricing rule

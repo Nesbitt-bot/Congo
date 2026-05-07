@@ -95,6 +95,7 @@ Each item should have:
 - `earliestPickupDate`
 - optional `latestPickupDate`
 - `image`
+- optional `images` array for gallery photos
 - `description`
 - `pickupNotes`
 

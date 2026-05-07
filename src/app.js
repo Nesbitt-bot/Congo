@@ -151,6 +151,11 @@ function attachGlobalSearch() {
   });
 }
 
+function getItemPrimaryImage(item) {
+  if (Array.isArray(item?.images) && item.images.length) return item.images[0];
+  return item?.image || '';
+}
+
 function productCard(item, site) {
   const guessEntry = getGuessEntry(item.id);
   const unlocked = guessEntry.success;
@@ -166,7 +171,7 @@ function productCard(item, site) {
             <span class="badge gold">${escapeHtml(item.category)}</span>
             <span class="badge ${sold ? '' : 'green'}">${sold ? 'Unavailable' : '3 chances'}</span>
           </div>
-          <img src="${withBase(item.image)}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${relRoot}assets/placeholder.png'"/>
+          <img src="${withBase(getItemPrimaryImage(item))}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${relRoot}assets/placeholder.png'"/>
         </div>
         <div class="product-card-body">
           <div class="eyebrow">${escapeHtml(item.condition || 'Used')}</div>
@@ -288,6 +293,20 @@ function renderItemPage(catalog) {
   const site = catalog.site;
   const current = window.CONGO_CURRENT_ITEM;
   if (!current) return;
+
+  const galleryButtons = Array.from(document.querySelectorAll('[data-gallery-image]'));
+  const mainImage = document.getElementById('item-main-image');
+  if (galleryButtons.length && mainImage) {
+    galleryButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextSrc = button.dataset.galleryImage;
+        if (!nextSrc) return;
+        mainImage.src = withBase(nextSrc);
+        galleryButtons.forEach((node) => node.classList.remove('active'));
+        button.classList.add('active');
+      });
+    });
+  }
 
   const input = document.getElementById('guess-input');
   const button = document.getElementById('guess-button');
@@ -479,7 +498,7 @@ function renderCheckout(catalog) {
       .map((row) => `
         <article class="cart-item">
           <div class="cart-thumb">
-            <img src="${withBase(row.image)}" alt="${escapeHtml(row.name)}" onerror="this.src='${relRoot}assets/placeholder.png'"/>
+            <img src="${withBase(getItemPrimaryImage(row))}" alt="${escapeHtml(row.name)}" onerror="this.src='${relRoot}assets/placeholder.png'"/>
           </div>
           <div>
             <h3 style="margin:0 0 6px">${escapeHtml(row.name)}</h3>

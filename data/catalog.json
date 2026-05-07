@@ -59,6 +59,26 @@
       "image": "media/rog-swift-pg329q-monitor.jpg",
       "description": "ASUS ROG Swift PG329Q gaming monitor, box included.",
       "pickupNotes": "Box included. Additional photos available on request."
+    },
+    {
+      "id": "bose-companion-2-series-iii",
+      "name": "Bose Companion 2 Series III Speakers",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 166,
+      "referenceLink": "https://www.amazon.com/Bose-Companion-III-Multimedia-Speakers/dp/B00CD1PTF0",
+      "actualPrice": 50,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/bose-companion-2-series-iii-front.jpg",
+      "images": [
+        "media/bose-companion-2-series-iii-front.jpg",
+        "media/bose-companion-2-series-iii-rear.jpg",
+        "media/bose-companion-2-series-iii-label.jpg"
+      ],
+      "description": "Bose Companion 2 Series III multimedia speaker system with power adapter and attached cabling.",
+      "pickupNotes": "Three photos included: front view, rear connections, and model label."
     }
   ]
 }
