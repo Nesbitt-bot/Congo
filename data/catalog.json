@@ -12,7 +12,8 @@
     "defaultDescription": "Furniture and computer supplies for sale before graduation. Browse the goods, guess the price to unlock a deal, and schedule pickup or delivery by email.",
     "sharingTagline": "Guess the price. Unlock the deal.",
     "deliveryNote": "Orders above $50 qualify for free local delivery.",
-    "pickupNote": "Pickup details are coordinated by email after checkout."
+    "pickupNote": "Pickup details are coordinated by email after checkout.",
+    "publicUrl": "https://nesbitt-bot.github.io/Congo"
   },
   "items": [
     {
@@ -218,6 +219,25 @@
       ],
       "description": "Honeywell QuietSet 8 whole-room 40-inch tower fan, shown with the original box.",
       "pickupNotes": "Two photos included: full fan with box and close-up of the top controls."
+    },
+    {
+      "id": "herman-miller-aeron-chair-size-b",
+      "name": "Herman Miller Aeron Chair, Fully Featured Model, Size B",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 999.0,
+      "referenceLink": "https://seatingmind.com/herman-miller-aeron-chair-fully-featured-model-size-b-brand-new/?gad_source=1&gad_campaignid=19756157262&gclid=Cj0KCQjw8PDPBhCeARIsAOJwmWVRwVJqVklL6ojbAydZhvGkpM5luRHrMjPcTAjnDHxOTk4oZ_FKJSsaAoeKEALw_wcB",
+      "actualPrice": 99,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-07",
+      "image": "media/herman-miller-aeron-chair-front.jpg",
+      "images": [
+        "media/herman-miller-aeron-chair-front.jpg",
+        "media/herman-miller-aeron-chair-side.jpg"
+      ],
+      "description": "Herman Miller Aeron chair, fully featured, size B. Two photos included: front view and side profile.",
+      "pickupNotes": "Two photos included. Reference price uses the exact SeatingMind listing you provided."
     }
   ]
 }

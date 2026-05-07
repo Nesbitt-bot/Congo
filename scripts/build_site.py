@@ -98,6 +98,11 @@ ITEM_ZH = {
         "description": "Honeywell QuietSet 8 全房间 40 英寸塔扇，照片中带原包装箱。",
         "pickupNotes": "包含两张照片：带包装箱的整机图和顶部控制面板近景。",
     },
+    "herman-miller-aeron-chair-size-b": {
+        "name": "Herman Miller Aeron 人体工学椅（全功能，B号）",
+        "description": "Herman Miller Aeron 人体工学椅，全功能配置，B 号尺寸。包含正面和侧面两张照片。",
+        "pickupNotes": "包含两张照片。参考价格使用你提供的 SeatingMind 对应商品页面。",
+    },
     "ikea-skadis-pegboard-set": {
         "name": "IKEA SKÅDIS 洞洞板套装",
         "description": "IKEA SKÅDIS 白色洞洞板套装，包含挂篮、小盒、托盘、挂钩和夹具等配件，照片中展示为整套。",
