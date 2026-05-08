@@ -301,7 +301,7 @@ SITE_I18N = {
             "orderSummary": "订单摘要",
             "itemsLabel": "件数",
             "totalLabel": "总价",
-            "deliveryNeedMore": "再加 {amount} 就能享受本地免费配送。",
+            "deliveryNeedMore": "再加 {amount} 即可享受本地免费配送。",
             "deliveryUnlocked": "该订单已解锁本地免费配送。",
             "checkoutAddressedTo": "结账邮件将发送给 {email}。",
             "yourName": "你的名字",
