@@ -220,6 +220,29 @@ img {
   color: #c6d0d7;
 }
 
+
+.cart-link.compact {
+  gap: 8px;
+  padding: 0 14px;
+  font-weight: 700;
+}
+
+.cart-link.compact .cart-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.cart-link.compact .cart-count-inline {
+  font-size: 0.95rem;
+  color: white;
+}
+
+.cart-link.compact strong,
+.cart-link.compact span:not(.cart-icon):not(.cart-count-inline),
+.cart-link.compact div {
+  display: none;
+}
+
 .nav-secondary {
   background: var(--amazon-blue);
   color: #e9eef2;

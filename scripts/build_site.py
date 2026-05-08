@@ -589,11 +589,9 @@ def topbar_html(*, asset_root: str, page_root: str, site: dict, page: str, switc
           {nav_link(page_root, s['homeNav'], '⌂', 'index')}
           {nav_link(page_root + 'about/', s['aboutNav'], 'ℹ', 'about')}
         </nav>
-        <a class=\"cart-link\" href=\"{page_root}checkout/\">
-          <div>
-            <strong>{escape(s['cartNav'])}</strong>
-            <span><span data-cart-count>0</span> {escape(s['cartCounterLabel'])}</span>
-          </div>
+        <a class=\"cart-link compact\" href=\"{page_root}checkout/\" aria-label=\"{escape(s['cartNav'])}\">
+          <span class=\"cart-icon\">🛒</span>
+          <span class=\"cart-count-inline\">(<span data-cart-count>0</span>)</span>
         </a>
         <div class=\"language-switch\">
           <span class=\"language-switch-label\">{escape(s['langSwitchLabel'])}</span>
