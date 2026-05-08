@@ -15,7 +15,7 @@ const siteGuessEnabled = fallbackSite.priceGuessEnabled !== false;
 
 function currentMode() {
   if (!siteGuessEnabled) return 'plain';
-  return requestMode === 'plain' ? 'plain' : 'guess';
+  return requestMode === 'guess' ? 'guess' : 'plain';
 }
 
 function isGuessMode() {

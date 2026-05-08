@@ -138,8 +138,8 @@ SITE_I18N = {
             "guessModeLabel": "Guess mode",
             "plainModeLabel": "Plain mode",
             "modeChooserTitle": "Choose how visitors see prices",
-            "modeChooserBody": "Use different share links for the bargaining version or the plain listed-price version.",
-            "modeGuessButton": "Open guessing version",
+            "modeChooserBody": "Plain mode is the default share link. Guess mode is the bonus version.",
+            "modeGuessButton": "Open bonus guessing version",
             "modePlainButton": "Open plain version",
             "listedPrice": "Listed price",
             "plainModeNotice": "Plain version — actual price shown directly.",
@@ -263,8 +263,8 @@ SITE_I18N = {
             "guessModeLabel": "猜价版",
             "plainModeLabel": "直售价版",
             "modeChooserTitle": "选择给访客看的价格模式",
-            "modeChooserBody": "你可以分享猜价版链接，也可以直接分享明码标价版链接。",
-            "modeGuessButton": "打开猜价版",
+            "modeChooserBody": "直售价版是默认分享链接，猜价版作为额外玩法。",
+            "modeGuessButton": "打开加分彩蛋猜价版",
             "modePlainButton": "打开直售价版",
             "listedPrice": "现价",
             "plainModeNotice": "直售价版本——直接显示实际价格。",
@@ -723,8 +723,8 @@ def index_body(site: dict) -> str:
           <p class=\"muted\">{escape(s['modeChooserBody'])}</p>
         </div>
         <div class=\"inline-actions\">
-          <a id=\"mode-guess-link\" class=\"btn-amazon\" href=\"?mode=guess\">{escape(s['modeGuessButton'])}</a>
-          <a id=\"mode-plain-link\" class=\"btn-ghost\" href=\"?mode=plain\">{escape(s['modePlainButton'])}</a>
+          <a id=\"mode-plain-link\" class=\"btn-amazon\" href=\"?mode=plain\">{escape(s['modePlainButton'])}</a>
+          <a id=\"mode-guess-link\" class=\"btn-ghost\" href=\"?mode=guess\">{escape(s['modeGuessButton'])}</a>
         </div>
       </div>
       <div class=\"section-header\">
@@ -888,7 +888,9 @@ def summary_lines_for_catalog(catalog: dict, lang: str) -> str:
     pickup = site.get("pickupAddress", "")
     is_zh = lang == "zh"
     intro = f"出二手 自取 {pickup}" if is_zh else f"Second-hand for sale · Pickup at {pickup}"
-    sections = [intro, ""]
+    site_url = f"{public}/{lang}/?mode=plain"
+    site_line = f"最新页面：{site_url}" if is_zh else f"Latest update: {site_url}"
+    sections = [intro, site_line, ""]
     for item in localized["items"]:
         price = item.get("actualPrice")
         price_label = (f"${int(price) if float(price).is_integer() else price}" if price is not None else ("待定" if is_zh else "Price pending"))

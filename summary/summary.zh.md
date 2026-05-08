@@ -1,6 +1,7 @@
 出二手 自取 6043 Kingsbury Ave
+最新页面：https://nesbitt-bot.github.io/Congo/zh/?mode=plain
 
-## [Inland CAT6 网线双包装 10 英尺](https://nesbitt-bot.github.io/Congo/zh/item/cat6-cable-2pack-10ft/?mode=plain) ($8)
+## [Inland CAT6 网线双包装 10 英尺](https://nesbitt-bot.github.io/Congo/zh/item/cat6-cable-2pack-10ft/?mode=plain) ($10)
 
 最早可取：2026-05-07
 附加信息：小件，适合和其他电脑用品一起打包带走。
@@ -42,7 +43,7 @@
 
 ![IKEA ELLOVEN 带抽屉显示器增高架](https://nesbitt-bot.github.io/Congo/media/ikea-elloven-monitor-stand-open.jpg)
 
-## [ASUS VP28UQG 28 英寸 4K 显示器（带桌夹支架）](https://nesbitt-bot.github.io/Congo/zh/item/asus-vp28uqg-monitor-arm/?mode=plain) ($99)
+## [ASUS VP28UQG 28 英寸 4K 显示器（带桌夹支架）](https://nesbitt-bot.github.io/Congo/zh/item/asus-vp28uqg-monitor-arm/?mode=plain) ($100)
 
 最早可取：2026-05-07
 附加信息：包含桌夹支架和一根 DisplayPort 线。三张照片：正面、背部/支架和型号标签。
@@ -77,21 +78,21 @@
 
 ![IKEA SKÅDIS 洞洞板套装](https://nesbitt-bot.github.io/Congo/media/ikea-skadis-pegboard-set.jpg)
 
-## [Honeywell QuietSet 8 40英寸塔扇](https://nesbitt-bot.github.io/Congo/zh/item/honeywell-quietset-8-fan/?mode=plain) ($19)
+## [Honeywell QuietSet 8 40英寸塔扇](https://nesbitt-bot.github.io/Congo/zh/item/honeywell-quietset-8-fan/?mode=plain) ($20)
 
 最早可取：2026-05-07
 附加信息：包含两张照片：带包装箱的整机图和顶部控制面板近景。
 
 ![Honeywell QuietSet 8 40英寸塔扇](https://nesbitt-bot.github.io/Congo/media/honeywell-quietset-8-full.jpg)
 
-## [Herman Miller Aeron 人体工学椅（全功能，B号）](https://nesbitt-bot.github.io/Congo/zh/item/herman-miller-aeron-chair-size-b/?mode=plain) ($99)
+## [Herman Miller Aeron 人体工学椅（全功能，B号）](https://nesbitt-bot.github.io/Congo/zh/item/herman-miller-aeron-chair-size-b/?mode=plain) ($100)
 
 最早可取：2026-05-07
 附加信息：包含两张照片。参考价格使用你提供的 SeatingMind 对应商品页面。
 
 ![Herman Miller Aeron 人体工学椅（全功能，B号）](https://nesbitt-bot.github.io/Congo/media/herman-miller-aeron-chair-front.jpg)
 
-## [两块白板 + 三色白板笔套装](https://nesbitt-bot.github.io/Congo/zh/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($9)
+## [两块白板 + 三色白板笔套装](https://nesbitt-bot.github.io/Congo/zh/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($10)
 
 最早可取：2026-05-07
 附加信息：参考价格是根据相似 U Brands 白板和当前 Pilot V Board Master 白板笔套装做出的实用估算。

@@ -1,6 +1,7 @@
 Second-hand for sale · Pickup at 6043 Kingsbury Ave
+Latest update: https://nesbitt-bot.github.io/Congo/en/?mode=plain
 
-## [Inland CAT6 UTP Cable, 2-Pack, 10ft](https://nesbitt-bot.github.io/Congo/en/item/cat6-cable-2pack-10ft/?mode=plain) ($8)
+## [Inland CAT6 UTP Cable, 2-Pack, 10ft](https://nesbitt-bot.github.io/Congo/en/item/cat6-cable-2pack-10ft/?mode=plain) ($10)
 
 Earliest available: 2026-05-07
 Additional info: Small item, easy to bundle with other computer supplies.
@@ -42,7 +43,7 @@ Additional info: Two photos included: open drawer view and product label/referen
 
 ![IKEA ELLOVEN Monitor Stand with Drawer](https://nesbitt-bot.github.io/Congo/media/ikea-elloven-monitor-stand-open.jpg)
 
-## [ASUS VP28UQG 28-inch 4K Monitor with Table Mount](https://nesbitt-bot.github.io/Congo/en/item/asus-vp28uqg-monitor-arm/?mode=plain) ($99)
+## [ASUS VP28UQG 28-inch 4K Monitor with Table Mount](https://nesbitt-bot.github.io/Congo/en/item/asus-vp28uqg-monitor-arm/?mode=plain) ($100)
 
 Earliest available: 2026-05-07
 Additional info: Includes the table mount arm and a DisplayPort cable. Three photos included: front view, rear/arm view, and model label.
@@ -77,21 +78,21 @@ Additional info: Hidden seller price not set yet, so this item is currently disp
 
 ![IKEA SKADIS Pegboard Set](https://nesbitt-bot.github.io/Congo/media/ikea-skadis-pegboard-set.jpg)
 
-## [Honeywell QuietSet 8 Whole Room 40-inch Tower Fan](https://nesbitt-bot.github.io/Congo/en/item/honeywell-quietset-8-fan/?mode=plain) ($19)
+## [Honeywell QuietSet 8 Whole Room 40-inch Tower Fan](https://nesbitt-bot.github.io/Congo/en/item/honeywell-quietset-8-fan/?mode=plain) ($20)
 
 Earliest available: 2026-05-07
 Additional info: Two photos included: full fan with box and close-up of the top controls.
 
 ![Honeywell QuietSet 8 Whole Room 40-inch Tower Fan](https://nesbitt-bot.github.io/Congo/media/honeywell-quietset-8-full.jpg)
 
-## [Herman Miller Aeron Chair, Fully Featured Model, Size B](https://nesbitt-bot.github.io/Congo/en/item/herman-miller-aeron-chair-size-b/?mode=plain) ($99)
+## [Herman Miller Aeron Chair, Fully Featured Model, Size B](https://nesbitt-bot.github.io/Congo/en/item/herman-miller-aeron-chair-size-b/?mode=plain) ($100)
 
 Earliest available: 2026-05-07
 Additional info: Two photos included. Reference price uses the exact SeatingMind listing you provided.
 
 ![Herman Miller Aeron Chair, Fully Featured Model, Size B](https://nesbitt-bot.github.io/Congo/media/herman-miller-aeron-chair-front.jpg)
 
-## [2 Whiteboards + 3 Color Marker Set](https://nesbitt-bot.github.io/Congo/en/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($9)
+## [2 Whiteboards + 3 Color Marker Set](https://nesbitt-bot.github.io/Congo/en/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($10)
 
 Earliest available: 2026-05-07
 Additional info: Reference price is a practical bundle estimate based on similar U Brands whiteboards and a current Pilot V Board Master marker set.
