@@ -164,6 +164,7 @@ SITE_I18N = {
             "statusUnavailable": "Unavailable",
             "threeChances": "3 chances",
             "priceHiddenUntilGuess": "Price hidden until you guess high enough",
+            "generatedNegotiablePrice": "{price} (negotiable)",
             "unlockedOffer": "Unlocked offer: {price}",
             "noMatchTitle": "No items matched that search.",
             "noMatchDesc": "Try another keyword or another category.",
@@ -280,6 +281,7 @@ SITE_I18N = {
             "statusUnavailable": "暂不可售",
             "threeChances": "3 次机会",
             "priceHiddenUntilGuess": "价格会在你猜得足够高时解锁",
+            "generatedNegotiablePrice": "{price}（可砍价）",
             "unlockedOffer": "已解锁成交价：{price}",
             "noMatchTitle": "没有匹配该搜索的商品。",
             "noMatchDesc": "试试其他关键词或分类。",
@@ -523,17 +525,31 @@ def display_status(item: dict, site: dict) -> str:
     return strings["statusUnavailable"]
 
 
-def translate_item(item: dict, lang: str) -> dict:
-    if lang == "en":
-        return copy.deepcopy(item)
-    out = copy.deepcopy(item)
-    out["name"] = ITEM_ZH.get(item["id"], {}).get("name", item["name"])
-    out["description"] = ITEM_ZH.get(item["id"], {}).get("description", item.get("description", ""))
-    out["pickupNotes"] = ITEM_ZH.get(item["id"], {}).get("pickupNotes", item.get("pickupNotes", ""))
-    out["category"] = CATEGORY_ZH.get(item.get("category", ""), item.get("category", ""))
-    out["condition"] = CONDITION_ZH.get(item.get("condition", ""), item.get("condition", ""))
-    return out
+def compute_generated_price(item: dict) -> float | None:
+    actual = item.get("actualPrice")
+    reference = item.get("referencePrice")
+    if actual is None or reference is None:
+        return None
+    actual = float(actual)
+    reference = float(reference)
+    if reference <= actual:
+        return round(actual, 2)
+    digest = hashlib.sha1(f"public-price::{item.get('id','')}".encode("utf-8")).hexdigest()[:8]
+    ratio = int(digest, 16) / 0xFFFFFFFF
+    value = actual + (reference - actual) * ratio
+    return round(value)
 
+
+def translate_item(item: dict, lang: str) -> dict:
+    out = copy.deepcopy(item)
+    if lang != "en":
+        out["name"] = ITEM_ZH.get(item["id"], {}).get("name", item["name"])
+        out["description"] = ITEM_ZH.get(item["id"], {}).get("description", item.get("description", ""))
+        out["pickupNotes"] = ITEM_ZH.get(item["id"], {}).get("pickupNotes", item.get("pickupNotes", ""))
+        out["category"] = CATEGORY_ZH.get(item.get("category", ""), item.get("category", ""))
+        out["condition"] = CONDITION_ZH.get(item.get("condition", ""), item.get("condition", ""))
+    out["generatedPrice"] = compute_generated_price(item)
+    return out
 
 def localize_catalog(catalog: dict, lang: str) -> dict:
     site_base = copy.deepcopy(catalog["site"])
@@ -749,7 +765,7 @@ def item_body(site: dict, item: dict, asset_root: str) -> str:
               <input id=\"guess-input\" type=\"number\" min=\"0\" step=\"0.01\" placeholder=\"{escape(s['guessInputPlaceholder'])}\" />
               <button id=\"guess-button\" class=\"btn-amazon\">{escape(s['guessButton'])}</button>
             </div>
-            <div class=\"small-note\" id=\"hidden-price-hint\">{escape(s['hiddenCheckoutPrice'])}</div>
+            <div class=\"small-note\" id=\"hidden-price-hint\">{escape(s['generatedNegotiablePrice'].format(price=money(item.get('generatedPrice') or item.get('referencePrice') or 0, site))) if item.get('generatedPrice') else escape(s['hiddenCheckoutPrice'])}</div>
             <div class=\"reveal-price hide\" id=\"reveal-price\">{escape(s['unlockTitle'])}: <span data-offer-price></span></div>
             <div class=\"inline-actions hide\" id=\"unlock-actions\">
               <button id=\"add-to-cart\" class=\"btn-amazon\">{escape(s['addToCart'])}</button>

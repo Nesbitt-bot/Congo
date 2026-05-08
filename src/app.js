@@ -121,6 +121,21 @@ function getItemPrimaryImage(item) {
   return item?.image || '';
 }
 
+function getPublicNegotiablePrice(item) {
+  if (item?.generatedPrice !== null && item?.generatedPrice !== undefined) return Number(item.generatedPrice);
+  if (!itemReadyForGuessing(item)) return Number(item?.referencePrice || 0);
+  const actual = Number(item.actualPrice || 0);
+  const reference = Number(item.referencePrice || actual);
+  if (reference <= actual) return actual;
+  let hash = 0;
+  const key = `public-price::${item.id || ''}`;
+  for (let i = 0; i < key.length; i += 1) {
+    hash = ((hash << 5) - hash + key.charCodeAt(i)) >>> 0;
+  }
+  const ratio = hash / 0xFFFFFFFF;
+  return Math.round(actual + (reference - actual) * ratio);
+}
+
 function renderCategoryChips(items, activeCategory = t('allCategory', 'All')) {
   const host = document.getElementById('category-chips');
   if (!host) return;
@@ -184,7 +199,7 @@ function productCard(item, site) {
       : t('threeChances', '3 chances');
   const unlockedText = unlocked
     ? t('unlockedOffer', 'Unlocked offer: {price}', { price: money(guessEntry.offerPrice ?? item.actualPrice, site.currency) })
-    : t('priceHiddenUntilGuess', 'Price hidden until you guess high enough');
+    : t('generatedNegotiablePrice', '{price} (negotiable)', { price: money(getPublicNegotiablePrice(item), site.currency) });
   return `
     <article class="product-card ${sold ? 'is-sold' : ''}">
       <a class="product-card-link" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
@@ -407,7 +422,7 @@ function renderItemPage(catalog) {
               suffix: attemptsLeft === 1 ? '' : 's',
             })
           : t('guessTooLowFinal', 'Too low, and that was the last chance on this browser.');
-        if (hiddenHint) hiddenHint.textContent = t('hiddenCheckoutPrice', 'The checkout price is still hidden.');
+        if (hiddenHint) hiddenHint.textContent = t('generatedNegotiablePrice', '{price} (negotiable)', { price: money(getPublicNegotiablePrice(current), site.currency) });
         refreshState();
       }
     });
