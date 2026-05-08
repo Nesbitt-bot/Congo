@@ -151,8 +151,9 @@ SITE_I18N = {
             "latestPickupLabel": "Latest pickup",
             "pickupNoteLabel": "Pickup note",
             "availableNow": "Available now",
-            "unlockTitle": "Unlock the checkout price",
-            "unlockSubtitle": "Enter your offer to reveal the checkout price.",
+            "unlockTitle": "I will decide the checkout price.",
+            "unlockSubtitle": "Enter your willing to pay.",
+            "guessInputPlaceholder": "Enter your guess price to make a deal.",
             "offersLeft": "Offers left: {count}",
             "hiddenCheckoutPrice": "The checkout price is still hidden.",
             "guessButton": "Guess",
@@ -222,7 +223,7 @@ SITE_I18N = {
             "thanks": "Thanks!",
             "mailSubject": "Congo order request ({count} item{suffix})",
             "failedLoadCatalog": "Failed to load the catalog: {message}",
-            "footerBuildHint": "Update items in data/catalog.json, add photos to /media, then push to redeploy.",
+            "footerBuildHint": "",
             "langEnglish": "English",
             "langChinese": "中文",
             "langSwitchLabel": "Language",
@@ -266,8 +267,9 @@ SITE_I18N = {
             "latestPickupLabel": "最晚可取",
             "pickupNoteLabel": "取货说明",
             "availableNow": "随时可取",
-            "unlockTitle": "解锁成交价",
-            "unlockSubtitle": "输入你的出价以显示成交价。",
+            "unlockTitle": "我要砍价",
+            "unlockSubtitle": "输入自选价格，",
+            "guessInputPlaceholder": "输入自选价格，",
             "offersLeft": "剩余出价次数：{count}",
             "hiddenCheckoutPrice": "成交价仍然隐藏。",
             "guessButton": "出价",
@@ -285,11 +287,11 @@ SITE_I18N = {
             "pendingItemMessage": "这件商品暂时还不能出价。",
             "pendingItemHint": "卖家还没有为这件商品开放猜价。",
             "enterValidAmount": "请先输入有效金额。",
-            "guessSuccess": "可以，这个出价有效。下方已经显示解锁后的成交价。",
+            "guessSuccess": "砍价成功。",
             "unlockAtSellerPrice": "已按卖家成交价解锁。",
             "unlockAboveTarget": "超过目标价后已解锁成交价。",
-            "guessTooLow": "太低了，再试一次——还剩 {count} 次机会。",
-            "guessTooLowFinal": "太低了，而且这已经是该浏览器最后一次机会。",
+            "guessTooLow": "不卖，卖家宁愿直接扔了。",
+            "guessTooLowFinal": "不卖，卖家宁愿直接扔了。",
             "noGuessesLeft": "这个浏览器已经没有出价机会了。",
             "lastTryMessage": "这是这个浏览器的最后一次尝试。如果你仍然想要它，可以直接发邮件联系卖家。",
             "added": "已加入",
@@ -337,7 +339,7 @@ SITE_I18N = {
             "thanks": "谢谢！",
             "mailSubject": "Congo 订单请求（{count} 件商品）",
             "failedLoadCatalog": "加载商品目录失败：{message}",
-            "footerBuildHint": "更新 data/catalog.json、把照片放进 /media，然后 push 触发重新部署。",
+            "footerBuildHint": "",
             "langEnglish": "English",
             "langChinese": "中文",
             "langSwitchLabel": "语言",
@@ -562,7 +564,7 @@ def alt_links(path_suffix: str) -> dict[str, str]:
     }
 
 
-def topbar_html(*, asset_root: str, page_root: str, site: dict, page: str, switch_en: str, switch_zh: str) -> str:
+def topbar_html(*, asset_root: str, page_root: str, site: dict, page: str, switch_en: str, switch_zh: str, current_lang: str) -> str:
     s = site["strings"]
 
     def nav_link(href: str, label: str, icon: str, key: str) -> str:
@@ -595,9 +597,10 @@ def topbar_html(*, asset_root: str, page_root: str, site: dict, page: str, switc
         </a>
         <div class=\"language-switch\">
           <span class=\"language-switch-label\">{escape(s['langSwitchLabel'])}</span>
-          <a href=\"{switch_en}\">{escape(s['langEnglish'])}</a>
-          <span>·</span>
-          <a href=\"{switch_zh}\">{escape(s['langChinese'])}</a>
+          <select class=\"language-select\" data-language-switch>
+            <option value=\"{switch_en}\" {"selected" if current_lang == "en" else ""}>{escape(s['langEnglish'])}</option>
+            <option value=\"{switch_zh}\" {"selected" if current_lang == "zh" else ""}>{escape(s['langChinese'])}</option>
+          </select>
         </div>
       </div>
       <div class=\"nav-secondary\">
@@ -658,13 +661,13 @@ def html_shell(*, target_dir: Path, variant_base: Path, lang: str, page: str, pa
     <link rel=\"stylesheet\" href=\"{asset_root}assets/styles.css\" />
   </head>
   <body data-page=\"{page}\" class=\"has-mobile-footer\">
-    {topbar_html(asset_root=asset_root, page_root=page_root, site=site, page=page, switch_en=alts['en'], switch_zh=alts['zh'])}
+    {topbar_html(asset_root=asset_root, page_root=page_root, site=site, page=page, switch_en=alts['en'], switch_zh=alts['zh'], current_lang=lang)}
     {body}
     <footer class=\"footer\">
       <div class=\"footer-inner\">
         <div><strong>{site_title}</strong> · {escape(site.get('subtitle', ''))}</div>
         <div>{escape(site.get('deliveryNote', ''))}</div>
-        <div>{escape(site['strings']['footerBuildHint'])}</div>
+        <div><a href=\"{escape(site.get('githubRepoUrl', 'https://github.com/Nesbitt-bot/Congo'))}\">{escape(site.get('githubRepoUrl', 'https://github.com/Nesbitt-bot/Congo'))}</a></div>
       </div>
     </footer>
     {mobile_footer_html(page_root=page_root, page=page, site=site)}
@@ -745,7 +748,7 @@ def item_body(site: dict, item: dict, asset_root: str) -> str:
           <div class=\"guess-box\">
             <div class=\"status-box info\" id=\"guess-status\">{escape(s['offersLeft'].format(count=3))}</div>
             <div class=\"guess-input-row\">
-              <input id=\"guess-input\" type=\"number\" min=\"0\" step=\"0.01\" placeholder=\"{escape(s['unlockSubtitle'])}\" />
+              <input id=\"guess-input\" type=\"number\" min=\"0\" step=\"0.01\" placeholder=\"{escape(s['guessInputPlaceholder'])}\" />
               <button id=\"guess-button\" class=\"btn-amazon\">{escape(s['guessButton'])}</button>
             </div>
             <div class=\"small-note\" id=\"hidden-price-hint\">{escape(s['hiddenCheckoutPrice'])}</div>

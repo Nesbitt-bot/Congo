@@ -110,7 +110,7 @@ function slugToPath(id) {
 }
 
 function buildIndexUrl({ query = '', category = '' } = {}) {
-  const url = new URL(`${window.location.origin}${pageRoot}`);
+  const url = new URL(pageRoot, window.location.href);
   if (query) url.searchParams.set('q', query);
   if (category && category !== t('allCategory', 'All')) url.searchParams.set('category', category);
   return `${url.pathname}${url.search}`;
@@ -139,6 +139,15 @@ function renderCategoryChips(items, activeCategory = t('allCategory', 'All')) {
       return `<${tag} class="category-chip ${active}" ${extra}>${escapeHtml(category)}</${tag}>`;
     })
     .join('');
+}
+
+
+function attachLanguageSwitch() {
+  const select = document.querySelector('[data-language-switch]');
+  if (!select) return;
+  select.addEventListener('change', () => {
+    if (select.value) window.location.href = select.value;
+  });
 }
 
 function attachGlobalSearch() {
@@ -596,6 +605,7 @@ function renderCheckout(catalog) {
 function boot() {
   hydrateCartCount();
   attachGlobalSearch();
+  attachLanguageSwitch();
   fetchCatalog()
     .then((catalog) => {
       renderCategoryChips(catalog.items || [], new URLSearchParams(window.location.search).get('category') || t('allCategory', 'All'));

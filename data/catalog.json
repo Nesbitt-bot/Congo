@@ -13,7 +13,8 @@
     "sharingTagline": "Guess the price. Unlock the deal.",
     "deliveryNote": "Orders above $50 qualify for free local delivery.",
     "pickupNote": "Pickup details are coordinated by email after checkout.",
-    "publicUrl": "https://nesbitt-bot.github.io/Congo"
+    "publicUrl": "https://nesbitt-bot.github.io/Congo",
+    "githubRepoUrl": "https://github.com/Nesbitt-bot/Congo"
   },
   "items": [
     {

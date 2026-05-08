@@ -190,8 +190,18 @@ img {
   white-space: nowrap;
 }
 
-.language-switch a {
+.language-switch select,
+.language-select {
+  min-height: 38px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
   color: white;
+  padding: 0 10px;
+}
+
+.language-select option {
+  color: black;
 }
 
 .language-switch-label {
@@ -779,18 +789,28 @@ img {
 
 @media (max-width: 760px) {
   .topbar-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
   }
 
   .brand-lockup,
   .cart-link,
-  .primary-links,
-  .language-switch {
+  .primary-links {
     display: none;
   }
 
+  .language-switch {
+    display: inline-flex;
+    justify-self: end;
+    order: 2;
+  }
+
+  .language-switch-label {
+    display: inline;
+  }
+
   .search-shell {
-    grid-column: 1 / -1;
+    grid-column: auto;
     order: 1;
   }
 
