@@ -71,14 +71,14 @@ Additional info: Bundle includes the printer, extra black ink pack, and HP Premi
 
 ![HP Envy 6155e Printer Bundle](https://nesbitt-bot.github.io/Congo/media/hp-envy-6155e-printer-bundle.jpg)
 
-## [IKEA SKADIS Pegboard Set](https://nesbitt-bot.github.io/Congo/en/item/ikea-skadis-pegboard-set/?mode=plain) (Price pending)
+## [IKEA SKADIS Pegboard Set](https://nesbitt-bot.github.io/Congo/en/item/ikea-skadis-pegboard-set/?mode=plain) ($10)
 
 Earliest available: 2026-05-07
-Additional info: Hidden seller price not set yet, so this item is currently displayed as pending.
+Additional info: White IKEA SKÅDIS pegboard bundle with baskets, hooks, and trays. Hidden seller price is now set and the item is live.
 
 ![IKEA SKADIS Pegboard Set](https://nesbitt-bot.github.io/Congo/media/ikea-skadis-pegboard-set.jpg)
 
-## [Honeywell QuietSet 8 Whole Room 40-inch Tower Fan](https://nesbitt-bot.github.io/Congo/en/item/honeywell-quietset-8-fan/?mode=plain) ($20)
+## [Honeywell QuietSet 8 Whole Room 40-inch Tower Fan](https://nesbitt-bot.github.io/Congo/en/item/honeywell-quietset-8-fan/?mode=plain) ($15)
 
 Earliest available: 2026-05-07
 Additional info: Two photos included: full fan with box and close-up of the top controls.

@@ -197,13 +197,13 @@
       "condition": "Used - good",
       "referencePrice": 28,
       "referenceLink": "https://www.ikea.com/us/en/cat/skadis-series-37813/",
-      "actualPrice": null,
+      "actualPrice": 10,
       "quantity": 1,
-      "status": "pending",
+      "status": "available",
       "earliestPickupDate": "2026-05-07",
       "image": "media/ikea-skadis-pegboard-set.jpg",
       "description": "IKEA SKADIS pegboard set with cups, tray, hooks, and clamps shown together in one bundle.",
-      "pickupNotes": "Hidden seller price not set yet, so this item is currently displayed as pending."
+      "pickupNotes": "White IKEA SKÅDIS pegboard bundle with baskets, hooks, and trays. Hidden seller price is now set and the item is live."
     },
     {
       "id": "honeywell-quietset-8-fan",
@@ -212,7 +212,7 @@
       "condition": "Used - good",
       "referencePrice": 74.99,
       "referenceLink": "https://www.amazon.com/s?k=Honeywell+QuietSet+8+tower+fan",
-      "actualPrice": 20,
+      "actualPrice": 15,
       "quantity": 1,
       "status": "available",
       "earliestPickupDate": "2026-05-07",

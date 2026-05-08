@@ -71,14 +71,14 @@
 
 ![HP Envy 6155e 打印机套装](https://nesbitt-bot.github.io/Congo/media/hp-envy-6155e-printer-bundle.jpg)
 
-## [IKEA SKÅDIS 洞洞板套装](https://nesbitt-bot.github.io/Congo/zh/item/ikea-skadis-pegboard-set/?mode=plain) (待定)
+## [IKEA SKÅDIS 洞洞板套装](https://nesbitt-bot.github.io/Congo/zh/item/ikea-skadis-pegboard-set/?mode=plain) ($10)
 
 最早可取：2026-05-07
 附加信息：隐藏售价尚未设置，因此该商品暂时仅展示不开放出价。
 
 ![IKEA SKÅDIS 洞洞板套装](https://nesbitt-bot.github.io/Congo/media/ikea-skadis-pegboard-set.jpg)
 
-## [Honeywell QuietSet 8 40英寸塔扇](https://nesbitt-bot.github.io/Congo/zh/item/honeywell-quietset-8-fan/?mode=plain) ($20)
+## [Honeywell QuietSet 8 40英寸塔扇](https://nesbitt-bot.github.io/Congo/zh/item/honeywell-quietset-8-fan/?mode=plain) ($15)
 
 最早可取：2026-05-07
 附加信息：包含两张照片：带包装箱的整机图和顶部控制面板近景。
