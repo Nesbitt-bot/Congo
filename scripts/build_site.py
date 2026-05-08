@@ -110,8 +110,8 @@ ITEM_ZH = {
     },
     "floor-lamp-generic": {
         "name": "落地灯",
-        "description": "基础款落地灯，暂时还没有上传照片。",
-        "pickupNotes": "暂时没有商品照片，因此先使用占位图。",
+        "description": "黑色落地灯，带两个白色灯罩，照片中为已组装并可正常使用状态。",
+        "pickupNotes": "已补充实拍照片。标准双灯头落地灯。",
     },
     "ikea-skadis-pegboard-set": {
         "name": "IKEA SKÅDIS 洞洞板套装",
@@ -881,6 +881,40 @@ def about_body(site: dict) -> str:
     """
 
 
+def summary_lines_for_catalog(catalog: dict, lang: str) -> str:
+    localized = localize_catalog(catalog, lang)
+    site = localized["site"]
+    public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
+    pickup = site.get("pickupAddress", "")
+    is_zh = lang == "zh"
+    intro = f"出二手 自取 {pickup}" if is_zh else f"Second-hand for sale · Pickup at {pickup}"
+    sections = [intro, ""]
+    for item in localized["items"]:
+        price = item.get("actualPrice")
+        price_label = (f"${int(price) if float(price).is_integer() else price}" if price is not None else ("待定" if is_zh else "Price pending"))
+        item_url = f"{public}/{lang}/item/{item['id']}/?mode=plain"
+        image_path = item.get("image") or (item.get("images") or ["assets/placeholder.png"])[0]
+        image_url = f"{public}/{image_path.lstrip('/')}"
+        sections.append(f"## [{item['name']}]({item_url}) ({price_label})")
+        sections.append("")
+        sections.append((f"最早可取：{item.get('earliestPickupDate', '')}" if is_zh else f"Earliest available: {item.get('earliestPickupDate', '')}"))
+        if item.get('latestPickupDate'):
+            sections.append((f"最晚可取：{item.get('latestPickupDate')}" if is_zh else f"Latest available: {item.get('latestPickupDate')}"))
+        if item.get('pickupNotes'):
+            sections.append((f"附加信息：{item.get('pickupNotes')}" if is_zh else f"Additional info: {item.get('pickupNotes')}"))
+        sections.append("")
+        sections.append(f"![{item['name']}]({image_url})")
+        sections.append("")
+    return "\n".join(sections).strip() + "\n"
+
+
+def write_summary_files(catalog: dict) -> None:
+    summary_dir = ROOT / "summary"
+    summary_dir.mkdir(parents=True, exist_ok=True)
+    (summary_dir / "summary.en.md").write_text(summary_lines_for_catalog(catalog, "en"), encoding="utf-8")
+    (summary_dir / "summary.zh.md").write_text(summary_lines_for_catalog(catalog, "zh"), encoding="utf-8")
+
+
 def write_catalog_files(catalog: dict) -> None:
     (DIST / "data" / "catalog.json").write_text(json.dumps(localize_catalog(catalog, "en"), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for lang in ["en", "zh"]:
@@ -1023,6 +1057,7 @@ def main() -> None:
     copy_static_assets()
     write_support_assets()
     write_catalog_files(catalog)
+    write_summary_files(catalog)
     for variant in ["root-en", "en", "zh"]:
         write_posters_for_variant(catalog, variant)
         write_pages_for_variant(catalog, variant)
