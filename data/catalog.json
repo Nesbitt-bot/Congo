@@ -272,9 +272,9 @@
       "quantity": 1,
       "status": "available",
       "earliestPickupDate": "2026-05-08",
-      "image": "assets/placeholder.png",
-      "description": "Basic floor lamp. Photo not added yet.",
-      "pickupNotes": "No item photo yet; placeholder image is used until a photo is uploaded."
+      "image": "media/floor-lamp-generic.jpg",
+      "description": "Black floor lamp with two upward/downward white shades, shown assembled and working.",
+      "pickupNotes": "Photo added. Standard floor lamp with two light heads."
     }
   ]
 }
