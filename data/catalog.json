@@ -14,7 +14,9 @@
     "deliveryNote": "Orders above $50 qualify for free local delivery.",
     "pickupNote": "Pickup details are coordinated by email after checkout.",
     "publicUrl": "https://nesbitt-bot.github.io/Congo",
-    "githubRepoUrl": "https://github.com/Nesbitt-bot/Congo"
+    "githubRepoUrl": "https://github.com/Nesbitt-bot/Congo",
+    "priceGuessEnabled": true,
+    "logoEmoji": "🤓"
   },
   "items": [
     {
@@ -258,6 +260,21 @@
       ],
       "description": "Bundle includes two dry-erase whiteboards plus a 3-color Pilot V Board Master marker set.",
       "pickupNotes": "Reference price is a practical bundle estimate based on similar U Brands whiteboards and a current Pilot V Board Master marker set."
+    },
+    {
+      "id": "floor-lamp-generic",
+      "name": "Floor Lamp",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 24.99,
+      "referenceLink": "https://www.target.com/s?searchTerm=floor+lamp",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-08",
+      "image": "assets/placeholder.png",
+      "description": "Basic floor lamp. Photo not added yet.",
+      "pickupNotes": "No item photo yet; placeholder image is used until a photo is uploaded."
     }
   ]
 }

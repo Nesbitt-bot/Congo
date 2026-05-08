@@ -108,6 +108,11 @@ ITEM_ZH = {
         "description": "套装包含两块可擦写白板，以及一组三色 Pilot V Board Master 白板笔。",
         "pickupNotes": "参考价格是根据相似 U Brands 白板和当前 Pilot V Board Master 白板笔套装做出的实用估算。",
     },
+    "floor-lamp-generic": {
+        "name": "落地灯",
+        "description": "基础款落地灯，暂时还没有上传照片。",
+        "pickupNotes": "暂时没有商品照片，因此先使用占位图。",
+    },
     "ikea-skadis-pegboard-set": {
         "name": "IKEA SKÅDIS 洞洞板套装",
         "description": "IKEA SKÅDIS 白色洞洞板套装，包含挂篮、小盒、托盘、挂钩和夹具等配件，照片中展示为整套。",
@@ -130,6 +135,14 @@ SITE_I18N = {
             "aboutNav": "About",
             "cartNav": "Cart",
             "cartCounterLabel": "unlocked item(s)",
+            "guessModeLabel": "Guess mode",
+            "plainModeLabel": "Plain mode",
+            "modeChooserTitle": "Choose how visitors see prices",
+            "modeChooserBody": "Use different share links for the bargaining version or the plain listed-price version.",
+            "modeGuessButton": "Open guessing version",
+            "modePlainButton": "Open plain version",
+            "listedPrice": "Listed price",
+            "plainModeNotice": "Plain version — actual price shown directly.",
             "searchPlaceholder": "Search furniture, monitors, supplies...",
             "availableItemsTitle": "Available items",
             "availableItemsDesc": "Furniture, computer supplies, and anything else that needs a new home before graduation.",
@@ -247,6 +260,14 @@ SITE_I18N = {
             "aboutNav": "规则",
             "cartNav": "购物车",
             "cartCounterLabel": "件已解锁",
+            "guessModeLabel": "猜价版",
+            "plainModeLabel": "直售价版",
+            "modeChooserTitle": "选择给访客看的价格模式",
+            "modeChooserBody": "你可以分享猜价版链接，也可以直接分享明码标价版链接。",
+            "modeGuessButton": "打开猜价版",
+            "modePlainButton": "打开直售价版",
+            "listedPrice": "现价",
+            "plainModeNotice": "直售价版本——直接显示实际价格。",
             "searchPlaceholder": "搜索家具、显示器、电脑用品……",
             "availableItemsTitle": "在售商品",
             "availableItemsDesc": "家具、电脑用品，以及毕业前需要转手的其他物件。",
@@ -696,6 +717,16 @@ def index_body(site: dict) -> str:
     s = site["strings"]
     return f"""
     <main class=\"section\">
+      <div class=\"mode-chooser panel\" id=\"mode-chooser\">
+        <div>
+          <strong>{escape(s['modeChooserTitle'])}</strong>
+          <p class=\"muted\">{escape(s['modeChooserBody'])}</p>
+        </div>
+        <div class=\"inline-actions\">
+          <a id=\"mode-guess-link\" class=\"btn-amazon\" href=\"?mode=guess\">{escape(s['modeGuessButton'])}</a>
+          <a id=\"mode-plain-link\" class=\"btn-ghost\" href=\"?mode=plain\">{escape(s['modePlainButton'])}</a>
+        </div>
+      </div>
       <div class=\"section-header\">
         <div>
           <h1>{escape(s['availableItemsTitle'])}</h1>
@@ -758,7 +789,7 @@ def item_body(site: dict, item: dict, asset_root: str) -> str:
         </div>
         <div class=\"panel guess-panel\">
           <h2 class=\"block-title\">{escape(s['unlockTitle'])}</h2>
-          <p class=\"muted\">{escape(s['unlockSubtitle'])}</p>
+          <p class=\"muted\">{escape(s['guessInputPlaceholder']) if 'guessInputPlaceholder' in s else escape(s['unlockSubtitle'])}</p>
           <div class=\"guess-box\">
             <div class=\"status-box info\" id=\"guess-status\">{escape(s['offersLeft'].format(count=3))}</div>
             <div class=\"guess-input-row\">

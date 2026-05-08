@@ -99,6 +99,7 @@ img {
   color: white;
   font-weight: 800;
   letter-spacing: 0.04em;
+  font-size: 1.5rem;
 }
 
 .brand-copy strong {
@@ -310,6 +311,25 @@ img {
 
 .info-strip strong {
   color: var(--ink);
+}
+
+
+.mode-chooser {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.mode-chooser strong {
+  display: block;
+}
+
+.active-mode {
+  box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.2);
 }
 
 .section-header {

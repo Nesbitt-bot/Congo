@@ -10,6 +10,24 @@ const pageType = document.body.dataset.page || 'index';
 const fallbackSite = window.CONGO_SITE || {};
 const STRINGS = fallbackSite.strings || {};
 
+const requestMode = new URLSearchParams(window.location.search).get('mode');
+const siteGuessEnabled = fallbackSite.priceGuessEnabled !== false;
+
+function currentMode() {
+  if (!siteGuessEnabled) return 'plain';
+  return requestMode === 'plain' ? 'plain' : 'guess';
+}
+
+function isGuessMode() {
+  return currentMode() === 'guess';
+}
+
+function appendMode(url) {
+  const parsed = new URL(url, window.location.href);
+  parsed.searchParams.set('mode', currentMode());
+  return `${parsed.pathname}${parsed.search}`;
+}
+
 function t(key, fallback, vars = {}) {
   const template = STRINGS[key] ?? fallback;
   return String(template).replace(/\{(\w+)\}/g, (_, name) => String(vars[name] ?? `{${name}}`));
@@ -106,13 +124,14 @@ async function fetchCatalog() {
 }
 
 function slugToPath(id) {
-  return `${pageRoot}item/${encodeURIComponent(id)}/`;
+  return appendMode(`${pageRoot}item/${encodeURIComponent(id)}/`);
 }
 
 function buildIndexUrl({ query = '', category = '' } = {}) {
   const url = new URL(pageRoot, window.location.href);
   if (query) url.searchParams.set('q', query);
   if (category && category !== t('allCategory', 'All')) url.searchParams.set('category', category);
+  url.searchParams.set('mode', currentMode());
   return `${url.pathname}${url.search}`;
 }
 
@@ -197,9 +216,11 @@ function productCard(item, site) {
     : sold
       ? t('statusUnavailable', 'Unavailable')
       : t('threeChances', '3 chances');
-  const unlockedText = unlocked
-    ? t('unlockedOffer', 'Unlocked offer: {price}', { price: money(guessEntry.offerPrice ?? item.actualPrice, site.currency) })
-    : t('generatedNegotiablePrice', '{price} (negotiable)', { price: money(getPublicNegotiablePrice(item), site.currency) });
+  const unlockedText = !isGuessMode()
+    ? `${t('listedPrice', 'Listed price')}: ${money(item.actualPrice ?? getPublicNegotiablePrice(item), site.currency)}`
+    : unlocked
+      ? t('unlockedOffer', 'Unlocked offer: {price}', { price: money(guessEntry.offerPrice ?? item.actualPrice, site.currency) })
+      : t('generatedNegotiablePrice', '{price} (negotiable)', { price: money(getPublicNegotiablePrice(item), site.currency) });
   return `
     <article class="product-card ${sold ? 'is-sold' : ''}">
       <a class="product-card-link" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
@@ -223,6 +244,25 @@ function productCard(item, site) {
   `;
 }
 
+function renderModeChooser() {
+  const guess = document.getElementById('mode-guess-link');
+  const plain = document.getElementById('mode-plain-link');
+  if (!guess || !plain) return;
+  const guessUrl = new URL(pageRoot, window.location.href);
+  guessUrl.searchParams.set('mode', 'guess');
+  const plainUrl = new URL(pageRoot, window.location.href);
+  plainUrl.searchParams.set('mode', 'plain');
+  guess.href = `${guessUrl.pathname}${guessUrl.search}`;
+  plain.href = `${plainUrl.pathname}${plainUrl.search}`;
+  if (currentMode() === 'guess') {
+    guess.classList.add('active-mode');
+    plain.classList.remove('active-mode');
+  } else {
+    plain.classList.add('active-mode');
+    guess.classList.remove('active-mode');
+  }
+}
+
 function renderIndex(catalog) {
   const site = catalog.site;
   const items = catalog.items || [];
@@ -234,6 +274,7 @@ function renderIndex(catalog) {
   };
 
   if (searchInput) searchInput.value = activeFilters.query;
+  renderModeChooser();
 
   function draw(pushState = false) {
     renderCategoryChips(items, activeFilters.category);
@@ -283,10 +324,13 @@ function renderIndex(catalog) {
 function addToCart(item, quantity = 1) {
   const guessEntry = getGuessEntry(item.id);
   const cart = getCart();
+  const offerPrice = isGuessMode()
+    ? normalizePrice(guessEntry.offerPrice ?? item.actualPrice)
+    : normalizePrice(item.actualPrice);
   cart[item.id] = {
     qty: Math.min((cart[item.id]?.qty || 0) + quantity, item.quantity || 1),
-    offerPrice: normalizePrice(guessEntry.offerPrice ?? item.actualPrice),
-    guess: guessEntry.lastGuess,
+    offerPrice,
+    guess: isGuessMode() ? guessEntry.lastGuess : null,
   };
   setCart(cart);
 }
@@ -347,6 +391,40 @@ function renderItemPage(catalog) {
   const remaining = document.getElementById('remaining-guesses');
   const status = document.getElementById('guess-status');
   const hiddenHint = document.getElementById('hidden-price-hint');
+
+
+  if (!isGuessMode()) {
+    const plainBox = document.getElementById('plain-price-box');
+    const plainPrice = document.querySelector('[data-plain-price]');
+    if (plainBox) plainBox.classList.remove('hide');
+    if (plainPrice) plainPrice.textContent = money(current.actualPrice || 0, site.currency);
+    if (status) {
+      status.className = 'status-box good';
+      status.textContent = t('plainModeNotice', 'Plain version — actual price shown directly.');
+    }
+    if (hiddenHint) hiddenHint.classList.add('hide');
+    const inputRow = document.querySelector('.guess-input-row');
+    if (inputRow) inputRow.classList.add('hide');
+    const actionBlock = document.getElementById('unlock-actions');
+    if (actionBlock) actionBlock.classList.remove('hide');
+    return attachPlainActions();
+  }
+
+  function attachPlainActions() {
+    if (addButton) {
+      addButton.addEventListener('click', () => {
+        addToCart({ ...current, actualPrice: current.actualPrice }, 1);
+        addButton.textContent = t('added', 'Added');
+        addButton.disabled = true;
+      });
+    }
+    if (buyButton) {
+      buyButton.addEventListener('click', () => {
+        addToCart({ ...current, actualPrice: current.actualPrice }, 1);
+        window.location.href = appendMode(`${pageRoot}checkout/`);
+      });
+    }
+  }
 
   function refreshState() {
     const entry = getGuessEntry(current.id);
@@ -439,7 +517,7 @@ function renderItemPage(catalog) {
   if (buyButton) {
     buyButton.addEventListener('click', () => {
       addToCart(current, 1);
-      window.location.href = `${pageRoot}checkout/`;
+      window.location.href = appendMode(`${pageRoot}checkout/`);
     });
   }
 }
