@@ -615,6 +615,21 @@
       "image": "media/mailing-envelopes-yellow.jpg",
       "description": "Yellow mailing envelope pack with more than 40 envelopes remaining from the original 50-count set.",
       "pickupNotes": "Original packaging shows 50 count; current remaining quantity is over 40 envelopes."
+    },
+    {
+      "id": "cuisinart-electric-coffee-grinder-black",
+      "name": "Cuisinart Electric Coffee Grinder",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 24.99,
+      "referenceLink": "https://www.amazon.com/s?k=Cuisinart+electric+coffee+grinder",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/cuisinart-electric-coffee-grinder-black.jpg",
+      "description": "Black Cuisinart electric coffee bean grinder with power cord attached. Exact model is not verified from the photo alone.",
+      "pickupNotes": "Brand is clearly visible in the photo, but the specific model number is not readable."
     }
   ]
 }

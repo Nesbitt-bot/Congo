@@ -210,3 +210,10 @@ Earliest available: 2026-05-09
 Additional info: Original packaging shows 50 count; current remaining quantity is over 40 envelopes.
 
 ![Mailing Envelopes (>40 remaining)](https://nesbitt-bot.github.io/Congo/media/mailing-envelopes-yellow.jpg)
+
+## [Cuisinart Electric Coffee Grinder](https://nesbitt-bot.github.io/Congo/en/item/cuisinart-electric-coffee-grinder-black/?mode=plain) ($5)
+
+Earliest available: 2026-05-09
+Additional info: Brand is clearly visible in the photo, but the specific model number is not readable.
+
+![Cuisinart Electric Coffee Grinder](https://nesbitt-bot.github.io/Congo/media/cuisinart-electric-coffee-grinder-black.jpg)

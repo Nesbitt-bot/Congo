@@ -223,6 +223,11 @@ ITEM_ZH = {
         "description": "黄色邮寄信封一包，原包装为 50 个装，目前剩余超过 40 个。",
         "pickupNotes": "原包装标签显示 50 count；当前剩余数量为 40 多个信封。",
     },
+    "cuisinart-electric-coffee-grinder-black": {
+        "name": "Cuisinart 电动咖啡豆研磨机",
+        "description": "黑色 Cuisinart 电动咖啡豆研磨机，带电源线。仅凭当前照片无法确认具体型号。",
+        "pickupNotes": "照片中品牌清晰可见，但具体型号编号不可读。",
+    },
 }
 
 SITE_I18N = {

@@ -210,3 +210,10 @@
 附加信息：原包装标签显示 50 count；当前剩余数量为 40 多个信封。
 
 ![邮寄信封（剩余 40+ 个）](https://nesbitt-bot.github.io/Congo/media/mailing-envelopes-yellow.jpg)
+
+## [Cuisinart 电动咖啡豆研磨机](https://nesbitt-bot.github.io/Congo/zh/item/cuisinart-electric-coffee-grinder-black/?mode=plain) ($5)
+
+最早可取：2026-05-09
+附加信息：照片中品牌清晰可见，但具体型号编号不可读。
+
+![Cuisinart 电动咖啡豆研磨机](https://nesbitt-bot.github.io/Congo/media/cuisinart-electric-coffee-grinder-black.jpg)
