@@ -118,6 +118,11 @@ ITEM_ZH = {
         "description": "IKEA SKÅDIS 白色洞洞板套装，包含挂篮、小盒、托盘、挂钩和夹具等配件，照片中展示为整套。",
         "pickupNotes": "隐藏售价尚未设置，因此该商品暂时仅展示不开放出价。",
     },
+    "flexispot-slim-desk-drawer-s07lb": {
+        "name": "FlexiSpot 超薄桌下收纳抽屉 S07LB",
+        "description": "FlexiSpot 超薄桌下收纳抽屉，型号 S07LB，照片中展示原包装箱。",
+        "pickupNotes": "当前只附带一张照片，商品展示为原包装箱状态。",
+    },
 }
 
 SITE_I18N = {

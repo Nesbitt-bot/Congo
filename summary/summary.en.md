@@ -105,3 +105,10 @@ Earliest available: 2026-05-08
 Additional info: Photo added. Standard floor lamp with two light heads.
 
 ![Floor Lamp](https://nesbitt-bot.github.io/Congo/media/floor-lamp-generic.jpg)
+
+## [FlexiSpot Slim Under Desk Storage Drawer S07LB](https://nesbitt-bot.github.io/Congo/en/item/flexispot-slim-desk-drawer-s07lb/?mode=plain) ($10)
+
+Earliest available: 2026-05-09
+Additional info: Single photo currently attached. Original box shown in the listing photo.
+
+![FlexiSpot Slim Under Desk Storage Drawer S07LB](https://nesbitt-bot.github.io/Congo/media/flexispot-slim-desk-drawer-s07lb.jpg)

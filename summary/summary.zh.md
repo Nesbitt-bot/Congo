@@ -105,3 +105,10 @@
 附加信息：已补充实拍照片。标准双灯头落地灯。
 
 ![落地灯](https://nesbitt-bot.github.io/Congo/media/floor-lamp-generic.jpg)
+
+## [FlexiSpot 超薄桌下收纳抽屉 S07LB](https://nesbitt-bot.github.io/Congo/zh/item/flexispot-slim-desk-drawer-s07lb/?mode=plain) ($10)
+
+最早可取：2026-05-09
+附加信息：当前只附带一张照片，商品展示为原包装箱状态。
+
+![FlexiSpot 超薄桌下收纳抽屉 S07LB](https://nesbitt-bot.github.io/Congo/media/flexispot-slim-desk-drawer-s07lb.jpg)
