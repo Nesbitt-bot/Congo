@@ -189,3 +189,10 @@
 附加信息：照片中展示了加湿器及其电源适配器，具体型号编号不可见。
 
 ![GoveeLife 智能加湿器](https://nesbitt-bot.github.io/Congo/media/goveelife-smart-humidifier-white.jpg)
+
+## [Pen+Gear 订书机套装](https://nesbitt-bot.github.io/Congo/zh/item/pen-gear-stapler-set/?mode=plain) ($3)
+
+最早可取：2026-05-09
+附加信息：照片中展示的是整套一起出售：订书机、起钉器和订书钉。
+
+![Pen+Gear 订书机套装](https://nesbitt-bot.github.io/Congo/media/pen-gear-stapler-set.jpg)

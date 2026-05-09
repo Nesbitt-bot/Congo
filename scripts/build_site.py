@@ -208,6 +208,11 @@ ITEM_ZH = {
         "description": "白色 GoveeLife 智能加湿器，附带电源适配器。仅凭当前照片无法确认具体型号。",
         "pickupNotes": "照片中展示了加湿器及其电源适配器，具体型号编号不可见。",
     },
+    "pen-gear-stapler-set": {
+        "name": "Pen+Gear 订书机套装",
+        "description": "Pen+Gear 订书机套装，包含黑色订书机、起钉器和多盒标准订书钉。",
+        "pickupNotes": "照片中展示的是整套一起出售：订书机、起钉器和订书钉。",
+    },
 }
 
 SITE_I18N = {

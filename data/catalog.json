@@ -570,6 +570,21 @@
       "image": "media/goveelife-smart-humidifier-white.jpg",
       "description": "White GoveeLife smart humidifier with power adapter included. Exact model is not verified from the photo alone.",
       "pickupNotes": "Photo shows the humidifier powered by its included adapter. Exact model number is not visible."
+    },
+    {
+      "id": "pen-gear-stapler-set",
+      "name": "Pen+Gear Stapler Set",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 8.99,
+      "referenceLink": "https://www.amazon.com/s?k=stapler+set+staple+remover+staples",
+      "actualPrice": 3,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/pen-gear-stapler-set.jpg",
+      "description": "Pen+Gear stapler set including a black stapler, staple remover, and boxes of standard staples.",
+      "pickupNotes": "Photo shows the stapler, staple remover, and staple boxes together as one set."
     }
   ]
 }

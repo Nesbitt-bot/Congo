@@ -189,3 +189,10 @@ Earliest available: 2026-05-09
 Additional info: Photo shows the humidifier powered by its included adapter. Exact model number is not visible.
 
 ![GoveeLife Smart Humidifier](https://nesbitt-bot.github.io/Congo/media/goveelife-smart-humidifier-white.jpg)
+
+## [Pen+Gear Stapler Set](https://nesbitt-bot.github.io/Congo/en/item/pen-gear-stapler-set/?mode=plain) ($3)
+
+Earliest available: 2026-05-09
+Additional info: Photo shows the stapler, staple remover, and staple boxes together as one set.
+
+![Pen+Gear Stapler Set](https://nesbitt-bot.github.io/Congo/media/pen-gear-stapler-set.jpg)
