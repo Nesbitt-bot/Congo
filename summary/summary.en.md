@@ -133,3 +133,10 @@ Earliest available: 2026-05-09
 Additional info: Photo shows the original box plus the assembled Creeper inside a glass dome.
 
 ![LEGO Minecraft The Creeper 21276 (with glass display dome)](https://nesbitt-bot.github.io/Congo/media/lego-minecraft-creeper-21276.jpg)
+
+## [Crate & Barrel Tate Nightstand](https://nesbitt-bot.github.io/Congo/en/item/crate-barrel-tate-nightstand/?mode=plain) ($50)
+
+Earliest available: 2026-05-09
+Additional info: Two photos included: front view and drawer-open view.
+
+![Crate & Barrel Tate Nightstand](https://nesbitt-bot.github.io/Congo/media/crate-barrel-tate-nightstand-front.jpg)

@@ -168,6 +168,11 @@ ITEM_ZH = {
         "description": "乐高 Minecraft 21276 苦力怕套装，照片中为已拼装状态，并放在玻璃展示罩中安全展示。",
         "pickupNotes": "照片中包含原盒，以及放在玻璃罩里的已拼装苦力怕。",
     },
+    "crate-barrel-tate-nightstand": {
+        "name": "Crate & Barrel Tate 床头柜",
+        "description": "Crate & Barrel Tate 床头柜，暖木色，一只抽屉加一层开放置物格。",
+        "pickupNotes": "包含两张照片：正面视图和抽屉打开视图。",
+    },
 }
 
 SITE_I18N = {

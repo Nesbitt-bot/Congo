@@ -438,6 +438,25 @@
       "image": "media/lego-minecraft-creeper-21276.jpg",
       "description": "LEGO Minecraft set 21276 The Creeper, shown assembled and placed inside a glass display dome for safe display.",
       "pickupNotes": "Photo shows the original box plus the assembled Creeper inside a glass dome."
+    },
+    {
+      "id": "crate-barrel-tate-nightstand",
+      "name": "Crate & Barrel Tate Nightstand",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 299.0,
+      "referenceLink": "https://www.crateandbarrel.com/search?query=tate%20nightstand",
+      "actualPrice": 50,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/crate-barrel-tate-nightstand-front.jpg",
+      "images": [
+        "media/crate-barrel-tate-nightstand-front.jpg",
+        "media/crate-barrel-tate-nightstand-open.jpg"
+      ],
+      "description": "Crate & Barrel Tate Nightstand in warm wood finish, with one drawer and one open shelf.",
+      "pickupNotes": "Two photos included: front view and drawer-open view."
     }
   ]
 }

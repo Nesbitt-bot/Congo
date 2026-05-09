@@ -133,3 +133,10 @@
 附加信息：照片中包含原盒，以及放在玻璃罩里的已拼装苦力怕。
 
 ![乐高 Minecraft 苦力怕 21276（含玻璃展示罩）](https://nesbitt-bot.github.io/Congo/media/lego-minecraft-creeper-21276.jpg)
+
+## [Crate & Barrel Tate 床头柜](https://nesbitt-bot.github.io/Congo/zh/item/crate-barrel-tate-nightstand/?mode=plain) ($50)
+
+最早可取：2026-05-09
+附加信息：包含两张照片：正面视图和抽屉打开视图。
+
+![Crate & Barrel Tate 床头柜](https://nesbitt-bot.github.io/Congo/media/crate-barrel-tate-nightstand-front.jpg)
