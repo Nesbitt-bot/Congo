@@ -196,3 +196,10 @@
 附加信息：照片中展示的是整套一起出售：订书机、起钉器和订书钉。
 
 ![Pen+Gear 订书机套装](https://nesbitt-bot.github.io/Congo/media/pen-gear-stapler-set.jpg)
+
+## [黑色美工刀套装](https://nesbitt-bot.github.io/Congo/zh/item/utility-knife-set-black/?mode=plain) ($3)
+
+最早可取：2026-05-09
+附加信息：照片中展示的是整套一起出售，不是单把刀。
+
+![黑色美工刀套装](https://nesbitt-bot.github.io/Congo/media/utility-knife-set-black.jpg)

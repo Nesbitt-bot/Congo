@@ -213,6 +213,11 @@ ITEM_ZH = {
         "description": "Pen+Gear 订书机套装，包含黑色订书机、起钉器和多盒标准订书钉。",
         "pickupNotes": "照片中展示的是整套一起出售：订书机、起钉器和订书钉。",
     },
+    "utility-knife-set-black": {
+        "name": "黑色美工刀套装",
+        "description": "黑色多件装美工刀 / 裁纸刀套装，盒内含多把独立包装的小刀。",
+        "pickupNotes": "照片中展示的是整套一起出售，不是单把刀。",
+    },
 }
 
 SITE_I18N = {

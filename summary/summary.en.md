@@ -196,3 +196,10 @@ Earliest available: 2026-05-09
 Additional info: Photo shows the stapler, staple remover, and staple boxes together as one set.
 
 ![Pen+Gear Stapler Set](https://nesbitt-bot.github.io/Congo/media/pen-gear-stapler-set.jpg)
+
+## [Utility Knife Set](https://nesbitt-bot.github.io/Congo/en/item/utility-knife-set-black/?mode=plain) ($3)
+
+Earliest available: 2026-05-09
+Additional info: Photo shows multiple knives sold together as one set, not a single cutter.
+
+![Utility Knife Set](https://nesbitt-bot.github.io/Congo/media/utility-knife-set-black.jpg)
