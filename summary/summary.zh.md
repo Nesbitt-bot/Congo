@@ -175,3 +175,10 @@
 附加信息：实际售价尚未设置，因此该商品目前为待定状态。
 
 ![黑色门后挂钩架](https://nesbitt-bot.github.io/Congo/media/over-door-hook-rack-black.jpg)
+
+## [戴森吹风机（含收纳盒）](https://nesbitt-bot.github.io/Congo/zh/item/dyson-hair-dryer-with-case/?mode=plain) ($50)
+
+最早可取：2026-05-09
+附加信息：目前照片展示的是收纳盒；如果后续补充吹风机或配件照片，可以继续加到这个条目里。
+
+![戴森吹风机（含收纳盒）](https://nesbitt-bot.github.io/Congo/media/dyson-hair-dryer-case.jpg)

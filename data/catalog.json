@@ -540,6 +540,21 @@
       "image": "media/over-door-hook-rack-black.jpg",
       "description": "Black over-the-door hook rack with five lower hooks.",
       "pickupNotes": "Actual price not set yet, so this item is currently displayed as pending."
+    },
+    {
+      "id": "dyson-hair-dryer-with-case",
+      "name": "Dyson Hair Dryer with Storage Case",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 329.99,
+      "referenceLink": "https://www.dyson.com/search-results?searchTerm=supersonic%20hair%20dryer",
+      "actualPrice": 50,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/dyson-hair-dryer-case.jpg",
+      "description": "Dyson hair dryer listing with the purple storage/presentation case shown in the photo. Exact variant is not verified from the image alone.",
+      "pickupNotes": "Current photo shows the storage case; if more photos of the dryer/attachments arrive, they can be added to this listing."
     }
   ]
 }

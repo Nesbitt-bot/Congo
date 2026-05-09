@@ -175,3 +175,10 @@ Earliest available: 2026-05-09
 Additional info: Actual price not set yet, so this item is currently displayed as pending.
 
 ![Over-the-Door Hook Rack (Black)](https://nesbitt-bot.github.io/Congo/media/over-door-hook-rack-black.jpg)
+
+## [Dyson Hair Dryer with Storage Case](https://nesbitt-bot.github.io/Congo/en/item/dyson-hair-dryer-with-case/?mode=plain) ($50)
+
+Earliest available: 2026-05-09
+Additional info: Current photo shows the storage case; if more photos of the dryer/attachments arrive, they can be added to this listing.
+
+![Dyson Hair Dryer with Storage Case](https://nesbitt-bot.github.io/Congo/media/dyson-hair-dryer-case.jpg)
