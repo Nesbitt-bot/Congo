@@ -140,3 +140,10 @@ Earliest available: 2026-05-09
 Additional info: Two photos included: front view and drawer-open view.
 
 ![Crate & Barrel Tate Nightstand](https://nesbitt-bot.github.io/Congo/media/crate-barrel-tate-nightstand-front.jpg)
+
+## [Small Rolling Utility Cart](https://nesbitt-bot.github.io/Congo/en/item/small-rolling-cart-black/?mode=plain) ($5)
+
+Earliest available: 2026-05-09
+Additional info: Photo shows the cart assembled with one shelf panel loose and hardware bag visible.
+
+![Small Rolling Utility Cart](https://nesbitt-bot.github.io/Congo/media/small-rolling-cart-black.jpg)

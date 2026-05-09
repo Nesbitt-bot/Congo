@@ -140,3 +140,10 @@
 附加信息：包含两张照片：正面视图和抽屉打开视图。
 
 ![Crate & Barrel Tate 床头柜](https://nesbitt-bot.github.io/Congo/media/crate-barrel-tate-nightstand-front.jpg)
+
+## [黑色迷你移动小推车](https://nesbitt-bot.github.io/Congo/zh/item/small-rolling-cart-black/?mode=plain) ($5)
+
+最早可取：2026-05-09
+附加信息：照片中展示了已组装小推车、松开的层板以及附带五金件。
+
+![黑色迷你移动小推车](https://nesbitt-bot.github.io/Congo/media/small-rolling-cart-black.jpg)

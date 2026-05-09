@@ -173,6 +173,11 @@ ITEM_ZH = {
         "description": "Crate & Barrel Tate 床头柜，暖木色，一只抽屉加一层开放置物格。",
         "pickupNotes": "包含两张照片：正面视图和抽屉打开视图。",
     },
+    "small-rolling-cart-black": {
+        "name": "黑色迷你移动小推车",
+        "description": "黑色迷你滚轮收纳/移动小推车，占地小，可自定义层板配置。",
+        "pickupNotes": "照片中展示了已组装小推车、松开的层板以及附带五金件。",
+    },
 }
 
 SITE_I18N = {

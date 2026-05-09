@@ -457,6 +457,21 @@
       ],
       "description": "Crate & Barrel Tate Nightstand in warm wood finish, with one drawer and one open shelf.",
       "pickupNotes": "Two photos included: front view and drawer-open view."
+    },
+    {
+      "id": "small-rolling-cart-black",
+      "name": "Small Rolling Utility Cart",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 29.99,
+      "referenceLink": "https://www.amazon.com/s?k=small+rolling+utility+cart+black+2+tier",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/small-rolling-cart-black.jpg",
+      "description": "Small black rolling utility cart with a compact footprint and custom shelf/layer configuration.",
+      "pickupNotes": "Photo shows the cart assembled with one shelf panel loose and hardware bag visible."
     }
   ]
 }
