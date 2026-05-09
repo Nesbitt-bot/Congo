@@ -351,6 +351,25 @@
       "image": "media/ikea-kallax-drawers-shelf.jpg",
       "description": "Black-brown IKEA KALLAX-style cube shelf bundle with foldable fabric drawers included.",
       "pickupNotes": "Photo shows the shelf assembled with the foldable drawer set stacked on top and one drawer inserted."
+    },
+    {
+      "id": "shelf-floor-lamp-black",
+      "name": "Shelf Floor Lamp",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 49.99,
+      "referenceLink": "https://www.amazon.com/s?k=shelf+floor+lamp+black",
+      "actualPrice": 10,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/shelf-floor-lamp-front.jpg",
+      "images": [
+        "media/shelf-floor-lamp-front.jpg",
+        "media/shelf-floor-lamp-top.jpg"
+      ],
+      "description": "Black shelf floor lamp with built-in display shelves and a white fabric shade.",
+      "pickupNotes": "Two photos included: full assembled view and top shade view."
     }
   ]
 }

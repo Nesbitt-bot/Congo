@@ -98,3 +98,10 @@ Earliest available: 2026-05-09
 Additional info: Photo shows the shelf assembled with the foldable drawer set stacked on top and one drawer inserted.
 
 ![IKEA KALLAX Shelf with Foldable Drawer Set](https://nesbitt-bot.github.io/Congo/media/ikea-kallax-drawers-shelf.jpg)
+
+## [Shelf Floor Lamp](https://nesbitt-bot.github.io/Congo/en/item/shelf-floor-lamp-black/?mode=plain) ($10)
+
+Earliest available: 2026-05-09
+Additional info: Two photos included: full assembled view and top shade view.
+
+![Shelf Floor Lamp](https://nesbitt-bot.github.io/Congo/media/shelf-floor-lamp-front.jpg)

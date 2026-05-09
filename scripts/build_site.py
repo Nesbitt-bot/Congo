@@ -143,6 +143,11 @@ ITEM_ZH = {
         "description": "黑棕色 IKEA KALLAX 风格格架，包含折叠布抽屉套装。",
         "pickupNotes": "照片中展示了已组装的架子，顶部放着折叠抽屉，另有一个抽屉已装入格架。",
     },
+    "shelf-floor-lamp-black": {
+        "name": "黑色置物落地灯",
+        "description": "黑色置物落地灯，自带多层置物架和白色布艺灯罩。",
+        "pickupNotes": "包含两张照片：整体组装视图和顶部灯罩视图。",
+    },
 }
 
 SITE_I18N = {

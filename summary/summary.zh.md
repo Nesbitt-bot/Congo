@@ -98,3 +98,10 @@
 附加信息：照片中展示了已组装的架子，顶部放着折叠抽屉，另有一个抽屉已装入格架。
 
 ![IKEA KALLAX 书架 + 折叠抽屉套装](https://nesbitt-bot.github.io/Congo/media/ikea-kallax-drawers-shelf.jpg)
+
+## [黑色置物落地灯](https://nesbitt-bot.github.io/Congo/zh/item/shelf-floor-lamp-black/?mode=plain) ($10)
+
+最早可取：2026-05-09
+附加信息：包含两张照片：整体组装视图和顶部灯罩视图。
+
+![黑色置物落地灯](https://nesbitt-bot.github.io/Congo/media/shelf-floor-lamp-front.jpg)
