@@ -35,6 +35,7 @@ CATEGORY_ZH = {
     "Computer Supplies": "电脑用品",
     "Electronics": "电子产品",
     "Furniture": "家具",
+    "Household": "家居用品",
 }
 
 CONDITION_ZH = {
@@ -227,6 +228,11 @@ ITEM_ZH = {
         "name": "Cuisinart 电动咖啡豆研磨机",
         "description": "黑色 Cuisinart 电动咖啡豆研磨机，带电源线。仅凭当前照片无法确认具体型号。",
         "pickupNotes": "照片中品牌清晰可见，但具体型号编号不可读。",
+    },
+    "amazon-basics-coffee-filters-basket": {
+        "name": "Amazon Basics 篮式咖啡滤纸",
+        "description": "已开封的 Amazon Basics 篮式咖啡滤纸，包装标签显示为 200 张。",
+        "pickupNotes": "这是已开封包装，不是全新未拆封。",
     },
 }
 

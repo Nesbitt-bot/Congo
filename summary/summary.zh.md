@@ -217,3 +217,10 @@
 附加信息：照片中品牌清晰可见，但具体型号编号不可读。
 
 ![Cuisinart 电动咖啡豆研磨机](https://nesbitt-bot.github.io/Congo/media/cuisinart-electric-coffee-grinder-black.jpg)
+
+## [Amazon Basics 篮式咖啡滤纸](https://nesbitt-bot.github.io/Congo/zh/item/amazon-basics-coffee-filters-basket/?mode=plain) ($1)
+
+最早可取：2026-05-09
+附加信息：这是已开封包装，不是全新未拆封。
+
+![Amazon Basics 篮式咖啡滤纸](https://nesbitt-bot.github.io/Congo/media/amazon-basics-coffee-filters-basket.jpg)

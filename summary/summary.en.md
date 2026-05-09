@@ -217,3 +217,10 @@ Earliest available: 2026-05-09
 Additional info: Brand is clearly visible in the photo, but the specific model number is not readable.
 
 ![Cuisinart Electric Coffee Grinder](https://nesbitt-bot.github.io/Congo/media/cuisinart-electric-coffee-grinder-black.jpg)
+
+## [Amazon Basics Basket Coffee Filters](https://nesbitt-bot.github.io/Congo/en/item/amazon-basics-coffee-filters-basket/?mode=plain) ($1)
+
+Earliest available: 2026-05-09
+Additional info: This is an opened bag, not a sealed-new pack.
+
+![Amazon Basics Basket Coffee Filters](https://nesbitt-bot.github.io/Congo/media/amazon-basics-coffee-filters-basket.jpg)

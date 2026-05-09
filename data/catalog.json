@@ -630,6 +630,21 @@
       "image": "media/cuisinart-electric-coffee-grinder-black.jpg",
       "description": "Black Cuisinart electric coffee bean grinder with power cord attached. Exact model is not verified from the photo alone.",
       "pickupNotes": "Brand is clearly visible in the photo, but the specific model number is not readable."
+    },
+    {
+      "id": "amazon-basics-coffee-filters-basket",
+      "name": "Amazon Basics Basket Coffee Filters",
+      "category": "Household",
+      "condition": "Used - good",
+      "referencePrice": 4.99,
+      "referenceLink": "https://www.amazon.com/s?k=Amazon+Basics+basket+coffee+filters+200",
+      "actualPrice": 1,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/amazon-basics-coffee-filters-basket.jpg",
+      "description": "Opened bag of Amazon Basics basket coffee filters. The package label shows 200 filters.",
+      "pickupNotes": "This is an opened bag, not a sealed-new pack."
     }
   ]
 }
