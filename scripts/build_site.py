@@ -128,6 +128,11 @@ ITEM_ZH = {
         "description": "Frigidaire Gallery 迷你美妆冰箱 / 小型冷藏箱，照片中展示了原包装盒和电源配件。",
         "pickupNotes": "照片中包含原包装箱和配件。属于小型台面迷你冰箱尺寸。",
     },
+    "frigidaire-countertop-ice-maker": {
+        "name": "Frigidaire 台面制冰机（每日 26 磅）",
+        "description": "Frigidaire 台面制冰机，标称每日制冰 26 磅，照片中展示了原包装箱。",
+        "pickupNotes": "照片中可见原包装箱。属于台面尺寸的小型制冰机。",
+    },
 }
 
 SITE_I18N = {

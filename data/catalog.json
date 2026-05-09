@@ -306,6 +306,21 @@
       "image": "media/frigidaire-gallery-mini-fridge.jpg",
       "description": "Frigidaire Gallery mini beauty fridge / compact cooler, shown with the original box and power accessories.",
       "pickupNotes": "Original box and accessories shown in the photo. Small countertop fridge size."
+    },
+    {
+      "id": "frigidaire-countertop-ice-maker",
+      "name": "Frigidaire Countertop Ice Maker (26 lbs/day)",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 89.99,
+      "referenceLink": "https://www.amazon.com/s?k=Frigidaire+26+lbs+ice+maker",
+      "actualPrice": 10,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/frigidaire-ice-maker.jpg",
+      "description": "Frigidaire countertop ice maker rated for 26 lbs/day, shown with the original box.",
+      "pickupNotes": "Original box visible in the photo. Countertop-size ice maker."
     }
   ]
 }

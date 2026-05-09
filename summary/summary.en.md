@@ -119,3 +119,10 @@ Earliest available: 2026-05-09
 Additional info: Original box and accessories shown in the photo. Small countertop fridge size.
 
 ![Frigidaire Gallery Mini Beauty Fridge (6-Can)](https://nesbitt-bot.github.io/Congo/media/frigidaire-gallery-mini-fridge.jpg)
+
+## [Frigidaire Countertop Ice Maker (26 lbs/day)](https://nesbitt-bot.github.io/Congo/en/item/frigidaire-countertop-ice-maker/?mode=plain) ($10)
+
+Earliest available: 2026-05-09
+Additional info: Original box visible in the photo. Countertop-size ice maker.
+
+![Frigidaire Countertop Ice Maker (26 lbs/day)](https://nesbitt-bot.github.io/Congo/media/frigidaire-ice-maker.jpg)

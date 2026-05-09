@@ -119,3 +119,10 @@
 附加信息：照片中包含原包装箱和配件。属于小型台面迷你冰箱尺寸。
 
 ![Frigidaire Gallery 迷你美妆冰箱（6罐装）](https://nesbitt-bot.github.io/Congo/media/frigidaire-gallery-mini-fridge.jpg)
+
+## [Frigidaire 台面制冰机（每日 26 磅）](https://nesbitt-bot.github.io/Congo/zh/item/frigidaire-countertop-ice-maker/?mode=plain) ($10)
+
+最早可取：2026-05-09
+附加信息：照片中可见原包装箱。属于台面尺寸的小型制冰机。
+
+![Frigidaire 台面制冰机（每日 26 磅）](https://nesbitt-bot.github.io/Congo/media/frigidaire-ice-maker.jpg)
