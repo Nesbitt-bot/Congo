@@ -291,6 +291,21 @@
       "image": "media/flexispot-slim-desk-drawer-s07lb.jpg",
       "description": "FlexiSpot slim under-desk storage drawer, model S07LB, shown in the original box.",
       "pickupNotes": "Single photo currently attached. Original box shown in the listing photo."
+    },
+    {
+      "id": "frigidaire-gallery-mini-fridge",
+      "name": "Frigidaire Gallery Mini Beauty Fridge (6-Can)",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 49.99,
+      "referenceLink": "https://www.amazon.com/s?k=Frigidaire+Gallery+mini+beauty+fridge+6+cans",
+      "actualPrice": 10,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/frigidaire-gallery-mini-fridge.jpg",
+      "description": "Frigidaire Gallery mini beauty fridge / compact cooler, shown with the original box and power accessories.",
+      "pickupNotes": "Original box and accessories shown in the photo. Small countertop fridge size."
     }
   ]
 }

@@ -112,3 +112,10 @@ Earliest available: 2026-05-09
 Additional info: Single photo currently attached. Original box shown in the listing photo.
 
 ![FlexiSpot Slim Under Desk Storage Drawer S07LB](https://nesbitt-bot.github.io/Congo/media/flexispot-slim-desk-drawer-s07lb.jpg)
+
+## [Frigidaire Gallery Mini Beauty Fridge (6-Can)](https://nesbitt-bot.github.io/Congo/en/item/frigidaire-gallery-mini-fridge/?mode=plain) ($10)
+
+Earliest available: 2026-05-09
+Additional info: Original box and accessories shown in the photo. Small countertop fridge size.
+
+![Frigidaire Gallery Mini Beauty Fridge (6-Can)](https://nesbitt-bot.github.io/Congo/media/frigidaire-gallery-mini-fridge.jpg)

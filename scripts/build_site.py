@@ -123,6 +123,11 @@ ITEM_ZH = {
         "description": "FlexiSpot 超薄桌下收纳抽屉，型号 S07LB，照片中展示原包装箱。",
         "pickupNotes": "当前只附带一张照片，商品展示为原包装箱状态。",
     },
+    "frigidaire-gallery-mini-fridge": {
+        "name": "Frigidaire Gallery 迷你美妆冰箱（6罐装）",
+        "description": "Frigidaire Gallery 迷你美妆冰箱 / 小型冷藏箱，照片中展示了原包装盒和电源配件。",
+        "pickupNotes": "照片中包含原包装箱和配件。属于小型台面迷你冰箱尺寸。",
+    },
 }
 
 SITE_I18N = {

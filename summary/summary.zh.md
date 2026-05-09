@@ -112,3 +112,10 @@
 附加信息：当前只附带一张照片，商品展示为原包装箱状态。
 
 ![FlexiSpot 超薄桌下收纳抽屉 S07LB](https://nesbitt-bot.github.io/Congo/media/flexispot-slim-desk-drawer-s07lb.jpg)
+
+## [Frigidaire Gallery 迷你美妆冰箱（6罐装）](https://nesbitt-bot.github.io/Congo/zh/item/frigidaire-gallery-mini-fridge/?mode=plain) ($10)
+
+最早可取：2026-05-09
+附加信息：照片中包含原包装箱和配件。属于小型台面迷你冰箱尺寸。
+
+![Frigidaire Gallery 迷你美妆冰箱（6罐装）](https://nesbitt-bot.github.io/Congo/media/frigidaire-gallery-mini-fridge.jpg)
