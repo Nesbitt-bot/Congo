@@ -148,9 +148,30 @@ Additional info: Two photos included: assembled front view and parts/shelf confi
 
 ![Small Rolling Utility Cart](https://nesbitt-bot.github.io/Congo/media/small-rolling-cart-black-front.jpg)
 
-## [Hanging Closet Shelf Organizer](https://nesbitt-bot.github.io/Congo/en/item/hanging-closet-organizer-6-shelf/?mode=plain) ($5)
+## [Hanging Closet Shelf Organizer](https://nesbitt-bot.github.io/Congo/en/item/hanging-closet-organizer-6-shelf/?mode=plain) ($3)
 
 Earliest available: 2026-05-09
 Additional info: Two photos included: opened hanging view and folded-flat view.
 
 ![Hanging Closet Shelf Organizer](https://nesbitt-bot.github.io/Congo/media/hanging-closet-organizer-open.jpg)
+
+## [Over-the-Door 2-Tier Basket Organizer](https://nesbitt-bot.github.io/Congo/en/item/over-door-basket-organizer-white/?mode=plain) (Price pending)
+
+Earliest available: 2026-05-09
+Additional info: Actual price not set yet, so this item is currently displayed as pending.
+
+![Over-the-Door 2-Tier Basket Organizer](https://nesbitt-bot.github.io/Congo/media/over-door-basket-organizer-white.jpg)
+
+## [Over-the-Door Hook Rack (White)](https://nesbitt-bot.github.io/Congo/en/item/over-door-hook-rack-white/?mode=plain) (Price pending)
+
+Earliest available: 2026-05-09
+Additional info: Actual price not set yet, so this item is currently displayed as pending.
+
+![Over-the-Door Hook Rack (White)](https://nesbitt-bot.github.io/Congo/media/over-door-hook-rack-white.jpg)
+
+## [Over-the-Door Hook Rack (Black)](https://nesbitt-bot.github.io/Congo/en/item/over-door-hook-rack-black/?mode=plain) (Price pending)
+
+Earliest available: 2026-05-09
+Additional info: Actual price not set yet, so this item is currently displayed as pending.
+
+![Over-the-Door Hook Rack (Black)](https://nesbitt-bot.github.io/Congo/media/over-door-hook-rack-black.jpg)

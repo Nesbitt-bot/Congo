@@ -183,6 +183,21 @@ ITEM_ZH = {
         "description": "布艺悬挂式衣柜收纳层架，带多个隔层，照片中展示了展开和折叠状态。",
         "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
     },
+    "over-door-basket-organizer-white": {
+        "name": "白色门后双层收纳篮",
+        "description": "白色门后双层收纳篮，带木纹层板。",
+        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+    },
+    "over-door-hook-rack-white": {
+        "name": "白色门后挂钩架",
+        "description": "白色门后挂钩架，下方有五个挂钩。",
+        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+    },
+    "over-door-hook-rack-black": {
+        "name": "黑色门后挂钩架",
+        "description": "黑色门后挂钩架，下方有五个挂钩。",
+        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+    },
 }
 
 SITE_I18N = {

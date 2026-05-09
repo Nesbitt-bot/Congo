@@ -484,7 +484,7 @@
       "condition": "Used - good",
       "referencePrice": 19.99,
       "referenceLink": "https://www.amazon.com/s?k=hanging+closet+shelf+organizer+6+shelf",
-      "actualPrice": 5,
+      "actualPrice": 3,
       "quantity": 1,
       "status": "available",
       "earliestPickupDate": "2026-05-09",
@@ -495,6 +495,51 @@
       ],
       "description": "Fabric hanging closet shelf organizer with multiple compartments, shown both opened and folded flat.",
       "pickupNotes": "Two photos included: opened hanging view and folded-flat view."
+    },
+    {
+      "id": "over-door-basket-organizer-white",
+      "name": "Over-the-Door 2-Tier Basket Organizer",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 19.99,
+      "referenceLink": "https://www.amazon.com/s?k=over+door+2+tier+basket+organizer",
+      "actualPrice": null,
+      "quantity": 1,
+      "status": "pending",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/over-door-basket-organizer-white.jpg",
+      "description": "White over-the-door 2-tier basket organizer with wood-look shelf panels.",
+      "pickupNotes": "Actual price not set yet, so this item is currently displayed as pending."
+    },
+    {
+      "id": "over-door-hook-rack-white",
+      "name": "Over-the-Door Hook Rack (White)",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 12.99,
+      "referenceLink": "https://www.amazon.com/s?k=over+door+hook+rack+white",
+      "actualPrice": null,
+      "quantity": 1,
+      "status": "pending",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/over-door-hook-rack-white.jpg",
+      "description": "White over-the-door hook rack with five lower hooks.",
+      "pickupNotes": "Actual price not set yet, so this item is currently displayed as pending."
+    },
+    {
+      "id": "over-door-hook-rack-black",
+      "name": "Over-the-Door Hook Rack (Black)",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 12.99,
+      "referenceLink": "https://www.amazon.com/s?k=over+door+hook+rack+black",
+      "actualPrice": null,
+      "quantity": 1,
+      "status": "pending",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/over-door-hook-rack-black.jpg",
+      "description": "Black over-the-door hook rack with five lower hooks.",
+      "pickupNotes": "Actual price not set yet, so this item is currently displayed as pending."
     }
   ]
 }
