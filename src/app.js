@@ -218,52 +218,38 @@ function productCard(item, site) {
       : sold
         ? t('statusUnavailable', 'Unavailable')
         : t('threeChances', '3 chances');
-  const unlockedText = !isGuessMode()
+  const currentPriceText = !isGuessMode()
     ? `${t('listedPrice', 'Listed price')}: ${money(item.actualPrice ?? getPublicNegotiablePrice(item), site.currency)}`
     : unlocked
       ? t('unlockedOffer', 'Unlocked offer: {price}', { price: money(guessEntry.offerPrice ?? item.actualPrice, site.currency) })
       : t('generatedNegotiablePrice', '{price} (negotiable)', { price: money(getPublicNegotiablePrice(item), site.currency) });
+  const referenceText = `${t('referencePriceLabel', 'Reference price')}: ${money(item.referencePrice ?? 0, site.currency)}`;
+  const qrImage = item.qrImage ? `<img class="card-qr" src="${escapeHtml(item.qrImage)}" alt="${escapeHtml(t('qrCodeLabel', 'QR code'))}" loading="lazy"/>` : '';
   return `
     <article class="product-card ${sold ? 'is-sold' : ''}">
-      <a class="product-card-link" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
-        <div class="card-image-wrap">
+      <a class="product-card-link split-layout" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
+        <div class="card-image-wrap square-crop">
           <div class="badge-row">
             <span class="badge gold">${escapeHtml(item.category)}</span>
             <span class="badge ${itemReadyForGuessing(item) ? 'green' : ''}">${escapeHtml(badgeText)}</span>
           </div>
           <img src="${withBase(getItemPrimaryImage(item))}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${assetRoot}assets/placeholder.png'"/>
         </div>
-        <div class="product-card-body">
-          <div class="eyebrow">${escapeHtml(item.condition || 'Used')}</div>
+        <div class="product-card-body split-body">
           <h3>${escapeHtml(item.name)}</h3>
-          <div class="price-stack">
-            <div class="hidden-price">${escapeHtml(unlockedText)}</div>
+          <div class="eyebrow">${escapeHtml(item.category)}</div>
+          <div class="card-divider"></div>
+          <div class="card-price-ref">${escapeHtml(referenceText)}</div>
+          <div class="card-bottom-row">
+            <div class="card-qr-wrap">${qrImage}</div>
+            <div class="card-price-current">${escapeHtml(currentPriceText)}</div>
           </div>
-          <div class="small-note">${escapeHtml(item.description || '')}</div>
         </div>
       </a>
     </article>
   `;
 }
 
-function renderModeChooser() {
-  const guess = document.getElementById('mode-guess-link');
-  const plain = document.getElementById('mode-plain-link');
-  if (!guess || !plain) return;
-  const guessUrl = new URL(pageRoot, window.location.href);
-  guessUrl.searchParams.set('mode', 'guess');
-  const plainUrl = new URL(pageRoot, window.location.href);
-  plainUrl.searchParams.set('mode', 'plain');
-  guess.href = `${guessUrl.pathname}${guessUrl.search}`;
-  plain.href = `${plainUrl.pathname}${plainUrl.search}`;
-  if (currentMode() === 'guess') {
-    guess.classList.add('active-mode');
-    plain.classList.remove('active-mode');
-  } else {
-    plain.classList.add('active-mode');
-    guess.classList.remove('active-mode');
-  }
-}
 
 function renderIndex(catalog) {
   const site = catalog.site;

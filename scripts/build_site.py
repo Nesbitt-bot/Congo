@@ -156,6 +156,7 @@ SITE_I18N = {
             "hideSoldOut": "Hide sold out",
             "showingItems": "Showing {shown} of {total}",
             "loadingMore": "Scroll down to load more items",
+            "qrCodeLabel": "QR code",
             "searchPlaceholder": "Search furniture, monitors, supplies...",
             "availableItemsTitle": "Available items",
             "availableItemsDesc": "Furniture, computer supplies, and anything else that needs a new home before graduation.",
@@ -256,7 +257,7 @@ SITE_I18N = {
             "langChinese": "中文",
             "langSwitchLabel": "Language",
             "posterQrCaption": "Scan for details",
-            "posterDefaultTitle": "Congo graduation sale",
+            "posterDefaultTitle": "Congo : graduate selling.",
             "posterCategoryLine": "{category} · Guess high enough to unlock the checkout price",
         },
     },
@@ -285,6 +286,7 @@ SITE_I18N = {
             "hideSoldOut": "隐藏已售出",
             "showingItems": "已显示 {shown} / {total}",
             "loadingMore": "向下滚动以加载更多商品",
+            "qrCodeLabel": "二维码",
             "searchPlaceholder": "搜索家具、显示器、电脑用品……",
             "availableItemsTitle": "在售商品",
             "availableItemsDesc": "家具、电脑用品，以及毕业前需要转手的其他物件。",
@@ -385,7 +387,7 @@ SITE_I18N = {
             "langChinese": "中文",
             "langSwitchLabel": "语言",
             "posterQrCaption": "扫码查看详情",
-            "posterDefaultTitle": "Congo 毕业出售",
+            "posterDefaultTitle": "Congo：毕业出售",
             "posterCategoryLine": "{category} · 猜到足够高即可解锁成交价",
         },
     },
@@ -604,9 +606,16 @@ def localize_catalog(catalog: dict, lang: str) -> dict:
     site_base["htmlLang"] = locale_cfg["htmlLang"]
     site_base["numberLocale"] = locale_cfg["numberLocale"]
     site_base["strings"] = locale_cfg["strings"]
+    public_base = site_base.get("publicUrl", site_base.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
+    localized_items = []
+    for item in catalog["items"]:
+        out = translate_item(item, lang)
+        out["publicItemUrl"] = f"{public_base}/{lang}/item/{item['id']}/?mode=plain"
+        out["qrImage"] = f"https://api.qrserver.com/v1/create-qr-code/?size=120x120&margin=0&data={quote_plus(out['publicItemUrl'])}"
+        localized_items.append(out)
     return {
         "site": site_base,
-        "items": [translate_item(item, lang) for item in catalog["items"]],
+        "items": localized_items,
     }
 
 
