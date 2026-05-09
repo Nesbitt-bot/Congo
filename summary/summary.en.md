@@ -203,3 +203,10 @@ Earliest available: 2026-05-09
 Additional info: Photo shows multiple knives sold together as one set, not a single cutter.
 
 ![Utility Knife Set](https://nesbitt-bot.github.io/Congo/media/utility-knife-set-black.jpg)
+
+## [Mailing Envelopes (>40 remaining)](https://nesbitt-bot.github.io/Congo/en/item/yellow-mailing-envelopes-40plus/?mode=plain) ($3)
+
+Earliest available: 2026-05-09
+Additional info: Original packaging shows 50 count; current remaining quantity is over 40 envelopes.
+
+![Mailing Envelopes (>40 remaining)](https://nesbitt-bot.github.io/Congo/media/mailing-envelopes-yellow.jpg)

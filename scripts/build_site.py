@@ -218,6 +218,11 @@ ITEM_ZH = {
         "description": "黑色多件装美工刀 / 裁纸刀套装，盒内含多把独立包装的小刀。",
         "pickupNotes": "照片中展示的是整套一起出售，不是单把刀。",
     },
+    "yellow-mailing-envelopes-40plus": {
+        "name": "邮寄信封（剩余 40+ 个）",
+        "description": "黄色邮寄信封一包，原包装为 50 个装，目前剩余超过 40 个。",
+        "pickupNotes": "原包装标签显示 50 count；当前剩余数量为 40 多个信封。",
+    },
 }
 
 SITE_I18N = {

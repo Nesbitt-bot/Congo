@@ -600,6 +600,21 @@
       "image": "media/utility-knife-set-black.jpg",
       "description": "Multi-piece black utility / paper knife set with several individually wrapped cutters in one box.",
       "pickupNotes": "Photo shows multiple knives sold together as one set, not a single cutter."
+    },
+    {
+      "id": "yellow-mailing-envelopes-40plus",
+      "name": "Mailing Envelopes (>40 remaining)",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 7.99,
+      "referenceLink": "https://www.amazon.com/s?k=mailing+envelopes+50+count",
+      "actualPrice": 3,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/mailing-envelopes-yellow.jpg",
+      "description": "Yellow mailing envelope pack with more than 40 envelopes remaining from the original 50-count set.",
+      "pickupNotes": "Original packaging shows 50 count; current remaining quantity is over 40 envelopes."
     }
   ]
 }

@@ -203,3 +203,10 @@
 附加信息：照片中展示的是整套一起出售，不是单把刀。
 
 ![黑色美工刀套装](https://nesbitt-bot.github.io/Congo/media/utility-knife-set-black.jpg)
+
+## [邮寄信封（剩余 40+ 个）](https://nesbitt-bot.github.io/Congo/zh/item/yellow-mailing-envelopes-40plus/?mode=plain) ($3)
+
+最早可取：2026-05-09
+附加信息：原包装标签显示 50 count；当前剩余数量为 40 多个信封。
+
+![邮寄信封（剩余 40+ 个）](https://nesbitt-bot.github.io/Congo/media/mailing-envelopes-yellow.jpg)
