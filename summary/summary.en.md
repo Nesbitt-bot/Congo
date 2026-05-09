@@ -144,6 +144,13 @@ Additional info: Two photos included: front view and drawer-open view.
 ## [Small Rolling Utility Cart](https://nesbitt-bot.github.io/Congo/en/item/small-rolling-cart-black/?mode=plain) ($5)
 
 Earliest available: 2026-05-09
-Additional info: Photo shows the cart assembled with one shelf panel loose and hardware bag visible.
+Additional info: Two photos included: assembled front view and parts/shelf configuration view.
 
-![Small Rolling Utility Cart](https://nesbitt-bot.github.io/Congo/media/small-rolling-cart-black.jpg)
+![Small Rolling Utility Cart](https://nesbitt-bot.github.io/Congo/media/small-rolling-cart-black-front.jpg)
+
+## [Hanging Closet Shelf Organizer](https://nesbitt-bot.github.io/Congo/en/item/hanging-closet-organizer-6-shelf/?mode=plain) (Price pending)
+
+Earliest available: 2026-05-09
+Additional info: Actual price not set yet, so the listing is currently pending.
+
+![Hanging Closet Shelf Organizer](https://nesbitt-bot.github.io/Congo/media/hanging-closet-organizer-open.jpg)

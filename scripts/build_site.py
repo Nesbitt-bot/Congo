@@ -178,6 +178,11 @@ ITEM_ZH = {
         "description": "黑色迷你滚轮收纳/移动小推车，占地小，可自定义层板配置。",
         "pickupNotes": "照片中展示了已组装小推车、松开的层板以及附带五金件。",
     },
+    "hanging-closet-organizer-6-shelf": {
+        "name": "悬挂式衣柜收纳层架",
+        "description": "布艺悬挂式衣柜收纳层架，带多个隔层，照片中展示了展开和折叠状态。",
+        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+    },
 }
 
 SITE_I18N = {
