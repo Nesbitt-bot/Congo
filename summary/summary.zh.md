@@ -126,3 +126,10 @@
 附加信息：包含两张照片：正面视图和斜角视图。不含床垫。
 
 ![KLV-UP-088 易组装大号床架](https://nesbitt-bot.github.io/Congo/media/queen-bed-frame-klv-up-088-front.jpg)
+
+## [乐高 Minecraft 苦力怕 21276（含玻璃展示罩）](https://nesbitt-bot.github.io/Congo/zh/item/lego-minecraft-creeper-21276/?mode=plain) ($10)
+
+最早可取：2026-05-09
+附加信息：照片中包含原盒，以及放在玻璃罩里的已拼装苦力怕。
+
+![乐高 Minecraft 苦力怕 21276（含玻璃展示罩）](https://nesbitt-bot.github.io/Congo/media/lego-minecraft-creeper-21276.jpg)

@@ -423,6 +423,21 @@
       ],
       "description": "Easy-assemble queen-size bed frame with black upholstered tufted headboard, model KLV-UP-088.",
       "pickupNotes": "Two photos included: front view and angled view. Mattress not included."
+    },
+    {
+      "id": "lego-minecraft-creeper-21276",
+      "name": "LEGO Minecraft The Creeper 21276 (with glass display dome)",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 39.99,
+      "referenceLink": "https://www.lego.com/en-us/product/the-creeper-21276",
+      "actualPrice": 10,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/lego-minecraft-creeper-21276.jpg",
+      "description": "LEGO Minecraft set 21276 The Creeper, shown assembled and placed inside a glass display dome for safe display.",
+      "pickupNotes": "Photo shows the original box plus the assembled Creeper inside a glass dome."
     }
   ]
 }

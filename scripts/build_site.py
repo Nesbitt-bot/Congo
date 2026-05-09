@@ -163,6 +163,11 @@ ITEM_ZH = {
         "description": "易于组装的大号床架，黑色软包菱格床头，型号 KLV-UP-088。",
         "pickupNotes": "包含两张照片：正面视图和斜角视图。不含床垫。",
     },
+    "lego-minecraft-creeper-21276": {
+        "name": "乐高 Minecraft 苦力怕 21276（含玻璃展示罩）",
+        "description": "乐高 Minecraft 21276 苦力怕套装，照片中为已拼装状态，并放在玻璃展示罩中安全展示。",
+        "pickupNotes": "照片中包含原盒，以及放在玻璃罩里的已拼装苦力怕。",
+    },
 }
 
 SITE_I18N = {

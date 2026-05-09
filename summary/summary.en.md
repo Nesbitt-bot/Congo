@@ -126,3 +126,10 @@ Earliest available: 2026-05-09
 Additional info: Two photos included: front view and angled view. Mattress not included.
 
 ![Queen Bed Frame KLV-UP-088](https://nesbitt-bot.github.io/Congo/media/queen-bed-frame-klv-up-088-front.jpg)
+
+## [LEGO Minecraft The Creeper 21276 (with glass display dome)](https://nesbitt-bot.github.io/Congo/en/item/lego-minecraft-creeper-21276/?mode=plain) ($10)
+
+Earliest available: 2026-05-09
+Additional info: Photo shows the original box plus the assembled Creeper inside a glass dome.
+
+![LEGO Minecraft The Creeper 21276 (with glass display dome)](https://nesbitt-bot.github.io/Congo/media/lego-minecraft-creeper-21276.jpg)
