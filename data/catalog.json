@@ -469,9 +469,13 @@
       "quantity": 1,
       "status": "available",
       "earliestPickupDate": "2026-05-09",
-      "image": "media/small-rolling-cart-black.jpg",
+      "image": "media/small-rolling-cart-black-front.jpg",
       "description": "Small black rolling utility cart with a compact footprint and custom shelf/layer configuration.",
-      "pickupNotes": "Photo shows the cart assembled with one shelf panel loose and hardware bag visible."
+      "pickupNotes": "Two photos included: assembled front view and parts/shelf configuration view.",
+      "images": [
+        "media/small-rolling-cart-black-front.jpg",
+        "media/small-rolling-cart-black.jpg"
+      ]
     }
   ]
 }
