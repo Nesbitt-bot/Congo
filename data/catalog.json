@@ -321,6 +321,21 @@
       "image": "media/frigidaire-ice-maker.jpg",
       "description": "Frigidaire countertop ice maker rated for 26 lbs/day, shown with the original box.",
       "pickupNotes": "Original box visible in the photo. Countertop-size ice maker."
+    },
+    {
+      "id": "goveelife-air-purifier-h7120",
+      "name": "GoveeLife Air Purifier H7120",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 69.99,
+      "referenceLink": "https://www.amazon.com/s?k=GoveeLife+H7120+air+purifier",
+      "actualPrice": null,
+      "quantity": 1,
+      "status": "pending",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/goveelife-air-purifier-h7120.jpg",
+      "description": "GoveeLife air purifier, model H7120, shown with the original box.",
+      "pickupNotes": "Hidden seller price not set yet, so this item is currently displayed as pending."
     }
   ]
 }

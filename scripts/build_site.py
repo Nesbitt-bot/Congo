@@ -133,6 +133,11 @@ ITEM_ZH = {
         "description": "Frigidaire 台面制冰机，标称每日制冰 26 磅，照片中展示了原包装箱。",
         "pickupNotes": "照片中可见原包装箱。属于台面尺寸的小型制冰机。",
     },
+    "goveelife-air-purifier-h7120": {
+        "name": "GoveeLife 空气净化器 H7120",
+        "description": "GoveeLife 空气净化器，型号 H7120，照片中展示了原包装箱。",
+        "pickupNotes": "隐藏售价尚未设置，因此该商品目前以待定状态展示。",
+    },
 }
 
 SITE_I18N = {
@@ -934,6 +939,8 @@ def summary_lines_for_catalog(catalog: dict, lang: str) -> str:
     site_line = f"最新页面：{site_url}" if is_zh else f"Latest update: {site_url}"
     sections = [intro, site_line, ""]
     for item in localized["items"]:
+        if item.get("status") == "sold":
+            continue
         price = item.get("actualPrice")
         price_label = (f"${int(price) if float(price).is_integer() else price}" if price is not None else ("待定" if is_zh else "Price pending"))
         item_url = f"{public}/{lang}/item/{item['id']}/?mode=plain"

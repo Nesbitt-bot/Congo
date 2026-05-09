@@ -15,34 +15,6 @@ Additional info: Includes original retail box shown in the photo.
 
 ![Sony EXTRA BASS SRS-XB23 Bluetooth Speaker](https://nesbitt-bot.github.io/Congo/media/sony-srs-xb23.jpg)
 
-## [ASUS ROG Swift PG329Q Monitor](https://nesbitt-bot.github.io/Congo/en/item/rog-swift-pg329q-monitor/?mode=plain) ($150)
-
-Earliest available: 2026-05-07
-Additional info: Box included. Additional photos available on request.
-
-![ASUS ROG Swift PG329Q Monitor](https://nesbitt-bot.github.io/Congo/media/rog-swift-pg329q-monitor.jpg)
-
-## [Bose Companion 2 Series III Speakers](https://nesbitt-bot.github.io/Congo/en/item/bose-companion-2-series-iii/?mode=plain) ($50)
-
-Earliest available: 2026-05-07
-Additional info: Three photos included: front view, rear connections, and model label.
-
-![Bose Companion 2 Series III Speakers](https://nesbitt-bot.github.io/Congo/media/bose-companion-2-series-iii-front.jpg)
-
-## [Lamicall Laptop Stand](https://nesbitt-bot.github.io/Congo/en/item/lamicall-laptop-stand/?mode=plain) ($5)
-
-Earliest available: 2026-05-07
-Additional info: Box included in the photo. Reference price uses Lamicall's current similar adjustable foldable laptop stand listing.
-
-![Lamicall Laptop Stand](https://nesbitt-bot.github.io/Congo/media/lamicall-laptop-stand.jpg)
-
-## [IKEA ELLOVEN Monitor Stand with Drawer](https://nesbitt-bot.github.io/Congo/en/item/ikea-elloven-monitor-stand-drawer/?mode=plain) ($5)
-
-Earliest available: 2026-05-07
-Additional info: Two photos included: open drawer view and product label/reference sticker.
-
-![IKEA ELLOVEN Monitor Stand with Drawer](https://nesbitt-bot.github.io/Congo/media/ikea-elloven-monitor-stand-open.jpg)
-
 ## [ASUS VP28UQG 28-inch 4K Monitor with Table Mount](https://nesbitt-bot.github.io/Congo/en/item/asus-vp28uqg-monitor-arm/?mode=plain) ($100)
 
 Earliest available: 2026-05-07
@@ -71,26 +43,12 @@ Additional info: Bundle includes the printer, extra black ink pack, and HP Premi
 
 ![HP Envy 6155e Printer Bundle](https://nesbitt-bot.github.io/Congo/media/hp-envy-6155e-printer-bundle.jpg)
 
-## [IKEA SKADIS Pegboard Set](https://nesbitt-bot.github.io/Congo/en/item/ikea-skadis-pegboard-set/?mode=plain) ($10)
-
-Earliest available: 2026-05-07
-Additional info: White IKEA SKÅDIS pegboard bundle with baskets, hooks, and trays. Hidden seller price is now set and the item is live.
-
-![IKEA SKADIS Pegboard Set](https://nesbitt-bot.github.io/Congo/media/ikea-skadis-pegboard-set.jpg)
-
 ## [Honeywell QuietSet 8 Whole Room 40-inch Tower Fan](https://nesbitt-bot.github.io/Congo/en/item/honeywell-quietset-8-fan/?mode=plain) ($15)
 
 Earliest available: 2026-05-07
 Additional info: Two photos included: full fan with box and close-up of the top controls.
 
 ![Honeywell QuietSet 8 Whole Room 40-inch Tower Fan](https://nesbitt-bot.github.io/Congo/media/honeywell-quietset-8-full.jpg)
-
-## [Herman Miller Aeron Chair, Fully Featured Model, Size B](https://nesbitt-bot.github.io/Congo/en/item/herman-miller-aeron-chair-size-b/?mode=plain) ($100)
-
-Earliest available: 2026-05-07
-Additional info: Two photos included. Reference price uses the exact SeatingMind listing you provided.
-
-![Herman Miller Aeron Chair, Fully Featured Model, Size B](https://nesbitt-bot.github.io/Congo/media/herman-miller-aeron-chair-front.jpg)
 
 ## [2 Whiteboards + 3 Color Marker Set](https://nesbitt-bot.github.io/Congo/en/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($10)
 
@@ -126,3 +84,10 @@ Earliest available: 2026-05-09
 Additional info: Original box visible in the photo. Countertop-size ice maker.
 
 ![Frigidaire Countertop Ice Maker (26 lbs/day)](https://nesbitt-bot.github.io/Congo/media/frigidaire-ice-maker.jpg)
+
+## [GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/en/item/goveelife-air-purifier-h7120/?mode=plain) (Price pending)
+
+Earliest available: 2026-05-09
+Additional info: Hidden seller price not set yet, so this item is currently displayed as pending.
+
+![GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/media/goveelife-air-purifier-h7120.jpg)

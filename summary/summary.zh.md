@@ -15,34 +15,6 @@
 
 ![Sony EXTRA BASS SRS-XB23 蓝牙音箱](https://nesbitt-bot.github.io/Congo/media/sony-srs-xb23.jpg)
 
-## [ASUS ROG Swift PG329Q 显示器](https://nesbitt-bot.github.io/Congo/zh/item/rog-swift-pg329q-monitor/?mode=plain) ($150)
-
-最早可取：2026-05-07
-附加信息：包含原包装箱，可按需提供更多照片。
-
-![ASUS ROG Swift PG329Q 显示器](https://nesbitt-bot.github.io/Congo/media/rog-swift-pg329q-monitor.jpg)
-
-## [Bose Companion 2 Series III 音箱](https://nesbitt-bot.github.io/Congo/zh/item/bose-companion-2-series-iii/?mode=plain) ($50)
-
-最早可取：2026-05-07
-附加信息：包含三张照片：正面、背部接口和型号标签。
-
-![Bose Companion 2 Series III 音箱](https://nesbitt-bot.github.io/Congo/media/bose-companion-2-series-iii-front.jpg)
-
-## [Lamicall 笔记本电脑支架](https://nesbitt-bot.github.io/Congo/zh/item/lamicall-laptop-stand/?mode=plain) ($5)
-
-最早可取：2026-05-07
-附加信息：照片中包含包装盒。参考价采用 Lamicall 当前同类可折叠支架。
-
-![Lamicall 笔记本电脑支架](https://nesbitt-bot.github.io/Congo/media/lamicall-laptop-stand.jpg)
-
-## [IKEA ELLOVEN 带抽屉显示器增高架](https://nesbitt-bot.github.io/Congo/zh/item/ikea-elloven-monitor-stand-drawer/?mode=plain) ($5)
-
-最早可取：2026-05-07
-附加信息：包含两张照片：抽屉展开视图和产品标签/参考贴纸。
-
-![IKEA ELLOVEN 带抽屉显示器增高架](https://nesbitt-bot.github.io/Congo/media/ikea-elloven-monitor-stand-open.jpg)
-
 ## [ASUS VP28UQG 28 英寸 4K 显示器（带桌夹支架）](https://nesbitt-bot.github.io/Congo/zh/item/asus-vp28uqg-monitor-arm/?mode=plain) ($100)
 
 最早可取：2026-05-07
@@ -71,26 +43,12 @@
 
 ![HP Envy 6155e 打印机套装](https://nesbitt-bot.github.io/Congo/media/hp-envy-6155e-printer-bundle.jpg)
 
-## [IKEA SKÅDIS 洞洞板套装](https://nesbitt-bot.github.io/Congo/zh/item/ikea-skadis-pegboard-set/?mode=plain) ($10)
-
-最早可取：2026-05-07
-附加信息：隐藏售价尚未设置，因此该商品暂时仅展示不开放出价。
-
-![IKEA SKÅDIS 洞洞板套装](https://nesbitt-bot.github.io/Congo/media/ikea-skadis-pegboard-set.jpg)
-
 ## [Honeywell QuietSet 8 40英寸塔扇](https://nesbitt-bot.github.io/Congo/zh/item/honeywell-quietset-8-fan/?mode=plain) ($15)
 
 最早可取：2026-05-07
 附加信息：包含两张照片：带包装箱的整机图和顶部控制面板近景。
 
 ![Honeywell QuietSet 8 40英寸塔扇](https://nesbitt-bot.github.io/Congo/media/honeywell-quietset-8-full.jpg)
-
-## [Herman Miller Aeron 人体工学椅（全功能，B号）](https://nesbitt-bot.github.io/Congo/zh/item/herman-miller-aeron-chair-size-b/?mode=plain) ($100)
-
-最早可取：2026-05-07
-附加信息：包含两张照片。参考价格使用你提供的 SeatingMind 对应商品页面。
-
-![Herman Miller Aeron 人体工学椅（全功能，B号）](https://nesbitt-bot.github.io/Congo/media/herman-miller-aeron-chair-front.jpg)
 
 ## [两块白板 + 三色白板笔套装](https://nesbitt-bot.github.io/Congo/zh/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($10)
 
@@ -126,3 +84,10 @@
 附加信息：照片中可见原包装箱。属于台面尺寸的小型制冰机。
 
 ![Frigidaire 台面制冰机（每日 26 磅）](https://nesbitt-bot.github.io/Congo/media/frigidaire-ice-maker.jpg)
+
+## [GoveeLife 空气净化器 H7120](https://nesbitt-bot.github.io/Congo/zh/item/goveelife-air-purifier-h7120/?mode=plain) (待定)
+
+最早可取：2026-05-09
+附加信息：隐藏售价尚未设置，因此该商品目前以待定状态展示。
+
+![GoveeLife 空气净化器 H7120](https://nesbitt-bot.github.io/Congo/media/goveelife-air-purifier-h7120.jpg)
