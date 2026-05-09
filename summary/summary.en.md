@@ -85,9 +85,9 @@ Additional info: Original box visible in the photo. Countertop-size ice maker.
 
 ![Frigidaire Countertop Ice Maker (26 lbs/day)](https://nesbitt-bot.github.io/Congo/media/frigidaire-ice-maker.jpg)
 
-## [GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/en/item/goveelife-air-purifier-h7120/?mode=plain) (Price pending)
+## [GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/en/item/goveelife-air-purifier-h7120/?mode=plain) ($10)
 
 Earliest available: 2026-05-09
-Additional info: Hidden seller price not set yet, so this item is currently displayed as pending.
+Additional info: Original box shown in the photo. Air purifier is now live with the seller price set.
 
 ![GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/media/goveelife-air-purifier-h7120.jpg)

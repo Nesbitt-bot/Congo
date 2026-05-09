@@ -329,13 +329,13 @@
       "condition": "Used - good",
       "referencePrice": 69.99,
       "referenceLink": "https://www.amazon.com/s?k=GoveeLife+H7120+air+purifier",
-      "actualPrice": null,
+      "actualPrice": 10,
       "quantity": 1,
-      "status": "pending",
+      "status": "available",
       "earliestPickupDate": "2026-05-09",
       "image": "media/goveelife-air-purifier-h7120.jpg",
       "description": "GoveeLife air purifier, model H7120, shown with the original box.",
-      "pickupNotes": "Hidden seller price not set yet, so this item is currently displayed as pending."
+      "pickupNotes": "Original box shown in the photo. Air purifier is now live with the seller price set."
     }
   ]
 }

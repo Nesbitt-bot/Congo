@@ -85,7 +85,7 @@
 
 ![Frigidaire 台面制冰机（每日 26 磅）](https://nesbitt-bot.github.io/Congo/media/frigidaire-ice-maker.jpg)
 
-## [GoveeLife 空气净化器 H7120](https://nesbitt-bot.github.io/Congo/zh/item/goveelife-air-purifier-h7120/?mode=plain) (待定)
+## [GoveeLife 空气净化器 H7120](https://nesbitt-bot.github.io/Congo/zh/item/goveelife-air-purifier-h7120/?mode=plain) ($10)
 
 最早可取：2026-05-09
 附加信息：隐藏售价尚未设置，因此该商品目前以待定状态展示。
