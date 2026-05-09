@@ -148,7 +148,7 @@
 
 ![黑色迷你移动小推车](https://nesbitt-bot.github.io/Congo/media/small-rolling-cart-black-front.jpg)
 
-## [悬挂式衣柜收纳层架](https://nesbitt-bot.github.io/Congo/zh/item/hanging-closet-organizer-6-shelf/?mode=plain) (待定)
+## [悬挂式衣柜收纳层架](https://nesbitt-bot.github.io/Congo/zh/item/hanging-closet-organizer-6-shelf/?mode=plain) ($5)
 
 最早可取：2026-05-09
 附加信息：实际售价尚未设置，因此该商品目前为待定状态。

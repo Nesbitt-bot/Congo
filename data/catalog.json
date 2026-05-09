@@ -484,9 +484,9 @@
       "condition": "Used - good",
       "referencePrice": 19.99,
       "referenceLink": "https://www.amazon.com/s?k=hanging+closet+shelf+organizer+6+shelf",
-      "actualPrice": null,
+      "actualPrice": 5,
       "quantity": 1,
-      "status": "pending",
+      "status": "available",
       "earliestPickupDate": "2026-05-09",
       "image": "media/hanging-closet-organizer-open.jpg",
       "images": [
@@ -494,7 +494,7 @@
         "media/hanging-closet-organizer-folded.jpg"
       ],
       "description": "Fabric hanging closet shelf organizer with multiple compartments, shown both opened and folded flat.",
-      "pickupNotes": "Actual price not set yet, so the listing is currently pending."
+      "pickupNotes": "Two photos included: opened hanging view and folded-flat view."
     }
   ]
 }
