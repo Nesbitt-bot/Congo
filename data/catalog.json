@@ -385,6 +385,25 @@
       "image": "media/black-tv-stand.jpg",
       "description": "Simple black TV stand / media table with one lower shelf.",
       "pickupNotes": "Single photo currently attached. Compact TV/media table size."
+    },
+    {
+      "id": "table-lamp-white-fabric-shade",
+      "name": "Table Lamp with Fabric Shade",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 24.99,
+      "referenceLink": "https://www.target.com/s?searchTerm=table+lamp+fabric+shade",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/table-lamp-white-on.jpg",
+      "images": [
+        "media/table-lamp-white-on.jpg",
+        "media/table-lamp-white-off.jpg"
+      ],
+      "description": "Small white table lamp with a fabric shade, shown both on and off.",
+      "pickupNotes": "Two photos included: lamp off and lamp lit."
     }
   ]
 }

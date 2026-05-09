@@ -112,3 +112,10 @@
 附加信息：当前只附带一张照片。属于紧凑型电视 / 媒体桌尺寸。
 
 ![黑色电视桌](https://nesbitt-bot.github.io/Congo/media/black-tv-stand.jpg)
+
+## [白色布罩台灯](https://nesbitt-bot.github.io/Congo/zh/item/table-lamp-white-fabric-shade/?mode=plain) ($5)
+
+最早可取：2026-05-09
+附加信息：包含两张照片：关闭状态和点亮状态。
+
+![白色布罩台灯](https://nesbitt-bot.github.io/Congo/media/table-lamp-white-on.jpg)

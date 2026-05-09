@@ -153,6 +153,11 @@ ITEM_ZH = {
         "description": "简洁的黑色电视桌 / 媒体桌，下方带一层置物板。",
         "pickupNotes": "当前只附带一张照片。属于紧凑型电视 / 媒体桌尺寸。",
     },
+    "table-lamp-white-fabric-shade": {
+        "name": "白色布罩台灯",
+        "description": "小型白色台灯，配布艺灯罩，照片中分别展示了亮灯和未亮灯状态。",
+        "pickupNotes": "包含两张照片：关闭状态和点亮状态。",
+    },
 }
 
 SITE_I18N = {

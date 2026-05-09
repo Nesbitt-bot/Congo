@@ -112,3 +112,10 @@ Earliest available: 2026-05-09
 Additional info: Single photo currently attached. Compact TV/media table size.
 
 ![Black TV Stand](https://nesbitt-bot.github.io/Congo/media/black-tv-stand.jpg)
+
+## [Table Lamp with Fabric Shade](https://nesbitt-bot.github.io/Congo/en/item/table-lamp-white-fabric-shade/?mode=plain) ($5)
+
+Earliest available: 2026-05-09
+Additional info: Two photos included: lamp off and lamp lit.
+
+![Table Lamp with Fabric Shade](https://nesbitt-bot.github.io/Congo/media/table-lamp-white-on.jpg)
