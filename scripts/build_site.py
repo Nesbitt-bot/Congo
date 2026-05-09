@@ -148,6 +148,11 @@ ITEM_ZH = {
         "description": "黑色置物落地灯，自带多层置物架和白色布艺灯罩。",
         "pickupNotes": "包含两张照片：整体组装视图和顶部灯罩视图。",
     },
+    "black-tv-stand": {
+        "name": "黑色电视桌",
+        "description": "简洁的黑色电视桌 / 媒体桌，下方带一层置物板。",
+        "pickupNotes": "当前只附带一张照片。属于紧凑型电视 / 媒体桌尺寸。",
+    },
 }
 
 SITE_I18N = {

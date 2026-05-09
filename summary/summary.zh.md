@@ -105,3 +105,10 @@
 附加信息：包含两张照片：整体组装视图和顶部灯罩视图。
 
 ![黑色置物落地灯](https://nesbitt-bot.github.io/Congo/media/shelf-floor-lamp-front.jpg)
+
+## [黑色电视桌](https://nesbitt-bot.github.io/Congo/zh/item/black-tv-stand/?mode=plain) ($10)
+
+最早可取：2026-05-09
+附加信息：当前只附带一张照片。属于紧凑型电视 / 媒体桌尺寸。
+
+![黑色电视桌](https://nesbitt-bot.github.io/Congo/media/black-tv-stand.jpg)

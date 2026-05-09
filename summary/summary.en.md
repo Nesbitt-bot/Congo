@@ -105,3 +105,10 @@ Earliest available: 2026-05-09
 Additional info: Two photos included: full assembled view and top shade view.
 
 ![Shelf Floor Lamp](https://nesbitt-bot.github.io/Congo/media/shelf-floor-lamp-front.jpg)
+
+## [Black TV Stand](https://nesbitt-bot.github.io/Congo/en/item/black-tv-stand/?mode=plain) ($10)
+
+Earliest available: 2026-05-09
+Additional info: Single photo currently attached. Compact TV/media table size.
+
+![Black TV Stand](https://nesbitt-bot.github.io/Congo/media/black-tv-stand.jpg)

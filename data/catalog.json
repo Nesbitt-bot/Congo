@@ -370,6 +370,21 @@
       ],
       "description": "Black shelf floor lamp with built-in display shelves and a white fabric shade.",
       "pickupNotes": "Two photos included: full assembled view and top shade view."
+    },
+    {
+      "id": "black-tv-stand",
+      "name": "Black TV Stand",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 59.99,
+      "referenceLink": "https://www.amazon.com/s?k=black+tv+stand",
+      "actualPrice": 10,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/black-tv-stand.jpg",
+      "description": "Simple black TV stand / media table with one lower shelf.",
+      "pickupNotes": "Single photo currently attached. Compact TV/media table size."
     }
   ]
 }
