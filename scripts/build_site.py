@@ -138,6 +138,11 @@ ITEM_ZH = {
         "description": "GoveeLife 空气净化器，型号 H7120，照片中展示了原包装箱。",
         "pickupNotes": "隐藏售价尚未设置，因此该商品目前以待定状态展示。",
     },
+    "ikea-kallax-shelf-drawers": {
+        "name": "IKEA KALLAX 书架 + 折叠抽屉套装",
+        "description": "黑棕色 IKEA KALLAX 风格格架，包含折叠布抽屉套装。",
+        "pickupNotes": "照片中展示了已组装的架子，顶部放着折叠抽屉，另有一个抽屉已装入格架。",
+    },
 }
 
 SITE_I18N = {

@@ -91,3 +91,10 @@
 附加信息：隐藏售价尚未设置，因此该商品目前以待定状态展示。
 
 ![GoveeLife 空气净化器 H7120](https://nesbitt-bot.github.io/Congo/media/goveelife-air-purifier-h7120.jpg)
+
+## [IKEA KALLAX 书架 + 折叠抽屉套装](https://nesbitt-bot.github.io/Congo/zh/item/ikea-kallax-shelf-drawers/?mode=plain) ($10)
+
+最早可取：2026-05-09
+附加信息：照片中展示了已组装的架子，顶部放着折叠抽屉，另有一个抽屉已装入格架。
+
+![IKEA KALLAX 书架 + 折叠抽屉套装](https://nesbitt-bot.github.io/Congo/media/ikea-kallax-drawers-shelf.jpg)

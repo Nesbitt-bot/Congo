@@ -336,6 +336,21 @@
       "image": "media/goveelife-air-purifier-h7120.jpg",
       "description": "GoveeLife air purifier, model H7120, shown with the original box.",
       "pickupNotes": "Original box shown in the photo. Air purifier is now live with the seller price set."
+    },
+    {
+      "id": "ikea-kallax-shelf-drawers",
+      "name": "IKEA KALLAX Shelf with Foldable Drawer Set",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 79.97,
+      "referenceLink": "https://www.ikea.com/us/en/search/?q=KALLAX%20black-brown",
+      "actualPrice": 10,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/ikea-kallax-drawers-shelf.jpg",
+      "description": "Black-brown IKEA KALLAX-style cube shelf bundle with foldable fabric drawers included.",
+      "pickupNotes": "Photo shows the shelf assembled with the foldable drawer set stacked on top and one drawer inserted."
     }
   ]
 }

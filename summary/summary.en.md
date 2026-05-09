@@ -91,3 +91,10 @@ Earliest available: 2026-05-09
 Additional info: Original box shown in the photo. Air purifier is now live with the seller price set.
 
 ![GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/media/goveelife-air-purifier-h7120.jpg)
+
+## [IKEA KALLAX Shelf with Foldable Drawer Set](https://nesbitt-bot.github.io/Congo/en/item/ikea-kallax-shelf-drawers/?mode=plain) ($10)
+
+Earliest available: 2026-05-09
+Additional info: Photo shows the shelf assembled with the foldable drawer set stacked on top and one drawer inserted.
+
+![IKEA KALLAX Shelf with Foldable Drawer Set](https://nesbitt-bot.github.io/Congo/media/ikea-kallax-drawers-shelf.jpg)
