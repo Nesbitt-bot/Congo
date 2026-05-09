@@ -175,6 +175,7 @@ SITE_I18N = {
             "statusAvailable": "available",
             "statusPending": "pending",
             "statusUnavailable": "Unavailable",
+            "statusSold": "Sold out",
             "threeChances": "3 chances",
             "priceHiddenUntilGuess": "Price hidden until you guess high enough",
             "generatedNegotiablePrice": "{price} (negotiable)",
@@ -300,6 +301,7 @@ SITE_I18N = {
             "statusAvailable": "在售",
             "statusPending": "待定价格",
             "statusUnavailable": "暂不可售",
+            "statusSold": "已售出",
             "threeChances": "3 次机会",
             "priceHiddenUntilGuess": "价格会在你猜得足够高时解锁",
             "generatedNegotiablePrice": "{price}（可砍价）",
@@ -543,6 +545,8 @@ def display_status(item: dict, site: dict) -> str:
         return strings["statusAvailable"]
     if status == "pending":
         return strings["statusPending"]
+    if status == "sold":
+        return strings["statusSold"]
     return strings["statusUnavailable"]
 
 

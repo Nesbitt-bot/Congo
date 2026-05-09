@@ -213,9 +213,11 @@ function productCard(item, site) {
   const sold = !itemReadyForGuessing(item);
   const badgeText = item.status === 'pending'
     ? t('statusPending', 'pending')
-    : sold
-      ? t('statusUnavailable', 'Unavailable')
-      : t('threeChances', '3 chances');
+    : item.status === 'sold'
+      ? t('statusSold', 'Sold out')
+      : sold
+        ? t('statusUnavailable', 'Unavailable')
+        : t('threeChances', '3 chances');
   const unlockedText = !isGuessMode()
     ? `${t('listedPrice', 'Listed price')}: ${money(item.actualPrice ?? getPublicNegotiablePrice(item), site.currency)}`
     : unlocked
