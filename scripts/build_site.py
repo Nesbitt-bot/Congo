@@ -153,6 +153,9 @@ SITE_I18N = {
             "modePlainButton": "Open plain version",
             "listedPrice": "Listed price",
             "plainModeNotice": "Plain version — actual price shown directly.",
+            "hideSoldOut": "Hide sold out",
+            "showingItems": "Showing {shown} of {total}",
+            "loadingMore": "Scroll down to load more items",
             "searchPlaceholder": "Search furniture, monitors, supplies...",
             "availableItemsTitle": "Available items",
             "availableItemsDesc": "Furniture, computer supplies, and anything else that needs a new home before graduation.",
@@ -279,6 +282,9 @@ SITE_I18N = {
             "modePlainButton": "打开直售价版",
             "listedPrice": "现价",
             "plainModeNotice": "直售价版本——直接显示实际价格。",
+            "hideSoldOut": "隐藏已售出",
+            "showingItems": "已显示 {shown} / {total}",
+            "loadingMore": "向下滚动以加载更多商品",
             "searchPlaceholder": "搜索家具、显示器、电脑用品……",
             "availableItemsTitle": "在售商品",
             "availableItemsDesc": "家具、电脑用品，以及毕业前需要转手的其他物件。",
@@ -747,8 +753,16 @@ def index_body(site: dict) -> str:
           <p>{escape(s['availableItemsDesc'])}</p>
         </div>
       </div>
+      <div class=\"catalog-toolbar panel\">
+        <label class=\"toggle-row\">
+          <input id=\"hide-sold-toggle\" type=\"checkbox\" checked />
+          <span>{escape(s['hideSoldOut'])}</span>
+        </label>
+        <div class=\"muted\" id=\"catalog-count\"></div>
+      </div>
       <div id=\"page-error\" class=\"status-box bad hide\"></div>
       <div id=\"catalog-grid\" class=\"catalog-grid\"></div>
+      <div id=\"catalog-sentinel\" class=\"catalog-sentinel muted\">{escape(s['loadingMore'])}</div>
     </main>
     """
 

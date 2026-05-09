@@ -270,58 +270,113 @@ function renderIndex(catalog) {
   const items = catalog.items || [];
   const grid = document.getElementById('catalog-grid');
   const searchInput = document.getElementById('global-search');
+  const hideSoldToggle = document.getElementById('hide-sold-toggle');
+  const countNode = document.getElementById('catalog-count');
+  const sentinel = document.getElementById('catalog-sentinel');
+  const batchSize = 12;
+  let visibleCount = batchSize;
   const activeFilters = {
     category: new URLSearchParams(window.location.search).get('category') || t('allCategory', 'All'),
     query: new URLSearchParams(window.location.search).get('q') || '',
+    hideSold: true,
   };
 
   if (searchInput) searchInput.value = activeFilters.query;
+  if (hideSoldToggle) hideSoldToggle.checked = activeFilters.hideSold;
   renderModeChooser();
 
-  function draw(pushState = false) {
-    renderCategoryChips(items, activeFilters.category);
-    const filtered = items.filter((item) => {
+  function getFiltered() {
+    return items.filter((item) => {
       const matchCategory = activeFilters.category === t('allCategory', 'All') || item.category === activeFilters.category;
       const needle = activeFilters.query.trim().toLowerCase();
       const hay = [item.name, item.category, item.description, item.condition].join(' ').toLowerCase();
       const matchQuery = !needle || hay.includes(needle);
-      return matchCategory && matchQuery;
+      const matchSold = !activeFilters.hideSold || item.status !== 'sold';
+      return matchCategory && matchQuery && matchSold;
     });
+  }
+
+  function updateCount(shown, total) {
+    if (countNode) countNode.textContent = t('showingItems', 'Showing {shown} of {total}', { shown, total });
+  }
+
+  function draw(pushState = false, resetVisible = false) {
+    renderCategoryChips(items, activeFilters.category);
+    const filtered = getFiltered();
+    if (resetVisible) visibleCount = batchSize;
+    const shownItems = filtered.slice(0, visibleCount);
 
     if (pushState) {
-      const url = buildIndexUrl({ query: activeFilters.query, category: activeFilters.category });
-      window.history.replaceState({}, '', url);
+      window.history.replaceState({}, '', buildIndexUrl({ query: activeFilters.query, category: activeFilters.category }));
     }
 
     if (!grid) return;
     if (!filtered.length) {
+      updateCount(0, 0);
       grid.innerHTML = `
         <div class="empty-state">
           <h3>${escapeHtml(t('noMatchTitle', 'No items matched that search.'))}</h3>
           <p class="muted">${escapeHtml(t('noMatchDesc', 'Try another keyword or another category.'))}</p>
         </div>
       `;
+      if (sentinel) sentinel.classList.add('hide');
       return;
     }
-    grid.innerHTML = filtered.map((item) => productCard(item, site)).join('');
+
+    updateCount(Math.min(visibleCount, filtered.length), filtered.length);
+    grid.innerHTML = shownItems.map((item) => productCard(item, site)).join('');
+    if (sentinel) {
+      if (shownItems.length >= filtered.length) sentinel.classList.add('hide');
+      else sentinel.classList.remove('hide');
+    }
   }
 
-  draw();
+  function loadMore() {
+    const filtered = getFiltered();
+    if (visibleCount >= filtered.length) return;
+    visibleCount += batchSize;
+    draw(false, false);
+  }
+
+  draw(false, true);
 
   document.addEventListener('click', (event) => {
     const button = event.target.closest('[data-category]');
     if (!button) return;
     activeFilters.category = button.dataset.category;
-    draw(true);
+    draw(true, true);
   });
 
   if (searchInput) {
     searchInput.addEventListener('input', (event) => {
       activeFilters.query = event.target.value;
-      draw(true);
+      draw(true, true);
     });
   }
+
+  if (hideSoldToggle) {
+    hideSoldToggle.addEventListener('change', (event) => {
+      activeFilters.hideSold = !!event.target.checked;
+      draw(false, true);
+    });
+  }
+
+  if (sentinel && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) loadMore();
+      });
+    }, { rootMargin: '400px 0px' });
+    observer.observe(sentinel);
+  } else {
+    window.addEventListener('scroll', () => {
+      if (!sentinel) return;
+      const rect = sentinel.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 400) loadMore();
+    }, { passive: true });
+  }
 }
+
 
 function addToCart(item, quantity = 1) {
   const guessEntry = getGuessEntry(item.id);
