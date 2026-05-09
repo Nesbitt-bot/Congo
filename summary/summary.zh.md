@@ -182,3 +182,10 @@
 附加信息：目前照片展示的是收纳盒；如果后续补充吹风机或配件照片，可以继续加到这个条目里。
 
 ![戴森吹风机（含收纳盒）](https://nesbitt-bot.github.io/Congo/media/dyson-hair-dryer-case.jpg)
+
+## [GoveeLife 智能加湿器](https://nesbitt-bot.github.io/Congo/zh/item/goveelife-smart-humidifier/?mode=plain) ($5)
+
+最早可取：2026-05-09
+附加信息：照片中展示了加湿器及其电源适配器，具体型号编号不可见。
+
+![GoveeLife 智能加湿器](https://nesbitt-bot.github.io/Congo/media/goveelife-smart-humidifier-white.jpg)

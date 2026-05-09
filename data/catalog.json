@@ -555,6 +555,21 @@
       "image": "media/dyson-hair-dryer-case.jpg",
       "description": "Dyson hair dryer listing with the purple storage/presentation case shown in the photo. Exact variant is not verified from the image alone.",
       "pickupNotes": "Current photo shows the storage case; if more photos of the dryer/attachments arrive, they can be added to this listing."
+    },
+    {
+      "id": "goveelife-smart-humidifier",
+      "name": "GoveeLife Smart Humidifier",
+      "category": "Electronics",
+      "condition": "Used - good",
+      "referencePrice": 29.99,
+      "referenceLink": "https://www.amazon.com/s?k=GoveeLife+smart+humidifier",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/goveelife-smart-humidifier-white.jpg",
+      "description": "White GoveeLife smart humidifier with power adapter included. Exact model is not verified from the photo alone.",
+      "pickupNotes": "Photo shows the humidifier powered by its included adapter. Exact model number is not visible."
     }
   ]
 }

@@ -182,3 +182,10 @@ Earliest available: 2026-05-09
 Additional info: Current photo shows the storage case; if more photos of the dryer/attachments arrive, they can be added to this listing.
 
 ![Dyson Hair Dryer with Storage Case](https://nesbitt-bot.github.io/Congo/media/dyson-hair-dryer-case.jpg)
+
+## [GoveeLife Smart Humidifier](https://nesbitt-bot.github.io/Congo/en/item/goveelife-smart-humidifier/?mode=plain) ($5)
+
+Earliest available: 2026-05-09
+Additional info: Photo shows the humidifier powered by its included adapter. Exact model number is not visible.
+
+![GoveeLife Smart Humidifier](https://nesbitt-bot.github.io/Congo/media/goveelife-smart-humidifier-white.jpg)

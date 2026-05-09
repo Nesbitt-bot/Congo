@@ -203,6 +203,11 @@ ITEM_ZH = {
         "description": "戴森吹风机，附带照片中的紫色收纳/展示盒。仅凭当前图片无法确认具体型号。",
         "pickupNotes": "目前照片展示的是收纳盒；如果后续补充吹风机或配件照片，可以继续加到这个条目里。",
     },
+    "goveelife-smart-humidifier": {
+        "name": "GoveeLife 智能加湿器",
+        "description": "白色 GoveeLife 智能加湿器，附带电源适配器。仅凭当前照片无法确认具体型号。",
+        "pickupNotes": "照片中展示了加湿器及其电源适配器，具体型号编号不可见。",
+    },
 }
 
 SITE_I18N = {
