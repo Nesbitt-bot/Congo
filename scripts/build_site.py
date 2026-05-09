@@ -158,6 +158,11 @@ ITEM_ZH = {
         "description": "小型白色台灯，配布艺灯罩，照片中分别展示了亮灯和未亮灯状态。",
         "pickupNotes": "包含两张照片：关闭状态和点亮状态。",
     },
+    "queen-bed-frame-klv-up-088": {
+        "name": "KLV-UP-088 易组装大号床架",
+        "description": "易于组装的大号床架，黑色软包菱格床头，型号 KLV-UP-088。",
+        "pickupNotes": "包含两张照片：正面视图和斜角视图。不含床垫。",
+    },
 }
 
 SITE_I18N = {

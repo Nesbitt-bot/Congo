@@ -404,6 +404,25 @@
       ],
       "description": "Small white table lamp with a fabric shade, shown both on and off.",
       "pickupNotes": "Two photos included: lamp off and lamp lit."
+    },
+    {
+      "id": "queen-bed-frame-klv-up-088",
+      "name": "Queen Bed Frame KLV-UP-088",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 129.99,
+      "referenceLink": "https://www.amazon.com/s?k=KLV-UP-088+queen+bed+frame",
+      "actualPrice": 30,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/queen-bed-frame-klv-up-088-front.jpg",
+      "images": [
+        "media/queen-bed-frame-klv-up-088-front.jpg",
+        "media/queen-bed-frame-klv-up-088-angle.jpg"
+      ],
+      "description": "Easy-assemble queen-size bed frame with black upholstered tufted headboard, model KLV-UP-088.",
+      "pickupNotes": "Two photos included: front view and angled view. Mattress not included."
     }
   ]
 }

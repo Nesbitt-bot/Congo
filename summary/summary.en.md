@@ -119,3 +119,10 @@ Earliest available: 2026-05-09
 Additional info: Two photos included: lamp off and lamp lit.
 
 ![Table Lamp with Fabric Shade](https://nesbitt-bot.github.io/Congo/media/table-lamp-white-on.jpg)
+
+## [Queen Bed Frame KLV-UP-088](https://nesbitt-bot.github.io/Congo/en/item/queen-bed-frame-klv-up-088/?mode=plain) ($30)
+
+Earliest available: 2026-05-09
+Additional info: Two photos included: front view and angled view. Mattress not included.
+
+![Queen Bed Frame KLV-UP-088](https://nesbitt-bot.github.io/Congo/media/queen-bed-frame-klv-up-088-front.jpg)

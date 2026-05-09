@@ -119,3 +119,10 @@
 附加信息：包含两张照片：关闭状态和点亮状态。
 
 ![白色布罩台灯](https://nesbitt-bot.github.io/Congo/media/table-lamp-white-on.jpg)
+
+## [KLV-UP-088 易组装大号床架](https://nesbitt-bot.github.io/Congo/zh/item/queen-bed-frame-klv-up-088/?mode=plain) ($30)
+
+最早可取：2026-05-09
+附加信息：包含两张照片：正面视图和斜角视图。不含床垫。
+
+![KLV-UP-088 易组装大号床架](https://nesbitt-bot.github.io/Congo/media/queen-bed-frame-klv-up-088-front.jpg)
