@@ -660,6 +660,21 @@
       "image": "media/mesh-file-organizers-2pack-white.jpg",
       "description": "Two white metal mesh file organizers / magazine holders sold together as a 2-pack.",
       "pickupNotes": "Photo shows both organizers together; this listing is for the pair."
+    },
+    {
+      "id": "chemical-safety-goggles-clear",
+      "name": "Chemical Safety Goggles",
+      "category": "Household",
+      "condition": "Used - good",
+      "referencePrice": 8.99,
+      "referenceLink": "https://www.amazon.com/s?k=chemical+safety+goggles",
+      "actualPrice": 3,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/chemical-safety-goggles-clear.jpg",
+      "description": "Clear chemical safety goggles with adjustable black strap.",
+      "pickupNotes": "Generic lab / chemistry safety goggles. No specific brand or model is visible in the photo."
     }
   ]
 }

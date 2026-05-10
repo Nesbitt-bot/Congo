@@ -239,6 +239,11 @@ ITEM_ZH = {
         "description": "两只白色金属网格文件收纳架 / 杂志架，一起作为两件套出售。",
         "pickupNotes": "照片中两只收纳架一起出售，此条目对应整套。",
     },
+    "chemical-safety-goggles-clear": {
+        "name": "化学实验护目镜",
+        "description": "透明化学实验 / 安全护目镜，带可调节黑色松紧带。",
+        "pickupNotes": "通用实验室 / 化学护目镜。照片中看不出具体品牌或型号。",
+    },
 }
 
 SITE_I18N = {

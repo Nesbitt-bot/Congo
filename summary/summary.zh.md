@@ -231,3 +231,10 @@
 附加信息：照片中两只收纳架一起出售，此条目对应整套。
 
 ![白色网格文件收纳架两件套](https://nesbitt-bot.github.io/Congo/media/mesh-file-organizers-2pack-white.jpg)
+
+## [化学实验护目镜](https://nesbitt-bot.github.io/Congo/zh/item/chemical-safety-goggles-clear/?mode=plain) ($3)
+
+最早可取：2026-05-09
+附加信息：通用实验室 / 化学护目镜。照片中看不出具体品牌或型号。
+
+![化学实验护目镜](https://nesbitt-bot.github.io/Congo/media/chemical-safety-goggles-clear.jpg)

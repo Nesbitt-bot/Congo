@@ -231,3 +231,10 @@ Earliest available: 2026-05-09
 Additional info: Photo shows both organizers together; this listing is for the pair.
 
 ![Mesh File Organizers (2-Pack)](https://nesbitt-bot.github.io/Congo/media/mesh-file-organizers-2pack-white.jpg)
+
+## [Chemical Safety Goggles](https://nesbitt-bot.github.io/Congo/en/item/chemical-safety-goggles-clear/?mode=plain) ($3)
+
+Earliest available: 2026-05-09
+Additional info: Generic lab / chemistry safety goggles. No specific brand or model is visible in the photo.
+
+![Chemical Safety Goggles](https://nesbitt-bot.github.io/Congo/media/chemical-safety-goggles-clear.jpg)
