@@ -185,7 +185,7 @@ img {
 .language-switch {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0;
   color: #d8e2e9;
   font-size: 0.9rem;
   white-space: nowrap;
@@ -199,6 +199,12 @@ img {
   background: rgba(255, 255, 255, 0.08);
   color: white;
   padding: 0 10px;
+}
+
+.language-select-flags {
+  min-width: 88px;
+  padding: 0 12px;
+  font-weight: 700;
 }
 
 .language-select option {

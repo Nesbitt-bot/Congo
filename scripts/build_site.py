@@ -855,11 +855,10 @@ def topbar_html(*, asset_root: str, page_root: str, site: dict, page: str, switc
           <span class=\"cart-icon\">🛒</span>
           <span class=\"cart-count-inline\"><span data-cart-count>0</span></span>
         </a>
-        <div class=\"language-switch\">
-          <span class=\"language-switch-label\">{escape(s['langSwitchLabel'])}</span>
-          <select class=\"language-select\" data-language-switch>
-            <option value=\"{switch_en}\" {"selected" if current_lang == "en" else ""}>{escape(s['langEnglish'])}</option>
-            <option value=\"{switch_zh}\" {"selected" if current_lang == "zh" else ""}>{escape(s['langChinese'])}</option>
+        <div class="language-switch">
+          <select class="language-select language-select-flags" data-language-switch aria-label="{escape(s['langSwitchLabel'])}">
+            <option value="{switch_en}" {"selected" if current_lang == "en" else ""}>🇺🇸 EN</option>
+            <option value="{switch_zh}" {"selected" if current_lang == "zh" else ""}>🇨🇳 中文</option>
           </select>
         </div>
       </div>
