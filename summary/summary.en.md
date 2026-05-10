@@ -238,3 +238,10 @@ Earliest available: 2026-05-09
 Additional info: Generic lab / chemistry safety goggles. No specific brand or model is visible in the photo.
 
 ![Chemical Safety Goggles](https://nesbitt-bot.github.io/Congo/media/chemical-safety-goggles-clear.jpg)
+
+## [Ninja Blender with Auto-iQ](https://nesbitt-bot.github.io/Congo/en/item/ninja-blender-auto-iq-black/?mode=plain) ($15)
+
+Earliest available: 2026-05-09
+Additional info: Brand is clearly visible. Photo shows the blender base and large pitcher assembled together.
+
+![Ninja Blender with Auto-iQ](https://nesbitt-bot.github.io/Congo/media/ninja-blender-auto-iq-black.jpg)

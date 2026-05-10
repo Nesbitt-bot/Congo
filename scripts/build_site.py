@@ -244,6 +244,11 @@ ITEM_ZH = {
         "description": "透明化学实验 / 安全护目镜，带可调节黑色松紧带。",
         "pickupNotes": "通用实验室 / 化学护目镜。照片中看不出具体品牌或型号。",
     },
+    "ninja-blender-auto-iq-black": {
+        "name": "Ninja Auto-iQ 搅拌机",
+        "description": "黑色 Ninja 台式搅拌机，带大容量搅拌杯和 Auto-iQ 控制面板。仅凭当前照片无法确认具体型号。",
+        "pickupNotes": "品牌清晰可见。照片中展示的是搅拌机底座和已装好的大杯体。",
+    },
 }
 
 SITE_I18N = {

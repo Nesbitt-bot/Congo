@@ -238,3 +238,10 @@
 附加信息：通用实验室 / 化学护目镜。照片中看不出具体品牌或型号。
 
 ![化学实验护目镜](https://nesbitt-bot.github.io/Congo/media/chemical-safety-goggles-clear.jpg)
+
+## [Ninja Auto-iQ 搅拌机](https://nesbitt-bot.github.io/Congo/zh/item/ninja-blender-auto-iq-black/?mode=plain) ($15)
+
+最早可取：2026-05-09
+附加信息：品牌清晰可见。照片中展示的是搅拌机底座和已装好的大杯体。
+
+![Ninja Auto-iQ 搅拌机](https://nesbitt-bot.github.io/Congo/media/ninja-blender-auto-iq-black.jpg)

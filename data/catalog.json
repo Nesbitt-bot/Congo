@@ -675,6 +675,21 @@
       "image": "media/chemical-safety-goggles-clear.jpg",
       "description": "Clear chemical safety goggles with adjustable black strap.",
       "pickupNotes": "Generic lab / chemistry safety goggles. No specific brand or model is visible in the photo."
+    },
+    {
+      "id": "ninja-blender-auto-iq-black",
+      "name": "Ninja Blender with Auto-iQ",
+      "category": "Household",
+      "condition": "Used - good",
+      "referencePrice": 89.99,
+      "referenceLink": "https://www.amazon.com/s?k=Ninja+blender+Auto-iQ",
+      "actualPrice": 15,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/ninja-blender-auto-iq-black.jpg",
+      "description": "Black Ninja countertop blender with large pitcher and Auto-iQ control panel. Exact model number is not verified from the photo alone.",
+      "pickupNotes": "Brand is clearly visible. Photo shows the blender base and large pitcher assembled together."
     }
   ]
 }
