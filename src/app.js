@@ -175,6 +175,41 @@ function renderCategoryChips(items, activeCategory = t('allCategory', 'All')) {
     .join('');
 }
 
+function buildModeUrl(mode) {
+  const url = new URL(window.location.href);
+  url.searchParams.set('mode', mode);
+  return `${url.pathname}${url.search}`;
+}
+
+function renderModeChooser() {
+  const host = document.getElementById('mode-chooser');
+  if (!host) return;
+
+  if (!siteGuessEnabled) {
+    host.classList.add('hide');
+    return;
+  }
+
+  host.classList.remove('hide');
+
+  const plainLink = document.getElementById('mode-plain-link');
+  const guessLink = document.getElementById('mode-guess-link');
+  const activeMode = currentMode();
+
+  if (plainLink) {
+    plainLink.href = buildModeUrl('plain');
+    plainLink.classList.toggle('btn-amazon', activeMode === 'plain');
+    plainLink.classList.toggle('btn-ghost', activeMode !== 'plain');
+    plainLink.setAttribute('aria-current', activeMode === 'plain' ? 'page' : 'false');
+  }
+
+  if (guessLink) {
+    guessLink.href = buildModeUrl('guess');
+    guessLink.classList.toggle('btn-amazon', activeMode === 'guess');
+    guessLink.classList.toggle('btn-ghost', activeMode !== 'guess');
+    guessLink.setAttribute('aria-current', activeMode === 'guess' ? 'page' : 'false');
+  }
+}
 
 function attachLanguageSwitch() {
   const select = document.querySelector('[data-language-switch]');
