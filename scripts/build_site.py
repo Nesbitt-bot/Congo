@@ -187,17 +187,17 @@ ITEM_ZH = {
     "over-door-basket-organizer-white": {
         "name": "白色门后双层收纳篮",
         "description": "白色门后双层收纳篮，带木纹层板。",
-        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+        "pickupNotes": "白色门后双层收纳篮，带木纹层板。",
     },
     "over-door-hook-rack-white": {
         "name": "白色门后挂钩架",
         "description": "白色门后挂钩架，下方有五个挂钩。",
-        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+        "pickupNotes": "白色门后挂钩架，下方有五个挂钩。",
     },
     "over-door-hook-rack-black": {
         "name": "黑色门后挂钩架",
         "description": "黑色门后挂钩架，下方有五个挂钩。",
-        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+        "pickupNotes": "黑色门后挂钩架，下方有五个挂钩。",
     },
     "dyson-hair-dryer-with-case": {
         "name": "戴森吹风机（含收纳盒）",
@@ -278,6 +278,7 @@ SITE_I18N = {
             "modeGuessButton": "Open bonus guessing version",
             "modePlainButton": "Open plain version",
             "listedPrice": "Listed price",
+            "actualPriceLabel": "Actual price",
             "plainModeNotice": "Plain version — actual price shown directly.",
             "hideSoldOut": "Hide sold out",
             "showingItems": "Showing {shown} of {total}",
@@ -408,6 +409,7 @@ SITE_I18N = {
             "modeGuessButton": "打开加分彩蛋猜价版",
             "modePlainButton": "打开直售价版",
             "listedPrice": "现价",
+            "actualPriceLabel": "实际价格",
             "plainModeNotice": "直售价版本——直接显示实际价格。",
             "hideSoldOut": "隐藏已售出",
             "showingItems": "已显示 {shown} / {total}",
@@ -608,6 +610,27 @@ def ensure_qr_png(target_url: str) -> Path:
     return path
 
 
+def ensure_square_card_image(image_path: str | None, size: int = 420) -> Path:
+    out_dir = CACHE / "og-images"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    source = ROOT / str(image_path or "")
+    if not source.exists():
+        source = ASSETS / PLACEHOLDER_NAME
+    digest = hashlib.sha1(f"{source}:{size}".encode("utf-8")).hexdigest()[:16]
+    out = out_dir / f"{digest}.png"
+    if out.exists():
+        return out
+    run_convert([
+        str(source),
+        "-auto-orient",
+        "-resize", f"{size}x{size}^",
+        "-gravity", "center",
+        "-extent", f"{size}x{size}",
+        str(out),
+    ])
+    return out
+
+
 def rel_prefix(from_dir: Path, to_dir: Path) -> str:
     rel = Path(shutil.os.path.relpath(to_dir, from_dir))
     s = rel.as_posix()
@@ -642,39 +665,87 @@ def create_favicon(path: Path) -> None:
     )
 
 
-def create_poster_png(path: Path, *, site: dict, lang: str, title: str, subtitle_lines: list[str], footer: str, qr_target: str) -> None:
+def create_poster_png(path: Path, *, site: dict, lang: str, title: str, subtitle_lines: list[str], footer: str, qr_target: str, item: dict | None = None) -> None:
     qr_path = ensure_qr_png(qr_target)
     tmp = path.with_suffix(".tmp.png")
-    caption = site["strings"]["posterQrCaption"]
+    top_title = site["strings"].get("posterDefaultTitle", site.get("title", "Congo"))
+
+    if item is None:
+        caption = site["strings"]["posterQrCaption"]
+        run_convert([
+            "-size", "1200x630", "gradient:#131a22-#243b55",
+            "-fill", "#f3a847", "-draw", "rectangle 0,0 1200,96",
+            "-fill", "#131a22", "-font", str(FONT_BOLD), "-gravity", "northwest",
+            "-pointsize", "42", "-annotate", "+56+26", top_title,
+            "-fill", "white", "-font", str(FONT_BOLD), "-pointsize", "68",
+            "-annotate", "+56+150", wrap_lines(title, 20, max_lines=1)[0],
+            *(sum(([
+                "-fill", "white",
+                "-font", str(FONT_BOLD),
+                "-pointsize", "68",
+                "-annotate", f"+56+{150 + idx * 76}", line,
+            ] for idx, line in enumerate(wrap_lines(title, 20, max_lines=2))), [])),
+            *(sum(([
+                "-fill", "#dbe6ef", "-font", str(FONT_REGULAR),
+                "-pointsize", "32", "-annotate", f"+56+{320 + idx * 42}", line,
+            ] for idx, line in enumerate(subtitle_lines[:2])), [])),
+            "-fill", "#0c1118", "-draw", "roundrectangle 40,430 1160,590 28,28",
+            "-fill", "#ffd68a", "-font", str(FONT_BOLD), "-pointsize", "34",
+            "-annotate", "+240+466", footer,
+            "-fill", "#f3f4f6", "-font", str(FONT_REGULAR), "-pointsize", "26",
+            "-annotate", "+240+516", site.get("sharingTagline", "Guess the price. Unlock the deal."),
+            "-fill", "#dbe6ef", "-font", str(FONT_REGULAR), "-pointsize", "22",
+            "-annotate", "+56+606", caption,
+            str(tmp),
+        ])
+        run_convert([
+            str(tmp), str(qr_path),
+            "-geometry", "+56+444",
+            "-composite",
+            str(path),
+        ])
+        if tmp.exists():
+            tmp.unlink()
+        return
+
+    image_path = ensure_square_card_image(item.get("image"))
+    title_lines = wrap_lines(item.get("name", title), 20, max_lines=2)
+    category_line = item.get("category", "Item")
+    reference_line = f"{site['strings']['referencePriceLabel']}: {money(item.get('referencePrice', 0), site)}"
+    actual_price = item.get("actualPrice")
+    if actual_price is None:
+        actual_line = display_status(item, site)
+    else:
+        actual_line = f"{site['strings'].get('actualPriceLabel', 'Actual price')}: {money(actual_price, site)}"
+
     run_convert([
-        "-size", "1200x630", "gradient:#131a22-#243b55",
+        "-size", "1200x630", "xc:#eaeded",
         "-fill", "#f3a847", "-draw", "rectangle 0,0 1200,96",
         "-fill", "#131a22", "-font", str(FONT_BOLD), "-gravity", "northwest",
-        "-pointsize", "42", "-annotate", "+56+26", site.get("title", "Congo"),
-        "-fill", "white", "-font", str(FONT_BOLD), "-pointsize", "68",
-        "-annotate", "+56+150", wrap_lines(title, 20, max_lines=1)[0],
+        "-pointsize", "40", "-annotate", "+56+28", top_title,
+        "-fill", "white", "-draw", "roundrectangle 40,130 1160,590 28,28",
+        "-fill", "#f5f7f9", "-draw", "roundrectangle 68,174 488,594 22,22",
         *(sum(([
-            "-fill", "white" if idx == 0 else "white",
+            "-fill", "#131a22",
             "-font", str(FONT_BOLD),
-            "-pointsize", "68",
-            "-annotate", f"+56+{150 + idx * 76}", line,
-        ] for idx, line in enumerate(wrap_lines(title, 20, max_lines=2))), [])),
-        *(sum(([
-            "-fill", "#dbe6ef", "-font", str(FONT_REGULAR),
-            "-pointsize", "32", "-annotate", f"+56+{320 + idx * 42}", line,
-        ] for idx, line in enumerate(subtitle_lines[:2])), [])),
-        "-fill", "#0c1118", "-draw", "roundrectangle 40,430 1160,590 28,28",
-        "-fill", "#ffd68a", "-font", str(FONT_BOLD), "-pointsize", "34",
-        "-annotate", "+240+466", footer,
-        "-fill", "#f3f4f6", "-font", str(FONT_REGULAR), "-pointsize", "26",
-        "-annotate", "+240+516", site.get("sharingTagline", "Guess the price. Unlock the deal."),
-        "-fill", "#dbe6ef", "-font", str(FONT_REGULAR), "-pointsize", "22",
-        "-annotate", "+56+606", caption,
+            "-pointsize", "46",
+            "-annotate", f"+540+{190 + idx * 54}", line,
+        ] for idx, line in enumerate(title_lines)), [])),
+        "-fill", "#5d6b7a", "-font", str(FONT_REGULAR),
+        "-pointsize", "28", "-annotate", "+540+316", category_line,
+        "-stroke", "#d5d9dd", "-strokewidth", "2", "-draw", "line 540,340 1096,340",
+        "-fill", "#5d6b7a", "-stroke", "none", "-font", str(FONT_BOLD),
+        "-pointsize", "28", "-annotate", "+540+368", reference_line,
+        "-fill", "#b12704", "-font", str(FONT_BOLD),
+        "-pointsize", "40", "-annotate", "+780+512", actual_line,
         str(tmp),
     ])
     run_convert([
-        str(tmp), str(qr_path),
-        "-geometry", "+56+444",
+        str(tmp), str(image_path),
+        "-geometry", "+68+174",
+        "-composite",
+        str(qr_path),
+        "-geometry", "+540+404",
         "-composite",
         str(path),
     ])
@@ -778,12 +849,11 @@ def topbar_html(*, asset_root: str, page_root: str, site: dict, page: str, switc
           <button id=\"global-search-button\" type=\"button\" aria-label=\"Search\">⌕</button>
         </div>
         <nav class=\"primary-links\" aria-label=\"Primary\">
-          {nav_link(page_root, s['homeNav'], '⌂', 'index')}
           {nav_link(page_root + 'about/', s['aboutNav'], 'ℹ', 'about')}
         </nav>
         <a class=\"cart-link compact\" href=\"{page_root}checkout/\" aria-label=\"{escape(s['cartNav'])}\">
           <span class=\"cart-icon\">🛒</span>
-          <span class=\"cart-count-inline\">(<span data-cart-count>0</span>)</span>
+          <span class=\"cart-count-inline\"><span data-cart-count>0</span></span>
         </a>
         <div class=\"language-switch\">
           <span class=\"language-switch-label\">{escape(s['langSwitchLabel'])}</span>
@@ -1139,6 +1209,7 @@ def write_posters_for_variant(catalog: dict, lang_variant: str) -> None:
             subtitle_lines=wrap_lines(site["strings"]["posterCategoryLine"].format(category=item.get("category", "Item")), 28, max_lines=2),
             footer=f"{site['strings']['referencePriceLabel']}: {money(item.get('referencePrice', 0), site)}",
             qr_target=f"{public}/item/{item['id']}/",
+            item=item,
         )
 
 

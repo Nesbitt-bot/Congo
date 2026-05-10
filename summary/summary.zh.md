@@ -155,24 +155,24 @@
 
 ![悬挂式衣柜收纳层架](https://nesbitt-bot.github.io/Congo/media/hanging-closet-organizer-open.jpg)
 
-## [白色门后双层收纳篮](https://nesbitt-bot.github.io/Congo/zh/item/over-door-basket-organizer-white/?mode=plain) (待定)
+## [白色门后双层收纳篮](https://nesbitt-bot.github.io/Congo/zh/item/over-door-basket-organizer-white/?mode=plain) ($3)
 
 最早可取：2026-05-09
-附加信息：实际售价尚未设置，因此该商品目前为待定状态。
+附加信息：白色门后双层收纳篮，带木纹层板。
 
 ![白色门后双层收纳篮](https://nesbitt-bot.github.io/Congo/media/over-door-basket-organizer-white.jpg)
 
-## [白色门后挂钩架](https://nesbitt-bot.github.io/Congo/zh/item/over-door-hook-rack-white/?mode=plain) (待定)
+## [白色门后挂钩架](https://nesbitt-bot.github.io/Congo/zh/item/over-door-hook-rack-white/?mode=plain) ($3)
 
 最早可取：2026-05-09
-附加信息：实际售价尚未设置，因此该商品目前为待定状态。
+附加信息：白色门后挂钩架，下方有五个挂钩。
 
 ![白色门后挂钩架](https://nesbitt-bot.github.io/Congo/media/over-door-hook-rack-white.jpg)
 
-## [黑色门后挂钩架](https://nesbitt-bot.github.io/Congo/zh/item/over-door-hook-rack-black/?mode=plain) (待定)
+## [黑色门后挂钩架](https://nesbitt-bot.github.io/Congo/zh/item/over-door-hook-rack-black/?mode=plain) ($3)
 
 最早可取：2026-05-09
-附加信息：实际售价尚未设置，因此该商品目前为待定状态。
+附加信息：黑色门后挂钩架，下方有五个挂钩。
 
 ![黑色门后挂钩架](https://nesbitt-bot.github.io/Congo/media/over-door-hook-rack-black.jpg)
 

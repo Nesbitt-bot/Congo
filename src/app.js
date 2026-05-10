@@ -245,40 +245,32 @@ function attachGlobalSearch() {
 function productCard(item, site) {
   const guessEntry = getGuessEntry(item.id);
   const unlocked = guessEntry.success;
-  const sold = !itemReadyForGuessing(item);
-  const badgeText = item.status === 'pending'
+  const statusText = item.status === 'pending'
     ? t('statusPending', 'pending')
     : item.status === 'sold'
       ? t('statusSold', 'Sold out')
-      : sold
-        ? t('statusUnavailable', 'Unavailable')
-        : t('threeChances', '3 chances');
+      : itemReadyForGuessing(item)
+        ? ''
+        : t('statusUnavailable', 'Unavailable');
   const currentPriceText = !isGuessMode()
-    ? `${t('listedPrice', 'Listed price')}: ${money(item.actualPrice ?? getPublicNegotiablePrice(item), site.currency)}`
+    ? `${t('actualPriceLabel', 'Actual price')}: ${money(item.actualPrice ?? getPublicNegotiablePrice(item), site.currency)}`
     : unlocked
       ? t('unlockedOffer', 'Unlocked offer: {price}', { price: money(guessEntry.offerPrice ?? item.actualPrice, site.currency) })
       : t('generatedNegotiablePrice', '{price} (negotiable)', { price: money(getPublicNegotiablePrice(item), site.currency) });
   const referenceText = `${t('referencePriceLabel', 'Reference price')}: ${money(item.referencePrice ?? 0, site.currency)}`;
-  const qrImage = item.qrImage ? `<img class="card-qr" src="${escapeHtml(item.qrImage)}" alt="${escapeHtml(t('qrCodeLabel', 'QR code'))}" loading="lazy"/>` : '';
   return `
-    <article class="product-card ${sold ? 'is-sold' : ''}">
-      <a class="product-card-link split-layout" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
+    <article class="product-card ${item.status === 'sold' ? 'is-sold' : ''}">
+      <a class="product-card-link stack-layout" href="${slugToPath(item.id)}" aria-label="View ${escapeHtml(item.name)} deal">
         <div class="card-image-wrap square-crop">
-          <div class="badge-row">
-            <span class="badge gold">${escapeHtml(item.category)}</span>
-            <span class="badge ${itemReadyForGuessing(item) ? 'green' : ''}">${escapeHtml(badgeText)}</span>
-          </div>
           <img src="${withBase(getItemPrimaryImage(item))}" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.src='${assetRoot}assets/placeholder.png'"/>
         </div>
-        <div class="product-card-body split-body">
+        <div class="product-card-body stack-body">
           <h3>${escapeHtml(item.name)}</h3>
           <div class="eyebrow">${escapeHtml(item.category)}</div>
+          ${statusText ? `<div class="card-status-text">${escapeHtml(statusText)}</div>` : ''}
           <div class="card-divider"></div>
           <div class="card-price-ref">${escapeHtml(referenceText)}</div>
-          <div class="card-bottom-row">
-            <div class="card-qr-wrap">${qrImage}</div>
-            <div class="card-price-current">${escapeHtml(currentPriceText)}</div>
-          </div>
+          <div class="card-price-current">${escapeHtml(currentPriceText)}</div>
         </div>
       </a>
     </article>
@@ -470,38 +462,39 @@ function renderItemPage(catalog) {
   const status = document.getElementById('guess-status');
   const hiddenHint = document.getElementById('hidden-price-hint');
 
-
-  if (!isGuessMode()) {
-    const plainBox = document.getElementById('plain-price-box');
-    const plainPrice = document.querySelector('[data-plain-price]');
-    if (plainBox) plainBox.classList.remove('hide');
-    if (plainPrice) plainPrice.textContent = money(current.actualPrice || 0, site.currency);
-    if (status) {
-      status.className = 'status-box good';
-      status.textContent = t('plainModeNotice', 'Plain version — actual price shown directly.');
-    }
-    if (hiddenHint) hiddenHint.classList.add('hide');
-    const inputRow = document.querySelector('.guess-input-row');
-    if (inputRow) inputRow.classList.add('hide');
-    const actionBlock = document.getElementById('unlock-actions');
-    if (actionBlock) actionBlock.classList.remove('hide');
-    return attachPlainActions();
-  }
-
   function attachPlainActions() {
-    if (addButton) {
-      addButton.addEventListener('click', () => {
+    const plainAddButton = document.getElementById('add-to-cart');
+    const plainBuyButton = document.getElementById('buy-now');
+    if (plainAddButton) {
+      plainAddButton.addEventListener('click', () => {
         addToCart({ ...current, actualPrice: current.actualPrice }, 1);
-        addButton.textContent = t('added', 'Added');
-        addButton.disabled = true;
+        plainAddButton.textContent = t('added', 'Added');
+        plainAddButton.disabled = true;
       });
     }
-    if (buyButton) {
-      buyButton.addEventListener('click', () => {
+    if (plainBuyButton) {
+      plainBuyButton.addEventListener('click', () => {
         addToCart({ ...current, actualPrice: current.actualPrice }, 1);
         window.location.href = appendMode(`${pageRoot}checkout/`);
       });
     }
+  }
+
+  if (!isGuessMode()) {
+    const guessPanel = document.querySelector('.guess-panel');
+    if (guessPanel) {
+      guessPanel.innerHTML = `
+        <div class="plain-purchase-box">
+          <div class="plain-price-line">${escapeHtml(t('actualPriceLabel', 'Actual price'))}: <strong>${escapeHtml(money(current.actualPrice || 0, site.currency))}</strong></div>
+          <div class="inline-actions plain-actions">
+            <button id="add-to-cart" class="btn-amazon">${escapeHtml(t('addToCart', 'Add to cart'))}</button>
+            <button id="buy-now" class="btn-secondary">${escapeHtml(t('checkoutNow', 'Checkout now'))}</button>
+          </div>
+        </div>
+      `;
+    }
+    attachPlainActions();
+    return;
   }
 
   function refreshState() {

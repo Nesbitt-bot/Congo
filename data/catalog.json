@@ -503,13 +503,13 @@
       "condition": "Used - good",
       "referencePrice": 19.99,
       "referenceLink": "https://www.amazon.com/s?k=over+door+2+tier+basket+organizer",
-      "actualPrice": null,
+      "actualPrice": 3,
       "quantity": 1,
-      "status": "pending",
+      "status": "available",
       "earliestPickupDate": "2026-05-09",
       "image": "media/over-door-basket-organizer-white.jpg",
       "description": "White over-the-door 2-tier basket organizer with wood-look shelf panels.",
-      "pickupNotes": "Actual price not set yet, so this item is currently displayed as pending."
+      "pickupNotes": "White over-the-door 2-tier basket organizer with wood-look shelf panels."
     },
     {
       "id": "over-door-hook-rack-white",
@@ -518,13 +518,13 @@
       "condition": "Used - good",
       "referencePrice": 12.99,
       "referenceLink": "https://www.amazon.com/s?k=over+door+hook+rack+white",
-      "actualPrice": null,
+      "actualPrice": 3,
       "quantity": 1,
-      "status": "pending",
+      "status": "available",
       "earliestPickupDate": "2026-05-09",
       "image": "media/over-door-hook-rack-white.jpg",
       "description": "White over-the-door hook rack with five lower hooks.",
-      "pickupNotes": "Actual price not set yet, so this item is currently displayed as pending."
+      "pickupNotes": "White over-the-door hook rack with five lower hooks."
     },
     {
       "id": "over-door-hook-rack-black",
@@ -533,13 +533,13 @@
       "condition": "Used - good",
       "referencePrice": 12.99,
       "referenceLink": "https://www.amazon.com/s?k=over+door+hook+rack+black",
-      "actualPrice": null,
+      "actualPrice": 3,
       "quantity": 1,
-      "status": "pending",
+      "status": "available",
       "earliestPickupDate": "2026-05-09",
       "image": "media/over-door-hook-rack-black.jpg",
       "description": "Black over-the-door hook rack with five lower hooks.",
-      "pickupNotes": "Actual price not set yet, so this item is currently displayed as pending."
+      "pickupNotes": "Black over-the-door hook rack with five lower hooks."
     },
     {
       "id": "dyson-hair-dryer-with-case",
