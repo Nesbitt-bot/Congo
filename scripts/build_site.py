@@ -234,6 +234,11 @@ ITEM_ZH = {
         "description": "已开封的 Amazon Basics 篮式咖啡滤纸，包装标签显示为 200 张。",
         "pickupNotes": "这是已开封包装，不是全新未拆封。",
     },
+    "mesh-file-organizers-2pack-white": {
+        "name": "白色网格文件收纳架两件套",
+        "description": "两只白色金属网格文件收纳架 / 杂志架，一起作为两件套出售。",
+        "pickupNotes": "照片中两只收纳架一起出售，此条目对应整套。",
+    },
 }
 
 SITE_I18N = {

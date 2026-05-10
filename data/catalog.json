@@ -645,6 +645,21 @@
       "image": "media/amazon-basics-coffee-filters-basket.jpg",
       "description": "Opened bag of Amazon Basics basket coffee filters. The package label shows 200 filters.",
       "pickupNotes": "This is an opened bag, not a sealed-new pack."
+    },
+    {
+      "id": "mesh-file-organizers-2pack-white",
+      "name": "Mesh File Organizers (2-Pack)",
+      "category": "Computer Supplies",
+      "condition": "Used - good",
+      "referencePrice": 14.99,
+      "referenceLink": "https://www.amazon.com/s?k=mesh+file+organizer+2+pack",
+      "actualPrice": 3,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/mesh-file-organizers-2pack-white.jpg",
+      "description": "Two white metal mesh file organizers / magazine holders sold together as a 2-pack.",
+      "pickupNotes": "Photo shows both organizers together; this listing is for the pair."
     }
   ]
 }

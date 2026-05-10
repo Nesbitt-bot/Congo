@@ -224,3 +224,10 @@ Earliest available: 2026-05-09
 Additional info: This is an opened bag, not a sealed-new pack.
 
 ![Amazon Basics Basket Coffee Filters](https://nesbitt-bot.github.io/Congo/media/amazon-basics-coffee-filters-basket.jpg)
+
+## [Mesh File Organizers (2-Pack)](https://nesbitt-bot.github.io/Congo/en/item/mesh-file-organizers-2pack-white/?mode=plain) ($3)
+
+Earliest available: 2026-05-09
+Additional info: Photo shows both organizers together; this listing is for the pair.
+
+![Mesh File Organizers (2-Pack)](https://nesbitt-bot.github.io/Congo/media/mesh-file-organizers-2pack-white.jpg)
