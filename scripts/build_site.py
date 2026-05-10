@@ -428,7 +428,7 @@ SITE_I18N = {
                 "如果出价成功，网站会解锁成交价，并允许加入购物车。",
                 "解锁后的商品可以一起打包，自提或本地配送。",
                 "订单满 {threshold} 可享受本地免费配送。",
-                "最终结账页会自动生成一封发给 {email} 的预约邮件。",
+                "中文结账页会显示微信二维码，扫码后联系卖家安排时间。",
             ],
             "referencePriceLabel": "参考价格",
             "quantityLabel": "数量",
@@ -467,7 +467,7 @@ SITE_I18N = {
             "lastTryMessage": "这是这个浏览器的最后一次尝试。如果你仍然想要它，可以直接发邮件联系卖家。",
             "added": "已加入",
             "checkoutTitle": "结账",
-            "checkoutDesc": "先解锁商品，再用这里生成自提或配送预约邮件。",
+            "checkoutDesc": "先解锁商品，再在这里查看总价并扫码微信联系。",
             "clearCart": "清空购物车",
             "orderSummary": "订单摘要",
             "itemsLabel": "件数",
@@ -1045,45 +1045,81 @@ def checkout_body(site: dict) -> str:
     s = site["strings"]
     threshold = escape(money(site.get("freeDeliveryThreshold", 0), site))
     contact_email = escape(site.get("contactEmail", "your-email@example.com"))
-    return f"""
-    <main class=\"checkout-page\">
-      <section class=\"cart-panel panel\">
-        <div class=\"section-header\" style=\"margin-bottom:18px\">
+
+    if site.get("locale") == "zh":
+        public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
+        wechat_image = escape(f"{public}/{str(site.get('wechatContactImage', 'media/wechat-contact-qr.jpg')).lstrip('/')}")
+        wechat_label = escape(site.get("wechatContactLabel", "微信"))
+        return f"""
+    <main class="checkout-page">
+      <section class="cart-panel panel">
+        <div class="section-header" style="margin-bottom:18px">
           <div>
             <h1>{escape(s['checkoutTitle'])}</h1>
             <p>{escape(s['checkoutDesc'])}</p>
           </div>
-          <button id=\"clear-cart\" class=\"btn-ghost\">{escape(s['clearCart'])}</button>
+          <button id="clear-cart" class="btn-ghost">{escape(s['clearCart'])}</button>
         </div>
-        <div id=\"page-error\" class=\"status-box bad hide\"></div>
-        <div id=\"cart-list\" class=\"cart-list\"></div>
+        <div id="page-error" class="status-box bad hide"></div>
+        <div id="cart-list" class="cart-list"></div>
       </section>
-      <aside class=\"summary-card checkout-card\">
-        <h2 class=\"block-title\">{escape(s['orderSummary'])}</h2>
-        <div class=\"checkout-summary-rows\" style=\"margin:16px 0\">
-          <div class=\"checkout-summary-row\"><span>{escape(s['itemsLabel'])}</span><strong id=\"summary-count\">0</strong></div>
-          <div class=\"checkout-summary-row\"><span>{escape(s['totalLabel'])}</span><strong id=\"summary-total\">$0</strong></div>
+      <aside class="summary-card checkout-card">
+        <h2 class="block-title">{escape(s['orderSummary'])}</h2>
+        <div class="checkout-summary-rows" style="margin:16px 0">
+          <div class="checkout-summary-row"><span>{escape(s['itemsLabel'])}</span><strong id="summary-count">0</strong></div>
+          <div class="checkout-summary-row"><span>{escape(s['totalLabel'])}</span><strong id="summary-total">$0</strong></div>
         </div>
-        <div class=\"progress\"><span id=\"delivery-progress\" style=\"width:0%\"></span></div>
-        <div id=\"delivery-message\" class=\"status-box info\" style=\"margin-top:12px\">{escape(s['deliveryNeedMore'].format(amount=threshold))}</div>
-        <p class=\"small-note\">{escape(s['checkoutAddressedTo'].format(email=site.get('contactEmail', '')))}</p>
-        <form id=\"checkout-form\" class=\"checkout-form\">
-          <div class=\"form-grid\">
-            <input name=\"name\" placeholder=\"{escape(s['yourName'])}\" />
-            <input name=\"email\" type=\"email\" placeholder=\"{escape(s['yourEmail'])}\" />
-            <input name=\"phone\" placeholder=\"{escape(s['yourPhone'])}\" />
-            <input name=\"when\" placeholder=\"{escape(s['preferredTime'])}\" />
+        <div class="progress"><span id="delivery-progress" style="width:0%"></span></div>
+        <div id="delivery-message" class="status-box info" style="margin-top:12px">{escape(s['deliveryNeedMore'].format(amount=threshold))}</div>
+        <div class="wechat-contact-card">
+          <h3>微信联系</h3>
+          <p class="muted">下单后请直接扫码添加微信，备注想要的商品、取货时间和联系方式。</p>
+          <img class="wechat-contact-image" src="{wechat_image}" alt="微信联系二维码" />
+          <div class="wechat-contact-id">{wechat_label}</div>
+        </div>
+      </aside>
+    </main>
+    """
+
+    return f"""
+    <main class="checkout-page">
+      <section class="cart-panel panel">
+        <div class="section-header" style="margin-bottom:18px">
+          <div>
+            <h1>{escape(s['checkoutTitle'])}</h1>
+            <p>{escape(s['checkoutDesc'])}</p>
           </div>
-          <select name=\"deliveryMode\">
+          <button id="clear-cart" class="btn-ghost">{escape(s['clearCart'])}</button>
+        </div>
+        <div id="page-error" class="status-box bad hide"></div>
+        <div id="cart-list" class="cart-list"></div>
+      </section>
+      <aside class="summary-card checkout-card">
+        <h2 class="block-title">{escape(s['orderSummary'])}</h2>
+        <div class="checkout-summary-rows" style="margin:16px 0">
+          <div class="checkout-summary-row"><span>{escape(s['itemsLabel'])}</span><strong id="summary-count">0</strong></div>
+          <div class="checkout-summary-row"><span>{escape(s['totalLabel'])}</span><strong id="summary-total">$0</strong></div>
+        </div>
+        <div class="progress"><span id="delivery-progress" style="width:0%"></span></div>
+        <div id="delivery-message" class="status-box info" style="margin-top:12px">{escape(s['deliveryNeedMore'].format(amount=threshold))}</div>
+        <p class="small-note">{escape(s['checkoutAddressedTo'].format(email=site.get('contactEmail', '')))}</p>
+        <form id="checkout-form" class="checkout-form">
+          <div class="form-grid">
+            <input name="name" placeholder="{escape(s['yourName'])}" />
+            <input name="email" type="email" placeholder="{escape(s['yourEmail'])}" />
+            <input name="phone" placeholder="{escape(s['yourPhone'])}" />
+            <input name="when" placeholder="{escape(s['preferredTime'])}" />
+          </div>
+          <select name="deliveryMode">
             <option>{escape(s['pickupOption'])}</option>
             <option>{escape(s['localDeliveryOption'])}</option>
             <option>{escape(s['eitherWorksOption'])}</option>
           </select>
-          <input name=\"address\" placeholder=\"{escape(s['pickupPoint'])}\" />
-          <textarea name=\"notes\" placeholder=\"{escape(s['notesPlaceholder'])}\"></textarea>
-          <div class=\"inline-actions\">
-            <button type=\"button\" id=\"copy-email\" class=\"btn-amazon\">{escape(s['copyEmailText'])}</button>
-            <a id=\"open-mailto\" class=\"btn-secondary\" href=\"mailto:{contact_email}\">{escape(s['openEmailDraft'])}</a>
+          <input name="address" placeholder="{escape(s['pickupPoint'])}" />
+          <textarea name="notes" placeholder="{escape(s['notesPlaceholder'])}"></textarea>
+          <div class="inline-actions">
+            <button type="button" id="copy-email" class="btn-amazon">{escape(s['copyEmailText'])}</button>
+            <a id="open-mailto" class="btn-secondary" href="mailto:{contact_email}">{escape(s['openEmailDraft'])}</a>
           </div>
         </form>
       </aside>

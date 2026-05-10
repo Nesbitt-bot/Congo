@@ -746,6 +746,35 @@ img {
   gap: 14px;
 }
 
+.wechat-contact-card {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #f9fbfc;
+}
+
+.wechat-contact-card h3 {
+  margin: 0;
+}
+
+.wechat-contact-image {
+  width: 100%;
+  max-width: 320px;
+  justify-self: center;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.wechat-contact-id {
+  text-align: center;
+  font-weight: 700;
+  color: var(--ink);
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -17,7 +17,9 @@
     "githubRepoUrl": "https://github.com/Nesbitt-bot/Congo",
     "priceGuessEnabled": true,
     "logoEmoji": "🤓",
-    "pickupAddress": "6043 Kingsbury Ave"
+    "pickupAddress": "6043 Kingsbury Ave",
+    "wechatContactImage": "media/wechat-contact-qr.jpg",
+    "wechatContactLabel": "ワッシャ"
   },
   "items": [
     {
