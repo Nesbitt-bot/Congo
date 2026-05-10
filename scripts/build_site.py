@@ -838,7 +838,7 @@ def topbar_html(*, asset_root: str, page_root: str, site: dict, page: str, switc
     <header class=\"topbar\">
       <div class=\"topbar-inner\">
         <a class=\"brand-lockup\" href=\"{page_root}\">
-          <span class=\"brand-mark\">CO</span>
+          <span class=\"brand-mark\">{escape(str(site.get('logoEmoji', 'CO')))}</span>
           <span class=\"brand-copy\">
             <strong>{escape(site.get('title', 'Congo'))}</strong>
             <span>{escape(s['brandTagline'])}</span>
