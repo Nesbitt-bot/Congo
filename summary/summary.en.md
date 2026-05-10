@@ -245,3 +245,10 @@ Earliest available: 2026-05-09
 Additional info: Brand is clearly visible. Photo shows the blender base and large pitcher assembled together.
 
 ![Ninja Blender with Auto-iQ](https://nesbitt-bot.github.io/Congo/media/ninja-blender-auto-iq-black.jpg)
+
+## [Bear Mini Rice Cooker](https://nesbitt-bot.github.io/Congo/en/item/bear-mini-rice-cooker-green/?mode=plain) ($15)
+
+Earliest available: 2026-05-09
+Additional info: Brand is visible on the front. Photo shows the cooker open with the inner pot removed.
+
+![Bear Mini Rice Cooker](https://nesbitt-bot.github.io/Congo/media/bear-rice-cooker-green.jpg)

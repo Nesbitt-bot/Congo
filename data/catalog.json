@@ -690,6 +690,21 @@
       "image": "media/ninja-blender-auto-iq-black.jpg",
       "description": "Black Ninja countertop blender with large pitcher and Auto-iQ control panel. Exact model number is not verified from the photo alone.",
       "pickupNotes": "Brand is clearly visible. Photo shows the blender base and large pitcher assembled together."
+    },
+    {
+      "id": "bear-mini-rice-cooker-green",
+      "name": "Bear Mini Rice Cooker",
+      "category": "Household",
+      "condition": "Used - good",
+      "referencePrice": 34.99,
+      "referenceLink": "https://www.amazon.com/s?k=bear+mini+rice+cooker+2+cup",
+      "actualPrice": 15,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-09",
+      "image": "media/bear-rice-cooker-green.jpg",
+      "description": "Small Bear rice cooker with removable nonstick inner pot and hinged lid. Exact model number is not verified from the photo alone.",
+      "pickupNotes": "Brand is visible on the front. Photo shows the cooker open with the inner pot removed."
     }
   ]
 }

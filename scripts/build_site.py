@@ -249,6 +249,11 @@ ITEM_ZH = {
         "description": "黑色 Ninja 台式搅拌机，带大容量搅拌杯和 Auto-iQ 控制面板。仅凭当前照片无法确认具体型号。",
         "pickupNotes": "品牌清晰可见。照片中展示的是搅拌机底座和已装好的大杯体。",
     },
+    "bear-mini-rice-cooker-green": {
+        "name": "Bear 迷你电饭煲",
+        "description": "小型 Bear 电饭煲，带可拆卸不粘内胆和翻盖。仅凭当前照片无法确认具体型号。",
+        "pickupNotes": "品牌在正面可见。照片中展示的是打开状态，并取出了内胆。",
+    },
 }
 
 SITE_I18N = {

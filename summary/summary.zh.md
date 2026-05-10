@@ -245,3 +245,10 @@
 附加信息：品牌清晰可见。照片中展示的是搅拌机底座和已装好的大杯体。
 
 ![Ninja Auto-iQ 搅拌机](https://nesbitt-bot.github.io/Congo/media/ninja-blender-auto-iq-black.jpg)
+
+## [Bear 迷你电饭煲](https://nesbitt-bot.github.io/Congo/zh/item/bear-mini-rice-cooker-green/?mode=plain) ($15)
+
+最早可取：2026-05-09
+附加信息：品牌在正面可见。照片中展示的是打开状态，并取出了内胆。
+
+![Bear 迷你电饭煲](https://nesbitt-bot.github.io/Congo/media/bear-rice-cooker-green.jpg)
