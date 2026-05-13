@@ -254,6 +254,11 @@ ITEM_ZH = {
         "description": "小型 Bear 电饭煲，带可拆卸不粘内胆和翻盖。仅凭当前照片无法确认具体型号。",
         "pickupNotes": "品牌在正面可见。照片中展示的是打开状态，并取出了内胆。",
     },
+    "ikea-dining-table-dark-brown": {
+        "name": "IKEA 餐桌",
+        "description": "深棕色 IKEA 风格长方形餐桌。仅凭当前照片无法确认具体 IKEA 型号。",
+        "pickupNotes": "仅包含桌子本体。照片中的椅子、人物和其他物品不包含在内。",
+    },
 }
 
 SITE_I18N = {

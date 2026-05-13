@@ -252,3 +252,10 @@ Earliest available: 2026-05-09
 Additional info: Brand is visible on the front. Photo shows the cooker open with the inner pot removed.
 
 ![Bear Mini Rice Cooker](https://nesbitt-bot.github.io/Congo/media/bear-rice-cooker-green.jpg)
+
+## [IKEA Dining Table](https://nesbitt-bot.github.io/Congo/en/item/ikea-dining-table-dark-brown/?mode=plain) ($30)
+
+Earliest available: 2026-05-13
+Additional info: Table only. Chairs, people, and other items in the photo are not included.
+
+![IKEA Dining Table](https://nesbitt-bot.github.io/Congo/media/ikea-dining-table-dark-brown.jpg)

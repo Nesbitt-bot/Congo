@@ -707,6 +707,21 @@
       "image": "media/bear-rice-cooker-green.jpg",
       "description": "Small Bear rice cooker with removable nonstick inner pot and hinged lid. Exact model number is not verified from the photo alone.",
       "pickupNotes": "Brand is visible on the front. Photo shows the cooker open with the inner pot removed."
+    },
+    {
+      "id": "ikea-dining-table-dark-brown",
+      "name": "IKEA Dining Table",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 129.99,
+      "referenceLink": "https://www.ikea.com/us/en/search/?q=dining%20table%20black-brown",
+      "actualPrice": 30,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-13",
+      "image": "media/ikea-dining-table-dark-brown.jpg",
+      "description": "Dark brown IKEA-style rectangular dining table. Exact IKEA model is not verified from the photo alone.",
+      "pickupNotes": "Table only. Chairs, people, and other items in the photo are not included."
     }
   ]
 }

@@ -252,3 +252,10 @@
 附加信息：品牌在正面可见。照片中展示的是打开状态，并取出了内胆。
 
 ![Bear 迷你电饭煲](https://nesbitt-bot.github.io/Congo/media/bear-rice-cooker-green.jpg)
+
+## [IKEA 餐桌](https://nesbitt-bot.github.io/Congo/zh/item/ikea-dining-table-dark-brown/?mode=plain) ($30)
+
+最早可取：2026-05-13
+附加信息：仅包含桌子本体。照片中的椅子、人物和其他物品不包含在内。
+
+![IKEA 餐桌](https://nesbitt-bot.github.io/Congo/media/ikea-dining-table-dark-brown.jpg)
