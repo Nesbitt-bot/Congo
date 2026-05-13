@@ -15,14 +15,14 @@ Additional info: Small item, easy to bundle with other computer supplies.
 ## [2 Whiteboards + 3 Color Marker Set](https://nesbitt-bot.github.io/Congo/en/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($10)
 
 Earliest available: 2026-05-07
-Additional info: Reference price is a practical bundle estimate based on similar U Brands whiteboards and a current Pilot V Board Master marker set.
+Additional info: Bundle includes two whiteboards and a Pilot marker set.
 
 ![2 Whiteboards + 3 Color Marker Set](../media/computer-supplies/whiteboard-bundle-two-boards-markers.jpg)
 
 ## [FlexiSpot Slim Under Desk Storage Drawer S07LB](https://nesbitt-bot.github.io/Congo/en/item/flexispot-slim-desk-drawer-s07lb/?mode=plain) ($10)
 
 Earliest available: 2026-05-09
-Additional info: Single photo currently attached. Original box shown in the listing photo.
+Additional info: Slim under-desk storage drawer with original box shown.
 
 ![FlexiSpot Slim Under Desk Storage Drawer S07LB](../media/computer-supplies/flexispot-slim-desk-drawer-s07lb.jpg)
 

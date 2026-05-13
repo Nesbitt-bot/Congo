@@ -69,7 +69,7 @@ ITEM_ZH = {
     "lamicall-laptop-stand": {
         "name": "Lamicall 笔记本电脑支架",
         "description": "可调节铝合金 Lamicall 笔记本支架，照片中带原包装盒。",
-        "pickupNotes": "照片中包含包装盒。参考价采用 Lamicall 当前同类可折叠支架。",
+        "pickupNotes": "可折叠可调节支架，照片中含原包装盒。",
     },
     "ikea-elloven-monitor-stand-drawer": {
         "name": "IKEA ELLOVEN 带抽屉显示器增高架",
@@ -79,7 +79,7 @@ ITEM_ZH = {
     "asus-vp28uqg-monitor-arm": {
         "name": "ASUS VP28UQG 28 英寸 4K 显示器（带桌夹支架）",
         "description": "ASUS VP28UQG 28 英寸 4K 显示器，已安装可调节桌夹支架，附带 DP 线。",
-        "pickupNotes": "包含桌夹支架和一根 DisplayPort 线。三张照片：正面、背部/支架和型号标签。",
+        "pickupNotes": "已安装可调节桌夹支架。包含三张照片：正面、背部和型号标签。",
     },
     "flexispot-e7-standing-desk-govee": {
         "name": "FlexiSpot Pro 升降桌（E7）+ Govee RGBIC 桌面灯带",
@@ -89,12 +89,12 @@ ITEM_ZH = {
     "big-joe-comfort-chair": {
         "name": "Big Joe 舒适懒人椅",
         "description": "Big Joe 风格黑色舒适豆袋/懒人椅。",
-        "pickupNotes": "当前只有一张照片。参考价使用当前 Big Joe 同类懒人椅在售价格作为近似比较。",
+        "pickupNotes": "柔软的大号懒人豆袋椅。",
     },
     "hp-envy-6155e-printer-bundle": {
         "name": "HP Envy 6155e 打印机套装",
         "description": "HP Envy 6155e 一体机套装，包含额外黑色墨盒和照片中展示的 HP Premium 24 打印纸。",
-        "pickupNotes": "套装包含打印机、额外黑色墨盒和 HP Premium 24 打印纸。参考价采用 HP 官方当前打印机页面，耗材为额外赠送内容。",
+        "pickupNotes": "套装包含额外黑色墨盒和 HP Premium 24 打印纸。",
     },
     "honeywell-quietset-8-fan": {
         "name": "Honeywell QuietSet 8 40英寸塔扇",
@@ -104,42 +104,42 @@ ITEM_ZH = {
     "herman-miller-aeron-chair-size-b": {
         "name": "Herman Miller Aeron 人体工学椅（全功能，B号）",
         "description": "Herman Miller Aeron 人体工学椅，全功能配置，B 号尺寸。包含正面和侧面两张照片。",
-        "pickupNotes": "包含两张照片。参考价格使用你提供的 SeatingMind 对应商品页面。",
+        "pickupNotes": "全功能 B 号 Aeron，包含两张照片。",
     },
     "whiteboard-bundle-two-boards-markers": {
         "name": "两块白板 + 三色白板笔套装",
         "description": "套装包含两块可擦写白板，以及一组三色 Pilot V Board Master 白板笔。",
-        "pickupNotes": "参考价格是根据相似 U Brands 白板和当前 Pilot V Board Master 白板笔套装做出的实用估算。",
+        "pickupNotes": "套装包含两块白板和一组 Pilot 白板笔。",
     },
     "floor-lamp-generic": {
         "name": "落地灯",
         "description": "黑色落地灯，带两个白色灯罩，照片中为已组装并可正常使用状态。",
-        "pickupNotes": "已补充实拍照片。标准双灯头落地灯。",
+        "pickupNotes": "标准双灯头落地灯。",
     },
     "ikea-skadis-pegboard-set": {
         "name": "IKEA SKÅDIS 洞洞板套装",
         "description": "IKEA SKÅDIS 白色洞洞板套装，包含挂篮、小盒、托盘、挂钩和夹具等配件，照片中展示为整套。",
-        "pickupNotes": "隐藏售价尚未设置，因此该商品暂时仅展示不开放出价。",
+        "pickupNotes": "套装包含照片中的挂篮、挂钩、托盘等配件。",
     },
     "flexispot-slim-desk-drawer-s07lb": {
         "name": "FlexiSpot 超薄桌下收纳抽屉 S07LB",
         "description": "FlexiSpot 超薄桌下收纳抽屉，型号 S07LB，照片中展示原包装箱。",
-        "pickupNotes": "当前只附带一张照片，商品展示为原包装箱状态。",
+        "pickupNotes": "超薄桌下收纳抽屉，照片中含原包装盒。",
     },
     "frigidaire-gallery-mini-fridge": {
         "name": "Frigidaire Gallery 迷你美妆冰箱（6罐装）",
         "description": "Frigidaire Gallery 迷你美妆冰箱 / 小型冷藏箱，照片中展示了原包装盒和电源配件。",
-        "pickupNotes": "照片中包含原包装箱和配件。属于小型台面迷你冰箱尺寸。",
+        "pickupNotes": "小型台面迷你冰箱，照片中含原包装箱和配件。",
     },
     "frigidaire-countertop-ice-maker": {
         "name": "Frigidaire 台面制冰机（每日 26 磅）",
         "description": "Frigidaire 台面制冰机，标称每日制冰 26 磅，照片中展示了原包装箱。",
-        "pickupNotes": "照片中可见原包装箱。属于台面尺寸的小型制冰机。",
+        "pickupNotes": "台面制冰机，照片中含原包装箱。",
     },
     "goveelife-air-purifier-h7120": {
         "name": "GoveeLife 空气净化器 H7120",
         "description": "GoveeLife 空气净化器，型号 H7120，照片中展示了原包装箱。",
-        "pickupNotes": "隐藏售价尚未设置，因此该商品目前以待定状态展示。",
+        "pickupNotes": "空气净化器，照片中含原包装箱。",
     },
     "ikea-kallax-shelf-drawers": {
         "name": "IKEA KALLAX 书架 + 折叠抽屉套装",
@@ -154,7 +154,7 @@ ITEM_ZH = {
     "black-tv-stand": {
         "name": "黑色电视桌",
         "description": "简洁的黑色电视桌 / 媒体桌，下方带一层置物板。",
-        "pickupNotes": "当前只附带一张照片。属于紧凑型电视 / 媒体桌尺寸。",
+        "pickupNotes": "紧凑型电视 / 媒体桌。",
     },
     "table-lamp-white-fabric-shade": {
         "name": "白色布罩台灯",
@@ -184,7 +184,7 @@ ITEM_ZH = {
     "hanging-closet-organizer-6-shelf": {
         "name": "悬挂式衣柜收纳层架",
         "description": "布艺悬挂式衣柜收纳层架，带多个隔层，照片中展示了展开和折叠状态。",
-        "pickupNotes": "实际售价尚未设置，因此该商品目前为待定状态。",
+        "pickupNotes": "包含两张照片：展开悬挂视图和折叠状态。",
     },
     "over-door-basket-organizer-white": {
         "name": "白色门后双层收纳篮",
@@ -204,12 +204,12 @@ ITEM_ZH = {
     "dyson-hair-dryer-with-case": {
         "name": "戴森吹风机（含收纳盒）",
         "description": "戴森吹风机，附带照片中的紫色收纳/展示盒。仅凭当前图片无法确认具体型号。",
-        "pickupNotes": "目前照片展示的是收纳盒；如果后续补充吹风机或配件照片，可以继续加到这个条目里。",
+        "pickupNotes": "包含照片中的紫色收纳盒。",
     },
     "goveelife-smart-humidifier": {
         "name": "GoveeLife 智能加湿器",
         "description": "白色 GoveeLife 智能加湿器，附带电源适配器。仅凭当前照片无法确认具体型号。",
-        "pickupNotes": "照片中展示了加湿器及其电源适配器，具体型号编号不可见。",
+        "pickupNotes": "白色智能加湿器，适合卧室或桌面使用。",
     },
     "pen-gear-stapler-set": {
         "name": "Pen+Gear 订书机套装",
@@ -229,7 +229,7 @@ ITEM_ZH = {
     "cuisinart-electric-coffee-grinder-black": {
         "name": "Cuisinart 电动咖啡豆研磨机",
         "description": "黑色 Cuisinart 电动咖啡豆研磨机，带电源线。仅凭当前照片无法确认具体型号。",
-        "pickupNotes": "照片中品牌清晰可见，但具体型号编号不可读。",
+        "pickupNotes": "小型电动研磨机，带透明豆仓。",
     },
     "amazon-basics-coffee-filters-basket": {
         "name": "Amazon Basics 篮式咖啡滤纸",
@@ -244,27 +244,27 @@ ITEM_ZH = {
     "chemical-safety-goggles-clear": {
         "name": "化学实验护目镜",
         "description": "透明化学实验 / 安全护目镜，带可调节黑色松紧带。",
-        "pickupNotes": "通用实验室 / 化学护目镜。照片中看不出具体品牌或型号。",
+        "pickupNotes": "可调节护目镜，属于全眼罩式防泼溅设计。",
     },
     "ninja-blender-auto-iq-black": {
         "name": "Ninja Auto-iQ 搅拌机",
         "description": "黑色 Ninja 台式搅拌机，带大容量搅拌杯和 Auto-iQ 控制面板。仅凭当前照片无法确认具体型号。",
-        "pickupNotes": "品牌清晰可见。照片中展示的是搅拌机底座和已装好的大杯体。",
+        "pickupNotes": "大容量搅拌杯款，带 Auto-iQ 控制面板。",
     },
     "bear-mini-rice-cooker-green": {
         "name": "Bear 迷你电饭煲",
         "description": "小型 Bear 电饭煲，带可拆卸不粘内胆和翻盖。仅凭当前照片无法确认具体型号。",
-        "pickupNotes": "品牌在正面可见。照片中展示的是打开状态，并取出了内胆。",
+        "pickupNotes": "小型电饭煲，带可拆卸不粘内胆。",
     },
     "ikea-dining-table-dark-brown": {
         "name": "IKEA 餐桌",
         "description": "深棕色 IKEA 风格长方形餐桌。仅凭当前照片无法确认具体 IKEA 型号。",
-        "pickupNotes": "仅包含桌子本体。照片中的椅子、人物和其他物品不包含在内。",
+        "pickupNotes": "仅包含桌子本体。",
     },
     "black-dining-chair-generic": {
         "name": "黑色餐椅",
         "description": "通用黑色餐椅，靠背为交叉设计。价格按单把计算。",
-        "pickupNotes": "按单把计价。包含两张照片。照片中的人物和周围其他物品不包含在内。",
+        "pickupNotes": "按单把计价。交叉靠背餐椅，包含两张照片。",
     },
 }
 
@@ -1192,11 +1192,7 @@ def summary_contact_lines(site: dict, lang: str, *, image_rel: str | None = None
 def summary_contact_text_lines(site: dict, lang: str, *, image_rel: str | None = None) -> list[str]:
     if lang == "zh":
         label = site.get("wechatContactLabel", "微信")
-        lines = [f"微信联系：{label}"]
-        if image_rel:
-            lines.append(f"二维码图片：{image_rel}")
-        lines.append("")
-        return lines
+        return [f"微信联系：{label}", ""]
     email = site.get("contactEmail", "")
     return [f"Contact email: {email}", ""] if email else []
 
@@ -1266,7 +1262,6 @@ def summary_text_for_catalog(catalog: dict, lang: str, *, items: list[dict] | No
         price_label = (f"${int(price) if float(price).is_integer() else price}" if price is not None else ("待定" if is_zh else "Price pending"))
         item_url = f"{public}/{lang}/item/{item['id']}/?mode=plain"
         sections.append(f"{item['name']} — {price_label}")
-        sections.append(f"链接：{item_url}" if is_zh else f"Link: {item_url}")
         sections.append((f"最早可取：{item.get('earliestPickupDate', '')}" if is_zh else f"Earliest available: {item.get('earliestPickupDate', '')}"))
         if item.get('latestPickupDate'):
             sections.append((f"最晚可取：{item.get('latestPickupDate')}" if is_zh else f"Latest available: {item.get('latestPickupDate')}"))
@@ -1300,11 +1295,9 @@ def summary_index_lines(catalog: dict, lang: str, grouped: list[tuple[str, str, 
     sections = [intro, site_line, "", title, ""]
     sections.extend(summary_contact_text_lines(site, lang, image_rel=contact_image_rel))
     for category_key, category_label, items in grouped:
-        slug = summary_slug(category_key)
-        rel_path = f"./{lang}/{slug}.txt"
         count = len(items)
         label = f"{count} 件" if is_zh else f"{count} item{'s' if count != 1 else ''}"
-        sections.append(f"- {category_label} ({label}) -> {rel_path}")
+        sections.append(f"- {category_label} ({label})")
     sections.append("")
     return "\n".join(sections)
 

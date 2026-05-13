@@ -15,7 +15,7 @@ Additional info: Bundle includes the FlexiSpot E7 standing desk and the Govee RG
 ## [Big Joe Comfort Chair](https://nesbitt-bot.github.io/Congo/en/item/big-joe-comfort-chair/?mode=plain) ($10)
 
 Earliest available: 2026-05-07
-Additional info: Single photo currently attached. Reference price uses current Big Joe bean bag chair listings as a model-near comparison.
+Additional info: Soft oversized beanbag-style lounge chair.
 
 ![Big Joe Comfort Chair](../media/furniture/big-joe-comfort-chair.jpg)
 
@@ -29,7 +29,7 @@ Additional info: Two photos included: full fan with box and close-up of the top 
 ## [Floor Lamp](https://nesbitt-bot.github.io/Congo/en/item/floor-lamp-generic/?mode=plain) ($5)
 
 Earliest available: 2026-05-08
-Additional info: Photo added. Standard floor lamp with two light heads.
+Additional info: Standard two-head floor lamp.
 
 ![Floor Lamp](../media/furniture/floor-lamp-generic.jpg)
 
@@ -50,7 +50,7 @@ Additional info: Two photos included: full assembled view and top shade view.
 ## [Black TV Stand](https://nesbitt-bot.github.io/Congo/en/item/black-tv-stand/?mode=plain) ($10)
 
 Earliest available: 2026-05-09
-Additional info: Single photo currently attached. Compact TV/media table size.
+Additional info: Compact TV/media table.
 
 ![Black TV Stand](../media/furniture/black-tv-stand.jpg)
 
@@ -113,13 +113,13 @@ Additional info: Black over-the-door hook rack with five lower hooks.
 ## [IKEA Dining Table](https://nesbitt-bot.github.io/Congo/en/item/ikea-dining-table-dark-brown/?mode=plain) ($30)
 
 Earliest available: 2026-05-13
-Additional info: Table only. Chairs, people, and other items in the photo are not included.
+Additional info: Table only.
 
 ![IKEA Dining Table](../media/furniture/ikea-dining-table-dark-brown.jpg)
 
 ## [Black Dining Chair](https://nesbitt-bot.github.io/Congo/en/item/black-dining-chair-generic/?mode=plain) ($5)
 
 Earliest available: 2026-05-13
-Additional info: Per-chair pricing. Two photos included. Photo may show a person and surrounding room items, which are not included.
+Additional info: Per-chair pricing. Cross-back dining chair with two photos.
 
 ![Black Dining Chair](../media/furniture/black-dining-chair-generic.jpg)

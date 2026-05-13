@@ -15,20 +15,20 @@ Additional info: This is an opened bag, not a sealed-new pack.
 ## [Chemical Safety Goggles](https://nesbitt-bot.github.io/Congo/en/item/chemical-safety-goggles-clear/?mode=plain) ($3)
 
 Earliest available: 2026-05-09
-Additional info: Generic lab / chemistry safety goggles. No specific brand or model is visible in the photo.
+Additional info: Adjustable safety goggles with full-eye splash coverage style.
 
 ![Chemical Safety Goggles](../media/household/chemical-safety-goggles-clear.jpg)
 
 ## [Ninja Blender with Auto-iQ](https://nesbitt-bot.github.io/Congo/en/item/ninja-blender-auto-iq-black/?mode=plain) ($15)
 
 Earliest available: 2026-05-09
-Additional info: Brand is clearly visible. Photo shows the blender base and large pitcher assembled together.
+Additional info: Large pitcher blender with Auto-iQ controls.
 
 ![Ninja Blender with Auto-iQ](../media/household/ninja-blender-auto-iq-black.jpg)
 
 ## [Bear Mini Rice Cooker](https://nesbitt-bot.github.io/Congo/en/item/bear-mini-rice-cooker-green/?mode=plain) ($15)
 
 Earliest available: 2026-05-09
-Additional info: Brand is visible on the front. Photo shows the cooker open with the inner pot removed.
+Additional info: Compact rice cooker with removable nonstick inner pot.
 
 ![Bear Mini Rice Cooker](../media/household/bear-mini-rice-cooker-green.jpg)

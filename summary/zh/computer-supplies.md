@@ -17,14 +17,14 @@
 ## [两块白板 + 三色白板笔套装](https://nesbitt-bot.github.io/Congo/zh/item/whiteboard-bundle-two-boards-markers/?mode=plain) ($10)
 
 最早可取：2026-05-07
-附加信息：参考价格是根据相似 U Brands 白板和当前 Pilot V Board Master 白板笔套装做出的实用估算。
+附加信息：套装包含两块白板和一组 Pilot 白板笔。
 
 ![两块白板 + 三色白板笔套装](../media/computer-supplies/whiteboard-bundle-two-boards-markers.jpg)
 
 ## [FlexiSpot 超薄桌下收纳抽屉 S07LB](https://nesbitt-bot.github.io/Congo/zh/item/flexispot-slim-desk-drawer-s07lb/?mode=plain) ($10)
 
 最早可取：2026-05-09
-附加信息：当前只附带一张照片，商品展示为原包装箱状态。
+附加信息：超薄桌下收纳抽屉，照片中含原包装盒。
 
 ![FlexiSpot 超薄桌下收纳抽屉 S07LB](../media/computer-supplies/flexispot-slim-desk-drawer-s07lb.jpg)
 

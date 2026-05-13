@@ -17,20 +17,20 @@
 ## [化学实验护目镜](https://nesbitt-bot.github.io/Congo/zh/item/chemical-safety-goggles-clear/?mode=plain) ($3)
 
 最早可取：2026-05-09
-附加信息：通用实验室 / 化学护目镜。照片中看不出具体品牌或型号。
+附加信息：可调节护目镜，属于全眼罩式防泼溅设计。
 
 ![化学实验护目镜](../media/household/chemical-safety-goggles-clear.jpg)
 
 ## [Ninja Auto-iQ 搅拌机](https://nesbitt-bot.github.io/Congo/zh/item/ninja-blender-auto-iq-black/?mode=plain) ($15)
 
 最早可取：2026-05-09
-附加信息：品牌清晰可见。照片中展示的是搅拌机底座和已装好的大杯体。
+附加信息：大容量搅拌杯款，带 Auto-iQ 控制面板。
 
 ![Ninja Auto-iQ 搅拌机](../media/household/ninja-blender-auto-iq-black.jpg)
 
 ## [Bear 迷你电饭煲](https://nesbitt-bot.github.io/Congo/zh/item/bear-mini-rice-cooker-green/?mode=plain) ($15)
 
 最早可取：2026-05-09
-附加信息：品牌在正面可见。照片中展示的是打开状态，并取出了内胆。
+附加信息：小型电饭煲，带可拆卸不粘内胆。
 
 ![Bear 迷你电饭煲](../media/household/bear-mini-rice-cooker-green.jpg)

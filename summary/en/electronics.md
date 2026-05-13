@@ -15,35 +15,35 @@ Additional info: Includes original retail box shown in the photo.
 ## [ASUS VP28UQG 28-inch 4K Monitor with Table Mount](https://nesbitt-bot.github.io/Congo/en/item/asus-vp28uqg-monitor-arm/?mode=plain) ($100)
 
 Earliest available: 2026-05-07
-Additional info: Includes the table mount arm and a DisplayPort cable. Three photos included: front view, rear/arm view, and model label.
+Additional info: Mounted on an adjustable clamp arm. Three photos included: front, rear, and model label.
 
 ![ASUS VP28UQG 28-inch 4K Monitor with Table Mount](../media/electronics/asus-vp28uqg-monitor-arm.jpg)
 
 ## [HP Envy 6155e Printer Bundle](https://nesbitt-bot.github.io/Congo/en/item/hp-envy-6155e-printer-bundle/?mode=plain) ($75)
 
 Earliest available: 2026-05-07
-Additional info: Bundle includes the printer, extra black ink pack, and HP Premium 24 print paper. Reference price uses HP's direct current printer listing; bundle extras are included on top.
+Additional info: Bundle includes extra black ink and HP Premium 24 paper.
 
 ![HP Envy 6155e Printer Bundle](../media/electronics/hp-envy-6155e-printer-bundle.jpg)
 
 ## [Frigidaire Gallery Mini Beauty Fridge (6-Can)](https://nesbitt-bot.github.io/Congo/en/item/frigidaire-gallery-mini-fridge/?mode=plain) ($10)
 
 Earliest available: 2026-05-09
-Additional info: Original box and accessories shown in the photo. Small countertop fridge size.
+Additional info: Compact countertop mini fridge with original box and accessories shown.
 
 ![Frigidaire Gallery Mini Beauty Fridge (6-Can)](../media/electronics/frigidaire-gallery-mini-fridge.jpg)
 
 ## [Frigidaire Countertop Ice Maker (26 lbs/day)](https://nesbitt-bot.github.io/Congo/en/item/frigidaire-countertop-ice-maker/?mode=plain) ($10)
 
 Earliest available: 2026-05-09
-Additional info: Original box visible in the photo. Countertop-size ice maker.
+Additional info: Compact countertop ice maker with original box shown.
 
 ![Frigidaire Countertop Ice Maker (26 lbs/day)](../media/electronics/frigidaire-countertop-ice-maker.jpg)
 
 ## [GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/en/item/goveelife-air-purifier-h7120/?mode=plain) ($10)
 
 Earliest available: 2026-05-09
-Additional info: Original box shown in the photo. Air purifier is now live with the seller price set.
+Additional info: Air purifier with original box shown in the photo.
 
 ![GoveeLife Air Purifier H7120](../media/electronics/goveelife-air-purifier-h7120.jpg)
 
@@ -57,20 +57,20 @@ Additional info: Photo shows the original box plus the assembled Creeper inside 
 ## [Dyson Hair Dryer with Storage Case](https://nesbitt-bot.github.io/Congo/en/item/dyson-hair-dryer-with-case/?mode=plain) ($50)
 
 Earliest available: 2026-05-09
-Additional info: Current photo shows the storage case; if more photos of the dryer/attachments arrive, they can be added to this listing.
+Additional info: Includes the purple storage case shown in the photo.
 
 ![Dyson Hair Dryer with Storage Case](../media/electronics/dyson-hair-dryer-with-case.jpg)
 
 ## [GoveeLife Smart Humidifier](https://nesbitt-bot.github.io/Congo/en/item/goveelife-smart-humidifier/?mode=plain) ($5)
 
 Earliest available: 2026-05-09
-Additional info: Photo shows the humidifier powered by its included adapter. Exact model number is not visible.
+Additional info: Compact white smart humidifier.
 
 ![GoveeLife Smart Humidifier](../media/electronics/goveelife-smart-humidifier.jpg)
 
 ## [Cuisinart Electric Coffee Grinder](https://nesbitt-bot.github.io/Congo/en/item/cuisinart-electric-coffee-grinder-black/?mode=plain) ($5)
 
 Earliest available: 2026-05-09
-Additional info: Brand is clearly visible in the photo, but the specific model number is not readable.
+Additional info: Compact electric grinder with clear bean chamber.
 
 ![Cuisinart Electric Coffee Grinder](../media/electronics/cuisinart-electric-coffee-grinder-black.jpg)

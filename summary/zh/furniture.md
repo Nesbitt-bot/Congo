@@ -17,7 +17,7 @@
 ## [Big Joe 舒适懒人椅](https://nesbitt-bot.github.io/Congo/zh/item/big-joe-comfort-chair/?mode=plain) ($10)
 
 最早可取：2026-05-07
-附加信息：当前只有一张照片。参考价使用当前 Big Joe 同类懒人椅在售价格作为近似比较。
+附加信息：柔软的大号懒人豆袋椅。
 
 ![Big Joe 舒适懒人椅](../media/furniture/big-joe-comfort-chair.jpg)
 
@@ -31,7 +31,7 @@
 ## [落地灯](https://nesbitt-bot.github.io/Congo/zh/item/floor-lamp-generic/?mode=plain) ($5)
 
 最早可取：2026-05-08
-附加信息：已补充实拍照片。标准双灯头落地灯。
+附加信息：标准双灯头落地灯。
 
 ![落地灯](../media/furniture/floor-lamp-generic.jpg)
 
@@ -52,7 +52,7 @@
 ## [黑色电视桌](https://nesbitt-bot.github.io/Congo/zh/item/black-tv-stand/?mode=plain) ($10)
 
 最早可取：2026-05-09
-附加信息：当前只附带一张照片。属于紧凑型电视 / 媒体桌尺寸。
+附加信息：紧凑型电视 / 媒体桌。
 
 ![黑色电视桌](../media/furniture/black-tv-stand.jpg)
 
@@ -87,7 +87,7 @@
 ## [悬挂式衣柜收纳层架](https://nesbitt-bot.github.io/Congo/zh/item/hanging-closet-organizer-6-shelf/?mode=plain) ($3)
 
 最早可取：2026-05-09
-附加信息：实际售价尚未设置，因此该商品目前为待定状态。
+附加信息：包含两张照片：展开悬挂视图和折叠状态。
 
 ![悬挂式衣柜收纳层架](../media/furniture/hanging-closet-organizer-6-shelf.jpg)
 
@@ -115,13 +115,13 @@
 ## [IKEA 餐桌](https://nesbitt-bot.github.io/Congo/zh/item/ikea-dining-table-dark-brown/?mode=plain) ($30)
 
 最早可取：2026-05-13
-附加信息：仅包含桌子本体。照片中的椅子、人物和其他物品不包含在内。
+附加信息：仅包含桌子本体。
 
 ![IKEA 餐桌](../media/furniture/ikea-dining-table-dark-brown.jpg)
 
 ## [黑色餐椅](https://nesbitt-bot.github.io/Congo/zh/item/black-dining-chair-generic/?mode=plain) ($5)
 
 最早可取：2026-05-13
-附加信息：按单把计价。包含两张照片。照片中的人物和周围其他物品不包含在内。
+附加信息：按单把计价。交叉靠背餐椅，包含两张照片。
 
 ![黑色餐椅](../media/furniture/black-dining-chair-generic.jpg)
