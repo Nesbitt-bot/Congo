@@ -1,0 +1,11 @@
+Second-hand for sale · Pickup at 6043 Kingsbury Ave
+Latest update: https://nesbitt-bot.github.io/Congo/en/?mode=plain
+
+Category summaries
+
+Contact email: me@trance-0.com
+
+- Computer Supplies (7 items) -> ./en/computer-supplies.txt
+- Electronics (10 items) -> ./en/electronics.txt
+- Furniture (17 items) -> ./en/furniture.txt
+- Household (4 items) -> ./en/household.txt

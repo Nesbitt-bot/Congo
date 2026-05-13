@@ -1,0 +1,12 @@
+出二手 自取 6043 Kingsbury Ave
+最新页面：https://nesbitt-bot.github.io/Congo/zh/?mode=plain
+
+分类汇总
+
+微信联系：ワッシャ
+二维码图片：media/contact/wechat-contact-qr.jpg
+
+- 家具 (17 件) -> ./zh/furniture.txt
+- 家居用品 (4 件) -> ./zh/household.txt
+- 电子产品 (10 件) -> ./zh/electronics.txt
+- 电脑用品 (7 件) -> ./zh/computer-supplies.txt

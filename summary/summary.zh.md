@@ -5,7 +5,7 @@
 
 微信联系：ワッシャ
 
-![微信联系二维码](https://nesbitt-bot.github.io/Congo/media/wechat-contact-qr.jpg)
+![微信联系二维码](media/contact/wechat-contact-qr.jpg)
 
 - [家具](./zh/furniture.md) (17 件)
 - [家居用品](./zh/household.md) (4 件)

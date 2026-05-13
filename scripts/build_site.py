@@ -1167,14 +1167,38 @@ def summary_slug(value: str) -> str:
     return slug or "other"
 
 
-def summary_contact_lines(site: dict, lang: str) -> list[str]:
-    public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
+def summary_copy_media(source_path: str, target: Path) -> Path:
+    source = ROOT / str(source_path).lstrip("/")
+    if not source.exists():
+        source = DIST / str(source_path).lstrip("/")
+    if not source.exists():
+        source = DIST / "assets" / PLACEHOLDER_NAME
+    target.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(source, target)
+    return target
+
+
+def summary_contact_lines(site: dict, lang: str, *, image_rel: str | None = None) -> list[str]:
     if lang == "zh":
-        image_url = f"{public}/{str(site.get('wechatContactImage', 'media/wechat-contact-qr.jpg')).lstrip('/')}"
         label = site.get("wechatContactLabel", "微信")
-        return [f"微信联系：{label}", "", f"![微信联系二维码]({image_url})", ""]
+        lines = [f"微信联系：{label}", ""]
+        if image_rel:
+            lines.extend([f"![微信联系二维码]({image_rel})", ""])
+        return lines
     email = site.get("contactEmail", "")
     return [f"Contact email: <{email}>", ""] if email else []
+
+
+def summary_contact_text_lines(site: dict, lang: str, *, image_rel: str | None = None) -> list[str]:
+    if lang == "zh":
+        label = site.get("wechatContactLabel", "微信")
+        lines = [f"微信联系：{label}"]
+        if image_rel:
+            lines.append(f"二维码图片：{image_rel}")
+        lines.append("")
+        return lines
+    email = site.get("contactEmail", "")
+    return [f"Contact email: {email}", ""] if email else []
 
 
 def grouped_summary_items(catalog: dict, lang: str) -> tuple[dict, list[tuple[str, str, list[dict]]]]:
@@ -1193,7 +1217,7 @@ def grouped_summary_items(catalog: dict, lang: str) -> tuple[dict, list[tuple[st
     return site, ordered
 
 
-def summary_lines_for_catalog(catalog: dict, lang: str, *, items: list[dict] | None = None, category_label: str | None = None) -> str:
+def summary_lines_for_catalog(catalog: dict, lang: str, *, items: list[dict] | None = None, category_label: str | None = None, contact_image_rel: str | None = None) -> str:
     site = localize_catalog(catalog, lang)["site"]
     public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
     pickup = site.get("pickupAddress", "")
@@ -1205,13 +1229,12 @@ def summary_lines_for_catalog(catalog: dict, lang: str, *, items: list[dict] | N
     if category_label:
         sections.append(f"# {category_label}")
         sections.append("")
-    sections.extend(summary_contact_lines(site, lang))
+    sections.extend(summary_contact_lines(site, lang, image_rel=contact_image_rel))
     for item in items or []:
         price = item.get("actualPrice")
         price_label = (f"${int(price) if float(price).is_integer() else price}" if price is not None else ("待定" if is_zh else "Price pending"))
         item_url = f"{public}/{lang}/item/{item['id']}/?mode=plain"
-        image_path = item.get("image") or (item.get("images") or ["assets/placeholder.png"])[0]
-        image_url = f"{public}/{image_path.lstrip('/')}"
+        image_path = item.get("summaryImageRel") or item.get("image") or (item.get("images") or ["assets/placeholder.png"])[0]
         sections.append(f"## [{item['name']}]({item_url}) ({price_label})")
         sections.append("")
         sections.append((f"最早可取：{item.get('earliestPickupDate', '')}" if is_zh else f"Earliest available: {item.get('earliestPickupDate', '')}"))
@@ -1220,12 +1243,12 @@ def summary_lines_for_catalog(catalog: dict, lang: str, *, items: list[dict] | N
         if item.get('pickupNotes'):
             sections.append((f"附加信息：{item.get('pickupNotes')}" if is_zh else f"Additional info: {item.get('pickupNotes')}"))
         sections.append("")
-        sections.append(f"![{item['name']}]({image_url})")
+        sections.append(f"![{item['name']}]({image_path})")
         sections.append("")
     return "\n".join(sections).strip() + "\n"
 
 
-def summary_index_lines(catalog: dict, lang: str, grouped: list[tuple[str, str, list[dict]]]) -> str:
+def summary_text_for_catalog(catalog: dict, lang: str, *, items: list[dict] | None = None, category_label: str | None = None, contact_image_rel: str | None = None) -> str:
     site = localize_catalog(catalog, lang)["site"]
     public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
     pickup = site.get("pickupAddress", "")
@@ -1233,35 +1256,100 @@ def summary_index_lines(catalog: dict, lang: str, grouped: list[tuple[str, str, 
     intro = f"出二手 自取 {pickup}" if is_zh else f"Second-hand for sale · Pickup at {pickup}"
     site_url = f"{public}/{lang}/?mode=plain"
     site_line = f"最新页面：{site_url}" if is_zh else f"Latest update: {site_url}"
-    title = "# 分类汇总" if is_zh else "# Category summaries"
+    sections = [intro, site_line, ""]
+    if category_label:
+        sections.append(f"Category: {category_label}" if not is_zh else f"分类：{category_label}")
+        sections.append("")
+    sections.extend(summary_contact_text_lines(site, lang, image_rel=contact_image_rel))
+    for item in items or []:
+        price = item.get("actualPrice")
+        price_label = (f"${int(price) if float(price).is_integer() else price}" if price is not None else ("待定" if is_zh else "Price pending"))
+        item_url = f"{public}/{lang}/item/{item['id']}/?mode=plain"
+        sections.append(f"{item['name']} — {price_label}")
+        sections.append(f"链接：{item_url}" if is_zh else f"Link: {item_url}")
+        sections.append((f"最早可取：{item.get('earliestPickupDate', '')}" if is_zh else f"Earliest available: {item.get('earliestPickupDate', '')}"))
+        if item.get('latestPickupDate'):
+            sections.append((f"最晚可取：{item.get('latestPickupDate')}" if is_zh else f"Latest available: {item.get('latestPickupDate')}"))
+        if item.get('pickupNotes'):
+            sections.append((f"附加信息：{item.get('pickupNotes')}" if is_zh else f"Additional info: {item.get('pickupNotes')}"))
+        sections.append("")
+    return "\n".join(sections).strip() + "\n"
+
+
+def summary_index_lines(catalog: dict, lang: str, grouped: list[tuple[str, str, list[dict]]], *, contact_image_rel: str | None = None, extension: str = "md") -> str:
+    site = localize_catalog(catalog, lang)["site"]
+    public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
+    pickup = site.get("pickupAddress", "")
+    is_zh = lang == "zh"
+    intro = f"出二手 自取 {pickup}" if is_zh else f"Second-hand for sale · Pickup at {pickup}"
+    site_url = f"{public}/{lang}/?mode=plain"
+    site_line = f"最新页面：{site_url}" if is_zh else f"Latest update: {site_url}"
+    if extension == "md":
+        title = "# 分类汇总" if is_zh else "# Category summaries"
+        sections = [intro, site_line, "", title, ""]
+        sections.extend(summary_contact_lines(site, lang, image_rel=contact_image_rel))
+        for category_key, category_label, items in grouped:
+            slug = summary_slug(category_key)
+            rel_path = f"./{lang}/{slug}.md"
+            count = len(items)
+            label = f"{count} 件" if is_zh else f"{count} item{'s' if count != 1 else ''}"
+            sections.append(f"- [{category_label}]({rel_path}) ({label})")
+        sections.append("")
+        return "\n".join(sections)
+    title = "分类汇总" if is_zh else "Category summaries"
     sections = [intro, site_line, "", title, ""]
-    sections.extend(summary_contact_lines(site, lang))
+    sections.extend(summary_contact_text_lines(site, lang, image_rel=contact_image_rel))
     for category_key, category_label, items in grouped:
         slug = summary_slug(category_key)
-        rel_path = f"./{lang}/{slug}.md"
+        rel_path = f"./{lang}/{slug}.txt"
         count = len(items)
         label = f"{count} 件" if is_zh else f"{count} item{'s' if count != 1 else ''}"
-        sections.append(f"- [{category_label}]({rel_path}) ({label})")
+        sections.append(f"- {category_label} ({label}) -> {rel_path}")
     sections.append("")
     return "\n".join(sections)
 
 
 def write_summary_files(catalog: dict) -> None:
     summary_dir = ROOT / "summary"
+    media_dir = summary_dir / "media"
     summary_dir.mkdir(parents=True, exist_ok=True)
+    if media_dir.exists():
+        shutil.rmtree(media_dir)
+    media_dir.mkdir(parents=True, exist_ok=True)
     for lang in ["en", "zh"]:
         lang_dir = summary_dir / lang
         lang_dir.mkdir(parents=True, exist_ok=True)
         for stale in lang_dir.glob("*.md"):
             stale.unlink()
+        for stale in lang_dir.glob("*.txt"):
+            stale.unlink()
         site, grouped = grouped_summary_items(catalog, lang)
+        contact_rel_root = None
+        if lang == "zh":
+            contact_name = Path(str(site.get("wechatContactImage", "media/wechat-contact-qr.jpg"))).name or "wechat-contact-qr.jpg"
+            contact_target = summary_copy_media(str(site.get("wechatContactImage", "media/wechat-contact-qr.jpg")), media_dir / "contact" / contact_name)
+            contact_rel_root = Path(shutil.os.path.relpath(contact_target, summary_dir)).as_posix()
         for category_key, category_label, items in grouped:
             slug = summary_slug(category_key)
+            prepared_items = []
+            for item in items:
+                clone = dict(item)
+                image_source = item.get("image") or (item.get("images") or ["assets/placeholder.png"])[0]
+                source_suffix = Path(str(image_source)).suffix or ".jpg"
+                image_target = summary_copy_media(image_source, media_dir / slug / f"{item['id']}{source_suffix}")
+                clone["summaryImageRel"] = Path(shutil.os.path.relpath(image_target, lang_dir)).as_posix()
+                prepared_items.append(clone)
+            contact_rel_lang = Path(shutil.os.path.relpath(media_dir / "contact" / Path(str(site.get("wechatContactImage", "media/wechat-contact-qr.jpg"))).name, lang_dir)).as_posix() if lang == "zh" else None
             (lang_dir / f"{slug}.md").write_text(
-                summary_lines_for_catalog(catalog, lang, items=items, category_label=category_label),
+                summary_lines_for_catalog(catalog, lang, items=prepared_items, category_label=category_label, contact_image_rel=contact_rel_lang),
                 encoding="utf-8",
             )
-        (summary_dir / f"summary.{lang}.md").write_text(summary_index_lines(catalog, lang, grouped), encoding="utf-8")
+            (lang_dir / f"{slug}.txt").write_text(
+                summary_text_for_catalog(catalog, lang, items=prepared_items, category_label=category_label, contact_image_rel=contact_rel_lang),
+                encoding="utf-8",
+            )
+        (summary_dir / f"summary.{lang}.md").write_text(summary_index_lines(catalog, lang, grouped, contact_image_rel=contact_rel_root, extension="md"), encoding="utf-8")
+        (summary_dir / f"summary.{lang}.txt").write_text(summary_index_lines(catalog, lang, grouped, contact_image_rel=contact_rel_root, extension="txt"), encoding="utf-8")
 
 
 def write_catalog_files(catalog: dict) -> None:

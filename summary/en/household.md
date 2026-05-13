@@ -10,25 +10,25 @@ Contact email: <me@trance-0.com>
 Earliest available: 2026-05-09
 Additional info: This is an opened bag, not a sealed-new pack.
 
-![Amazon Basics Basket Coffee Filters](https://nesbitt-bot.github.io/Congo/media/amazon-basics-coffee-filters-basket.jpg)
+![Amazon Basics Basket Coffee Filters](../media/household/amazon-basics-coffee-filters-basket.jpg)
 
 ## [Chemical Safety Goggles](https://nesbitt-bot.github.io/Congo/en/item/chemical-safety-goggles-clear/?mode=plain) ($3)
 
 Earliest available: 2026-05-09
 Additional info: Generic lab / chemistry safety goggles. No specific brand or model is visible in the photo.
 
-![Chemical Safety Goggles](https://nesbitt-bot.github.io/Congo/media/chemical-safety-goggles-clear.jpg)
+![Chemical Safety Goggles](../media/household/chemical-safety-goggles-clear.jpg)
 
 ## [Ninja Blender with Auto-iQ](https://nesbitt-bot.github.io/Congo/en/item/ninja-blender-auto-iq-black/?mode=plain) ($15)
 
 Earliest available: 2026-05-09
 Additional info: Brand is clearly visible. Photo shows the blender base and large pitcher assembled together.
 
-![Ninja Blender with Auto-iQ](https://nesbitt-bot.github.io/Congo/media/ninja-blender-auto-iq-black.jpg)
+![Ninja Blender with Auto-iQ](../media/household/ninja-blender-auto-iq-black.jpg)
 
 ## [Bear Mini Rice Cooker](https://nesbitt-bot.github.io/Congo/en/item/bear-mini-rice-cooker-green/?mode=plain) ($15)
 
 Earliest available: 2026-05-09
 Additional info: Brand is visible on the front. Photo shows the cooker open with the inner pot removed.
 
-![Bear Mini Rice Cooker](https://nesbitt-bot.github.io/Congo/media/bear-rice-cooker-green.jpg)
+![Bear Mini Rice Cooker](../media/household/bear-mini-rice-cooker-green.jpg)
