@@ -259,3 +259,10 @@ Earliest available: 2026-05-13
 Additional info: Table only. Chairs, people, and other items in the photo are not included.
 
 ![IKEA Dining Table](https://nesbitt-bot.github.io/Congo/media/ikea-dining-table-dark-brown.jpg)
+
+## [Black Dining Chair](https://nesbitt-bot.github.io/Congo/en/item/black-dining-chair-generic/?mode=plain) ($5)
+
+Earliest available: 2026-05-13
+Additional info: Per-chair pricing. Photo also includes a person and surrounding room items, which are not included.
+
+![Black Dining Chair](https://nesbitt-bot.github.io/Congo/media/black-dining-chair-generic.jpg)

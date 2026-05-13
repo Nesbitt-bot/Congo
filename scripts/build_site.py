@@ -259,6 +259,11 @@ ITEM_ZH = {
         "description": "深棕色 IKEA 风格长方形餐桌。仅凭当前照片无法确认具体 IKEA 型号。",
         "pickupNotes": "仅包含桌子本体。照片中的椅子、人物和其他物品不包含在内。",
     },
+    "black-dining-chair-generic": {
+        "name": "黑色餐椅",
+        "description": "通用黑色餐椅，靠背为交叉设计。价格按单把计算。",
+        "pickupNotes": "按单把计价。照片中的人物和周围其他物品不包含在内。",
+    },
 }
 
 SITE_I18N = {

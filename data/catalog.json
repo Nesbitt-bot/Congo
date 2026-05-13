@@ -722,6 +722,21 @@
       "image": "media/ikea-dining-table-dark-brown.jpg",
       "description": "Dark brown IKEA-style rectangular dining table. Exact IKEA model is not verified from the photo alone.",
       "pickupNotes": "Table only. Chairs, people, and other items in the photo are not included."
+    },
+    {
+      "id": "black-dining-chair-generic",
+      "name": "Black Dining Chair",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 39.99,
+      "referenceLink": "https://www.amazon.com/s?k=black+wood+dining+chair",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-13",
+      "image": "media/black-dining-chair-generic.jpg",
+      "description": "Generic black dining chair with cross-back design. Price is per chair.",
+      "pickupNotes": "Per-chair pricing. Photo also includes a person and surrounding room items, which are not included."
     }
   ]
 }

@@ -259,3 +259,10 @@
 附加信息：仅包含桌子本体。照片中的椅子、人物和其他物品不包含在内。
 
 ![IKEA 餐桌](https://nesbitt-bot.github.io/Congo/media/ikea-dining-table-dark-brown.jpg)
+
+## [黑色餐椅](https://nesbitt-bot.github.io/Congo/zh/item/black-dining-chair-generic/?mode=plain) ($5)
+
+最早可取：2026-05-13
+附加信息：按单把计价。照片中的人物和周围其他物品不包含在内。
+
+![黑色餐椅](https://nesbitt-bot.github.io/Congo/media/black-dining-chair-generic.jpg)
