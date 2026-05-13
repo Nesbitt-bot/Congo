@@ -4,9 +4,11 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import textwrap
+import unicodedata
 from html import escape
 from pathlib import Path
 from urllib.parse import quote_plus
@@ -1159,9 +1161,40 @@ def about_body(site: dict) -> str:
     """
 
 
-def summary_lines_for_catalog(catalog: dict, lang: str) -> str:
+def summary_slug(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", str(value)).encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", normalized).strip("-").lower()
+    return slug or "other"
+
+
+def summary_contact_lines(site: dict, lang: str) -> list[str]:
+    public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
+    if lang == "zh":
+        image_url = f"{public}/{str(site.get('wechatContactImage', 'media/wechat-contact-qr.jpg')).lstrip('/')}"
+        label = site.get("wechatContactLabel", "微信")
+        return [f"微信联系：{label}", "", f"![微信联系二维码]({image_url})", ""]
+    email = site.get("contactEmail", "")
+    return [f"Contact email: <{email}>", ""] if email else []
+
+
+def grouped_summary_items(catalog: dict, lang: str) -> tuple[dict, list[tuple[str, str, list[dict]]]]:
     localized = localize_catalog(catalog, lang)
     site = localized["site"]
+    grouped: dict[str, dict] = {}
+    for original, item in zip(catalog["items"], localized["items"]):
+        if item.get("status") == "sold":
+            continue
+        key = original.get("category", "Other")
+        bucket = grouped.setdefault(key, {"label": item.get("category", key), "items": []})
+        bucket["items"].append(item)
+    ordered = []
+    for key in sorted(grouped.keys(), key=lambda value: grouped[value]["label"]):
+        ordered.append((key, grouped[key]["label"], grouped[key]["items"]))
+    return site, ordered
+
+
+def summary_lines_for_catalog(catalog: dict, lang: str, *, items: list[dict] | None = None, category_label: str | None = None) -> str:
+    site = localize_catalog(catalog, lang)["site"]
     public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
     pickup = site.get("pickupAddress", "")
     is_zh = lang == "zh"
@@ -1169,9 +1202,11 @@ def summary_lines_for_catalog(catalog: dict, lang: str) -> str:
     site_url = f"{public}/{lang}/?mode=plain"
     site_line = f"最新页面：{site_url}" if is_zh else f"Latest update: {site_url}"
     sections = [intro, site_line, ""]
-    for item in localized["items"]:
-        if item.get("status") == "sold":
-            continue
+    if category_label:
+        sections.append(f"# {category_label}")
+        sections.append("")
+    sections.extend(summary_contact_lines(site, lang))
+    for item in items or []:
         price = item.get("actualPrice")
         price_label = (f"${int(price) if float(price).is_integer() else price}" if price is not None else ("待定" if is_zh else "Price pending"))
         item_url = f"{public}/{lang}/item/{item['id']}/?mode=plain"
@@ -1190,11 +1225,43 @@ def summary_lines_for_catalog(catalog: dict, lang: str) -> str:
     return "\n".join(sections).strip() + "\n"
 
 
+def summary_index_lines(catalog: dict, lang: str, grouped: list[tuple[str, str, list[dict]]]) -> str:
+    site = localize_catalog(catalog, lang)["site"]
+    public = site.get("publicUrl", site.get("baseUrl", "https://nesbitt-bot.github.io/Congo")).rstrip("/")
+    pickup = site.get("pickupAddress", "")
+    is_zh = lang == "zh"
+    intro = f"出二手 自取 {pickup}" if is_zh else f"Second-hand for sale · Pickup at {pickup}"
+    site_url = f"{public}/{lang}/?mode=plain"
+    site_line = f"最新页面：{site_url}" if is_zh else f"Latest update: {site_url}"
+    title = "# 分类汇总" if is_zh else "# Category summaries"
+    sections = [intro, site_line, "", title, ""]
+    sections.extend(summary_contact_lines(site, lang))
+    for category_key, category_label, items in grouped:
+        slug = summary_slug(category_key)
+        rel_path = f"./{lang}/{slug}.md"
+        count = len(items)
+        label = f"{count} 件" if is_zh else f"{count} item{'s' if count != 1 else ''}"
+        sections.append(f"- [{category_label}]({rel_path}) ({label})")
+    sections.append("")
+    return "\n".join(sections)
+
+
 def write_summary_files(catalog: dict) -> None:
     summary_dir = ROOT / "summary"
     summary_dir.mkdir(parents=True, exist_ok=True)
-    (summary_dir / "summary.en.md").write_text(summary_lines_for_catalog(catalog, "en"), encoding="utf-8")
-    (summary_dir / "summary.zh.md").write_text(summary_lines_for_catalog(catalog, "zh"), encoding="utf-8")
+    for lang in ["en", "zh"]:
+        lang_dir = summary_dir / lang
+        lang_dir.mkdir(parents=True, exist_ok=True)
+        for stale in lang_dir.glob("*.md"):
+            stale.unlink()
+        site, grouped = grouped_summary_items(catalog, lang)
+        for category_key, category_label, items in grouped:
+            slug = summary_slug(category_key)
+            (lang_dir / f"{slug}.md").write_text(
+                summary_lines_for_catalog(catalog, lang, items=items, category_label=category_label),
+                encoding="utf-8",
+            )
+        (summary_dir / f"summary.{lang}.md").write_text(summary_index_lines(catalog, lang, grouped), encoding="utf-8")
 
 
 def write_catalog_files(catalog: dict) -> None:

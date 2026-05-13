@@ -5,7 +5,7 @@ from build_site import read_catalog, write_summary_files
 def main() -> None:
     catalog = read_catalog()
     write_summary_files(catalog)
-    print("Generated summary/summary.en.md and summary/summary.zh.md")
+    print("Generated summary indexes and per-category markdown files under summary/")
 
 
 if __name__ == "__main__":
