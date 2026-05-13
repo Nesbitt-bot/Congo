@@ -262,7 +262,7 @@ ITEM_ZH = {
     "black-dining-chair-generic": {
         "name": "黑色餐椅",
         "description": "通用黑色餐椅，靠背为交叉设计。价格按单把计算。",
-        "pickupNotes": "按单把计价。照片中的人物和周围其他物品不包含在内。",
+        "pickupNotes": "按单把计价。包含两张照片。照片中的人物和周围其他物品不包含在内。",
     },
 }
 

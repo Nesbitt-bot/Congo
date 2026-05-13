@@ -736,7 +736,11 @@
       "earliestPickupDate": "2026-05-13",
       "image": "media/black-dining-chair-generic.jpg",
       "description": "Generic black dining chair with cross-back design. Price is per chair.",
-      "pickupNotes": "Per-chair pricing. Photo also includes a person and surrounding room items, which are not included."
+      "pickupNotes": "Per-chair pricing. Two photos included. Photo may show a person and surrounding room items, which are not included.",
+      "images": [
+        "media/black-dining-chair-generic.jpg",
+        "media/black-dining-chair-generic-side.jpg"
+      ]
     }
   ]
 }
