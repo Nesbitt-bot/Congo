@@ -146,3 +146,17 @@
 附加信息：此条目仅包含地灯本体，不含旁边的椅子和房间内其他物品。
 
 ![黑色地灯](../media/furniture/floor-lamp-black-room.jpg)
+
+## [黑色床头柜](https://nesbitt-bot.github.io/Congo/zh/item/nightstand-black-single-drawer/?mode=plain) ($5)
+
+最早可取：2026-05-14
+附加信息：此条目仅包含床头柜本体，不含台灯和旁边其他物品。
+
+![黑色床头柜](../media/furniture/nightstand-black-single-drawer.jpg)
+
+## [长方形灯罩台灯](https://nesbitt-bot.github.io/Congo/zh/item/table-lamp-rectangular-shade-black-base/?mode=plain) ($5)
+
+最早可取：2026-05-14
+附加信息：此条目仅包含台灯本体，不含床头柜和旁边其他物品。
+
+![长方形灯罩台灯](../media/furniture/table-lamp-rectangular-shade-black-base.jpg)

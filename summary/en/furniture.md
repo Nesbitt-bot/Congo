@@ -144,3 +144,17 @@ Earliest available: 2026-05-14
 Additional info: Lamp only. The nearby chair and other room items are not included in this listing.
 
 ![Black Floor Lamp](../media/furniture/floor-lamp-black-room.jpg)
+
+## [Black Nightstand](https://nesbitt-bot.github.io/Congo/en/item/nightstand-black-single-drawer/?mode=plain) ($5)
+
+Earliest available: 2026-05-14
+Additional info: Nightstand only. Lamp and other nearby room items are not included.
+
+![Black Nightstand](../media/furniture/nightstand-black-single-drawer.jpg)
+
+## [Table Lamp with Rectangular Shade](https://nesbitt-bot.github.io/Congo/en/item/table-lamp-rectangular-shade-black-base/?mode=plain) ($5)
+
+Earliest available: 2026-05-14
+Additional info: Lamp only. Nightstand and other nearby room items are not included.
+
+![Table Lamp with Rectangular Shade](../media/furniture/table-lamp-rectangular-shade-black-base.jpg)

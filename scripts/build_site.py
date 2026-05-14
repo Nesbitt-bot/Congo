@@ -291,6 +291,16 @@ ITEM_ZH = {
         "description": "照片里展示的黑色落地灯。",
         "pickupNotes": "此条目仅包含地灯本体，不含旁边的椅子和房间内其他物品。",
     },
+    "nightstand-black-single-drawer": {
+        "name": "黑色床头柜",
+        "description": "黑色床头柜，带一层开放置物格和一个下方抽屉。",
+        "pickupNotes": "此条目仅包含床头柜本体，不含台灯和旁边其他物品。",
+    },
+    "table-lamp-rectangular-shade-black-base": {
+        "name": "长方形灯罩台灯",
+        "description": "台灯带长方形白色灯罩和黑色方形底座。",
+        "pickupNotes": "此条目仅包含台灯本体，不含床头柜和旁边其他物品。",
+    },
 }
 
 SITE_I18N = {

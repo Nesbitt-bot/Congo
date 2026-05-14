@@ -816,6 +816,36 @@
       "image": "media/floor-lamp-black-room.jpg",
       "description": "Black floor lamp shown in the room photo.",
       "pickupNotes": "Lamp only. The nearby chair and other room items are not included in this listing."
+    },
+    {
+      "id": "nightstand-black-single-drawer",
+      "name": "Black Nightstand",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 49.99,
+      "referenceLink": "https://www.amazon.com/s?k=black+nightstand+single+drawer",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-14",
+      "image": "media/nightstand-black-single-drawer.jpg",
+      "description": "Black nightstand with one open shelf and one lower drawer.",
+      "pickupNotes": "Nightstand only. Lamp and other nearby room items are not included."
+    },
+    {
+      "id": "table-lamp-rectangular-shade-black-base",
+      "name": "Table Lamp with Rectangular Shade",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 24.99,
+      "referenceLink": "https://www.target.com/s?searchTerm=table+lamp+rectangular+shade",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-14",
+      "image": "media/table-lamp-rectangular-shade-black-base.jpg",
+      "description": "Table lamp with rectangular white shade and black square base.",
+      "pickupNotes": "Lamp only. Nightstand and other nearby room items are not included."
     }
   ]
 }
