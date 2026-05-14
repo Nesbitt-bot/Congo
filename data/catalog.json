@@ -741,6 +741,21 @@
         "media/black-dining-chair-generic.jpg",
         "media/black-dining-chair-generic-side.jpg"
       ]
+    },
+    {
+      "id": "twin-bed-frame-white",
+      "name": "Twin Bed Frame",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 99.99,
+      "referenceLink": "https://www.amazon.com/s?k=twin+bed+frame+white",
+      "actualPrice": 20,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-14",
+      "image": "media/twin-bed-frame-white.jpg",
+      "description": "White twin-size bed frame with tall headboard and low-profile side rails.",
+      "pickupNotes": "Bed frame only. Mattress, pillow, sheets, and nearby furniture are not included."
     }
   ]
 }

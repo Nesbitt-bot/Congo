@@ -125,3 +125,10 @@
 附加信息：按单把计价。交叉靠背餐椅，包含两张照片。
 
 ![黑色餐椅](../media/furniture/black-dining-chair-generic.jpg)
+
+## [单人床架](https://nesbitt-bot.github.io/Congo/zh/item/twin-bed-frame-white/?mode=plain) ($20)
+
+最早可取：2026-05-14
+附加信息：仅包含床架本体，不含床垫、枕头、床单和周围其他家具。
+
+![单人床架](../media/furniture/twin-bed-frame-white.jpg)

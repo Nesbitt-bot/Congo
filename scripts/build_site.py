@@ -266,6 +266,11 @@ ITEM_ZH = {
         "description": "通用黑色餐椅，靠背为交叉设计。价格按单把计算。",
         "pickupNotes": "按单把计价。交叉靠背餐椅，包含两张照片。",
     },
+    "twin-bed-frame-white": {
+        "name": "单人床架",
+        "description": "白色单人床架，带较高床头板和低矮侧边框。",
+        "pickupNotes": "仅包含床架本体，不含床垫、枕头、床单和周围其他家具。",
+    },
 }
 
 SITE_I18N = {

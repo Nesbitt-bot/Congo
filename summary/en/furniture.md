@@ -123,3 +123,10 @@ Earliest available: 2026-05-13
 Additional info: Per-chair pricing. Cross-back dining chair with two photos.
 
 ![Black Dining Chair](../media/furniture/black-dining-chair-generic.jpg)
+
+## [Twin Bed Frame](https://nesbitt-bot.github.io/Congo/en/item/twin-bed-frame-white/?mode=plain) ($20)
+
+Earliest available: 2026-05-14
+Additional info: Bed frame only. Mattress, pillow, sheets, and nearby furniture are not included.
+
+![Twin Bed Frame](../media/furniture/twin-bed-frame-white.jpg)
