@@ -132,3 +132,10 @@
 附加信息：仅包含床架本体，不含床垫、枕头、床单和周围其他家具。
 
 ![单人床架](../media/furniture/twin-bed-frame-white.jpg)
+
+## [黑色折叠懒人沙发椅](https://nesbitt-bot.github.io/Congo/zh/item/folding-saucer-chair-black/?mode=plain) ($5)
+
+最早可取：2026-05-14
+附加信息：仅包含椅子本体，不含旁边的台灯、电线和房间内其他物品。
+
+![黑色折叠懒人沙发椅](../media/furniture/folding-saucer-chair-black.jpg)

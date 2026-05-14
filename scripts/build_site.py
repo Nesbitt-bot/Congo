@@ -281,6 +281,11 @@ ITEM_ZH = {
         "description": "白色油汀式暖气片，带滚轮和前部控制旋钮。",
         "pickupNotes": "此条目仅对应白色油汀暖气片本体。",
     },
+    "folding-saucer-chair-black": {
+        "name": "黑色折叠懒人沙发椅",
+        "description": "黑色折叠式圆盘懒人沙发椅，带软垫圆形坐面和金属支架。",
+        "pickupNotes": "仅包含椅子本体，不含旁边的台灯、电线和房间内其他物品。",
+    },
 }
 
 SITE_I18N = {

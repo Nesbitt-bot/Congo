@@ -130,3 +130,10 @@ Earliest available: 2026-05-14
 Additional info: Bed frame only. Mattress, pillow, sheets, and nearby furniture are not included.
 
 ![Twin Bed Frame](../media/furniture/twin-bed-frame-white.jpg)
+
+## [Folding Saucer Chair](https://nesbitt-bot.github.io/Congo/en/item/folding-saucer-chair-black/?mode=plain) ($5)
+
+Earliest available: 2026-05-14
+Additional info: Chair only. Nearby lamp, cords, and other room items are not included.
+
+![Folding Saucer Chair](../media/furniture/folding-saucer-chair-black.jpg)

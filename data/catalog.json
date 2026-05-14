@@ -786,6 +786,21 @@
       "image": "media/oil-filled-radiator-heater-white.jpg",
       "description": "White oil-filled radiator heater with rolling casters and front control knobs.",
       "pickupNotes": "This listing is for the white radiator heater only."
+    },
+    {
+      "id": "folding-saucer-chair-black",
+      "name": "Folding Saucer Chair",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 34.99,
+      "referenceLink": "https://www.amazon.com/s?k=folding+saucer+chair+black",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-14",
+      "image": "media/folding-saucer-chair-black.jpg",
+      "description": "Black folding saucer-style lounge chair with padded circular seat and metal frame.",
+      "pickupNotes": "Chair only. Nearby lamp, cords, and other room items are not included."
     }
   ]
 }
