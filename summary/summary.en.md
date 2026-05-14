@@ -8,4 +8,4 @@ Contact email: <me@trance-0.com>
 - [Computer Supplies](./en/computer-supplies.md) (7 items)
 - [Electronics](./en/electronics.md) (10 items)
 - [Furniture](./en/furniture.md) (18 items)
-- [Household](./en/household.md) (4 items)
+- [Household](./en/household.md) (6 items)

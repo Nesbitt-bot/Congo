@@ -34,3 +34,17 @@
 附加信息：小型电饭煲，带可拆卸不粘内胆。
 
 ![Bear 迷你电饭煲](../media/household/bear-mini-rice-cooker-green.jpg)
+
+## [黑色暖风机](https://nesbitt-bot.github.io/Congo/zh/item/space-heater-black-compact/?mode=plain) ($5)
+
+最早可取：2026-05-14
+附加信息：此条目仅对应小黑色暖风机本体。
+
+![黑色暖风机](../media/household/space-heater-black-compact.jpg)
+
+## [白色油汀暖气片](https://nesbitt-bot.github.io/Congo/zh/item/oil-filled-radiator-heater-white/?mode=plain) ($5)
+
+最早可取：2026-05-14
+附加信息：此条目仅对应白色油汀暖气片本体。
+
+![白色油汀暖气片](../media/household/oil-filled-radiator-heater-white.jpg)

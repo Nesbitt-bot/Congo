@@ -271,6 +271,16 @@ ITEM_ZH = {
         "description": "白色单人床架，带较高床头板和低矮侧边框。",
         "pickupNotes": "仅包含床架本体，不含床垫、枕头、床单和周围其他家具。",
     },
+    "space-heater-black-compact": {
+        "name": "黑色暖风机",
+        "description": "黑色小型便携暖风机，顶部带提手。",
+        "pickupNotes": "此条目仅对应小黑色暖风机本体。",
+    },
+    "oil-filled-radiator-heater-white": {
+        "name": "白色油汀暖气片",
+        "description": "白色油汀式暖气片，带滚轮和前部控制旋钮。",
+        "pickupNotes": "此条目仅对应白色油汀暖气片本体。",
+    },
 }
 
 SITE_I18N = {

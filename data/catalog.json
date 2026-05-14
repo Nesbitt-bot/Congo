@@ -756,6 +756,36 @@
       "image": "media/twin-bed-frame-white.jpg",
       "description": "White twin-size bed frame with tall headboard and low-profile side rails.",
       "pickupNotes": "Bed frame only. Mattress, pillow, sheets, and nearby furniture are not included."
+    },
+    {
+      "id": "space-heater-black-compact",
+      "name": "Compact Space Heater",
+      "category": "Household",
+      "condition": "Used - good",
+      "referencePrice": 24.99,
+      "referenceLink": "https://www.amazon.com/s?k=compact+space+heater",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-14",
+      "image": "media/space-heater-black-compact.jpg",
+      "description": "Compact black portable space heater with top carry handle.",
+      "pickupNotes": "This listing is for the small black space heater only."
+    },
+    {
+      "id": "oil-filled-radiator-heater-white",
+      "name": "Oil-Filled Radiator Heater",
+      "category": "Household",
+      "condition": "Used - good",
+      "referencePrice": 59.99,
+      "referenceLink": "https://www.amazon.com/s?k=oil+filled+radiator+heater",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-14",
+      "image": "media/oil-filled-radiator-heater-white.jpg",
+      "description": "White oil-filled radiator heater with rolling casters and front control knobs.",
+      "pickupNotes": "This listing is for the white radiator heater only."
     }
   ]
 }

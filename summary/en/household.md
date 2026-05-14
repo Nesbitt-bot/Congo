@@ -32,3 +32,17 @@ Earliest available: 2026-05-09
 Additional info: Compact rice cooker with removable nonstick inner pot.
 
 ![Bear Mini Rice Cooker](../media/household/bear-mini-rice-cooker-green.jpg)
+
+## [Compact Space Heater](https://nesbitt-bot.github.io/Congo/en/item/space-heater-black-compact/?mode=plain) ($5)
+
+Earliest available: 2026-05-14
+Additional info: This listing is for the small black space heater only.
+
+![Compact Space Heater](../media/household/space-heater-black-compact.jpg)
+
+## [Oil-Filled Radiator Heater](https://nesbitt-bot.github.io/Congo/en/item/oil-filled-radiator-heater-white/?mode=plain) ($5)
+
+Earliest available: 2026-05-14
+Additional info: This listing is for the white radiator heater only.
+
+![Oil-Filled Radiator Heater](../media/household/oil-filled-radiator-heater-white.jpg)
