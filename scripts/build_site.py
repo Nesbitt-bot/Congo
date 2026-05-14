@@ -286,6 +286,11 @@ ITEM_ZH = {
         "description": "黑色折叠式圆盘懒人沙发椅，带软垫圆形坐面和金属支架。",
         "pickupNotes": "仅包含椅子本体，不含旁边的台灯、电线和房间内其他物品。",
     },
+    "floor-lamp-black-room": {
+        "name": "黑色地灯",
+        "description": "照片里展示的黑色落地灯。",
+        "pickupNotes": "此条目仅包含地灯本体，不含旁边的椅子和房间内其他物品。",
+    },
 }
 
 SITE_I18N = {

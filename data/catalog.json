@@ -801,6 +801,21 @@
       "image": "media/folding-saucer-chair-black.jpg",
       "description": "Black folding saucer-style lounge chair with padded circular seat and metal frame.",
       "pickupNotes": "Chair only. Nearby lamp, cords, and other room items are not included."
+    },
+    {
+      "id": "floor-lamp-black-room",
+      "name": "Black Floor Lamp",
+      "category": "Furniture",
+      "condition": "Used - good",
+      "referencePrice": 29.99,
+      "referenceLink": "https://www.target.com/s?searchTerm=floor+lamp+black",
+      "actualPrice": 5,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-14",
+      "image": "media/floor-lamp-black-room.jpg",
+      "description": "Black floor lamp shown in the room photo.",
+      "pickupNotes": "Lamp only. The nearby chair and other room items are not included in this listing."
     }
   ]
 }

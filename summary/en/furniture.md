@@ -137,3 +137,10 @@ Earliest available: 2026-05-14
 Additional info: Chair only. Nearby lamp, cords, and other room items are not included.
 
 ![Folding Saucer Chair](../media/furniture/folding-saucer-chair-black.jpg)
+
+## [Black Floor Lamp](https://nesbitt-bot.github.io/Congo/en/item/floor-lamp-black-room/?mode=plain) ($5)
+
+Earliest available: 2026-05-14
+Additional info: Lamp only. The nearby chair and other room items are not included in this listing.
+
+![Black Floor Lamp](../media/furniture/floor-lamp-black-room.jpg)
