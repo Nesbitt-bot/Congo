@@ -38,6 +38,7 @@ CATEGORY_ZH = {
     "Electronics": "电子产品",
     "Furniture": "家具",
     "Household": "家居用品",
+    "Transportation": "交通工具",
 }
 
 CONDITION_ZH = {
@@ -300,6 +301,11 @@ ITEM_ZH = {
         "name": "长方形灯罩台灯",
         "description": "台灯带长方形白色灯罩和黑色方形底座。",
         "pickupNotes": "此条目仅包含台灯本体，不含床头柜和旁边其他物品。",
+    },
+    "raleigh-detour-1-bike": {
+        "name": "Raleigh Detour 1 自行车",
+        "description": "Raleigh Detour 1 通勤/休闲自行车，照片中可见平把、脚撑和后挡泥板。",
+        "pickupNotes": "仅包含自行车本体。包含两张照片。",
     },
 }
 

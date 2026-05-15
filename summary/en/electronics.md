@@ -33,13 +33,6 @@ Additional info: Compact countertop mini fridge with original box and accessorie
 
 ![Frigidaire Gallery Mini Beauty Fridge (6-Can)](../media/electronics/frigidaire-gallery-mini-fridge.jpg)
 
-## [Frigidaire Countertop Ice Maker (26 lbs/day)](https://nesbitt-bot.github.io/Congo/en/item/frigidaire-countertop-ice-maker/?mode=plain) ($10)
-
-Earliest available: 2026-05-09
-Additional info: Compact countertop ice maker with original box shown.
-
-![Frigidaire Countertop Ice Maker (26 lbs/day)](../media/electronics/frigidaire-countertop-ice-maker.jpg)
-
 ## [GoveeLife Air Purifier H7120](https://nesbitt-bot.github.io/Congo/en/item/goveelife-air-purifier-h7120/?mode=plain) ($10)
 
 Earliest available: 2026-05-09

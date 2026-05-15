@@ -35,13 +35,6 @@
 
 ![Frigidaire Gallery 迷你美妆冰箱（6罐装）](../media/electronics/frigidaire-gallery-mini-fridge.jpg)
 
-## [Frigidaire 台面制冰机（每日 26 磅）](https://nesbitt-bot.github.io/Congo/zh/item/frigidaire-countertop-ice-maker/?mode=plain) ($10)
-
-最早可取：2026-05-09
-附加信息：台面制冰机，照片中含原包装箱。
-
-![Frigidaire 台面制冰机（每日 26 磅）](../media/electronics/frigidaire-countertop-ice-maker.jpg)
-
 ## [GoveeLife 空气净化器 H7120](https://nesbitt-bot.github.io/Congo/zh/item/goveelife-air-purifier-h7120/?mode=plain) ($10)
 
 最早可取：2026-05-09

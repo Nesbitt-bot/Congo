@@ -318,7 +318,7 @@
       "referenceLink": "https://www.amazon.com/s?k=Frigidaire+26+lbs+ice+maker",
       "actualPrice": 10,
       "quantity": 1,
-      "status": "available",
+      "status": "sold",
       "earliestPickupDate": "2026-05-09",
       "image": "media/frigidaire-ice-maker.jpg",
       "description": "Frigidaire countertop ice maker rated for 26 lbs/day, shown with the original box.",
@@ -846,6 +846,25 @@
       "image": "media/table-lamp-rectangular-shade-black-base.jpg",
       "description": "Table lamp with rectangular white shade and black square base.",
       "pickupNotes": "Lamp only. Nightstand and other nearby room items are not included."
+    },
+    {
+      "id": "raleigh-detour-1-bike",
+      "name": "Raleigh Detour 1 Bicycle",
+      "category": "Transportation",
+      "condition": "Used - good",
+      "referencePrice": 499.99,
+      "referenceLink": "https://www.google.com/search?q=Raleigh+Detour+1+bike",
+      "actualPrice": 100,
+      "quantity": 1,
+      "status": "available",
+      "earliestPickupDate": "2026-05-15",
+      "image": "media/raleigh-detour-1-bike-side.jpg",
+      "images": [
+        "media/raleigh-detour-1-bike-side.jpg",
+        "media/raleigh-detour-1-bike-angle.jpg"
+      ],
+      "description": "Raleigh Detour 1 comfort/commuter bicycle with flat handlebar, kickstand, and rear fender shown in the photos.",
+      "pickupNotes": "Bicycle only. Two photos included."
     }
   ]
 }
