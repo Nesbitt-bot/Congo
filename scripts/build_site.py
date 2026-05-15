@@ -289,8 +289,8 @@ ITEM_ZH = {
     },
     "floor-lamp-black-room": {
         "name": "黑色地灯",
-        "description": "照片里展示的黑色落地灯。",
-        "pickupNotes": "此条目仅包含地灯本体，不含旁边的椅子和房间内其他物品。",
+        "description": "黑色落地灯，带弯曲顶部灯臂和向下照射的灯罩。",
+        "pickupNotes": "仅包含地灯本体。",
     },
     "nightstand-black-single-drawer": {
         "name": "黑色床头柜",

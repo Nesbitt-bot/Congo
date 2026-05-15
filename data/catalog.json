@@ -813,9 +813,12 @@
       "quantity": 1,
       "status": "available",
       "earliestPickupDate": "2026-05-14",
-      "image": "media/floor-lamp-black-room.jpg",
-      "description": "Black floor lamp shown in the room photo.",
-      "pickupNotes": "Lamp only. The nearby chair and other room items are not included in this listing."
+      "image": "media/floor-lamp-black-room-correct.jpg",
+      "description": "Black floor lamp with curved top arm and downward-facing shade.",
+      "pickupNotes": "Lamp only.",
+      "images": [
+        "media/floor-lamp-black-room-correct.jpg"
+      ]
     },
     {
       "id": "nightstand-black-single-drawer",

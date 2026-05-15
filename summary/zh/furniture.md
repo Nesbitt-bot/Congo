@@ -143,7 +143,7 @@
 ## [黑色地灯](https://nesbitt-bot.github.io/Congo/zh/item/floor-lamp-black-room/?mode=plain) ($5)
 
 最早可取：2026-05-14
-附加信息：此条目仅包含地灯本体，不含旁边的椅子和房间内其他物品。
+附加信息：仅包含地灯本体。
 
 ![黑色地灯](../media/furniture/floor-lamp-black-room.jpg)
 
